@@ -4,7 +4,8 @@
  <groupId>br.com.wservices</groupId>
   <artifactId>wservices</artifactId>
   <packaging>war</packaging>
-  <version>1.0</version>
+   <version>0.0.1-SNAPSHOT</version>
+  
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.source>1.6</maven.compiler.source>

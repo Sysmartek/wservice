@@ -30,6 +30,13 @@
 			<version>5.3</version>
 		</dependency>
 
+
+		<dependency>
+			<groupId>org.privEJB.martini</groupId>
+			<artifactId>EJB-Samples</artifactId>
+			<version>1.1.2</version>
+		</dependency>
+
 	</dependencies>
 
 	<profiles>

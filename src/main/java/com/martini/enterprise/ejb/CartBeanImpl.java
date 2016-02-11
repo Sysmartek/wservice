@@ -24,7 +24,7 @@ import com.tutorialspoint.model.Product;
 @Remote(CartRemote.class)
 public class CartBeanImpl implements CartRemote {
 	
-	@PersistenceContext(unitName = "pu", type = PersistenceContextType.EXTENDED)
+	@PersistenceContext(unitName = "appCDIUnit", type = PersistenceContextType.EXTENDED)
 	private EntityManager entityManager;
 	  
 	private List<Product> products;

@@ -16,7 +16,7 @@ import javax.persistence.Table;
  * @author YaW Tecnologia
  */
 @Entity
-@Table(name="mercadoria_cdi_jsf", catalog="wservices")
+@Table(name="mercadoria_cdi_jsf", catalog="CatalogClients")
 public class Mercadoria implements AbstractEntity {
 
 	@Id

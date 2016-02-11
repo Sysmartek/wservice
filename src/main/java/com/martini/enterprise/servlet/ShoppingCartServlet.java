@@ -55,7 +55,7 @@ public class ShoppingCartServlet extends HttpServlet {
 				// "java:global/EJB-Statefull-SessionBeanEAR/EJB-Statefull-SessionBeanEJB/CartBean!"
 				// + "com.martini.enterprise.ejb.Cart";
 
-				String jndi_Name = "java:global/EJB-Samples-1.1//CartBeanImpl!com.martini.enterprise.ejb.CartRemote";
+				String jndi_Name = "java:global/EJB-Samples-1.1.3//CartBeanImpl!com.martini.enterprise.ejb.CartRemote";
 				InitialContext ic = new InitialContext();
 				cartBean1 = (CartRemote) ic.lookup(jndi_Name);
 

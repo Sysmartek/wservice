@@ -46,8 +46,21 @@
                 });
                 
                 
-                $('#submitJSF').click(function(event){  
+                $('#submitPrimeJSFEJB3').click(function(event){  
 					event.preventDefault();
+			    	
+					$(location).attr('href','http://wservices-sysmartek.rhcloud.com/listaMercadorias.jsf');
+//  					$(window).attr('location','http://localhost:8080/cdi-jsf-1.0/');
+//  					$(location).prop('href', 'http://localhost:8080/cdi-jsf-1.0/');
+				
+				});
+				
+				
+			$('#submitSpringMVC').click(function(event){  
+					event.preventDefault();
+
+					alert('Meu amor Preciso Estudar Sprimg MVC');
+					return null;
 			    	
 					$(location).attr('href','http://wservices-sysmartek.rhcloud.com/listaMercadorias.jsf');
 //  					$(window).attr('location','http://localhost:8080/cdi-jsf-1.0/');
@@ -114,8 +127,13 @@
 		<div id="welcometext"></div>
 
 		<h1>Test JSF Prime EJB 3 Persistence</h1>
-		<input class="btn btn-primary btn-block" type="button" id="submitJSF"
-			value="JSF CDI ManagedBean" /> <br />
+		<input class="btn btn-primary btn-block" type="button" id="submitPrimeJSFEJB3"
+			value="PRIME JSF ManagedBean" /> <br />
+
+		<h1>Test Spring MVC</h1>
+		<input class="btn btn-primary btn-block" type="button" id="submitSpringMVC"
+			value="Spring MVC" /> <br />
+
 
 	</div>
 

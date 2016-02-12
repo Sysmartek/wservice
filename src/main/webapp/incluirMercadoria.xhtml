@@ -8,10 +8,6 @@
 		<h:outputText value="#{msg['page.title.incluir.mercadoria']}" />
 	</ui:define>
 
-	<f:metadata>
-		<f:event type="preRenderView" listener="#{mercadoriaMB.incluir}" />
-	</f:metadata>
-
 	<ui:define name="content">
 		<ui:include src="formMercadoria.xhtml">
 			<ui:param name="subtitle" value="#{msg['label.incluir']}" />

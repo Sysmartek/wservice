@@ -49,7 +49,7 @@
                 $('#submitJSF').click(function(event){  
 					event.preventDefault();
 			    	
-					$(location).attr('href','http://wservices-sysmartek.rhcloud.com/cdi-jsf-1.0/');
+					$(location).attr('href','http://wservices-sysmartek.rhcloud.com/listaMercadorias.jsf');
 //  					$(window).attr('location','http://localhost:8080/cdi-jsf-1.0/');
 //  					$(location).prop('href', 'http://localhost:8080/cdi-jsf-1.0/');
 				
@@ -113,7 +113,7 @@
 			value="Ajax Submit" />
 		<div id="welcometext"></div>
 
-		<h1>Test JSF CDI Persistence</h1>
+		<h1>Test JSF Prime EJB 3 Persistence</h1>
 		<input class="btn btn-primary btn-block" type="button" id="submitJSF"
 			value="JSF CDI ManagedBean" /> <br />
 

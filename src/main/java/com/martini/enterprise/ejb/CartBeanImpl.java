@@ -19,7 +19,10 @@ import javax.persistence.PersistenceContextType;
 import com.tutorialspoint.model.Product;
 
 
-@Stateful
+//@Stateful
+//@Stateless(mappedName = CidadeRepositoryRemote.MAPPED_NAME)
+@Stateful(mappedName = CartRemote.MAPPED_NAME)
+
 //@StatefulTimeout(unit = TimeUnit.SECONDS, value = 20)
 @Remote(CartRemote.class)
 public class CartBeanImpl implements CartRemote {

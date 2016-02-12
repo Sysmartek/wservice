@@ -3,6 +3,8 @@ package com.martini.enterprise.servlet;
 import java.io.IOException;
 import java.util.Hashtable;
 
+import javax.annotation.ManagedBean;
+import javax.ejb.EJB;
 import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
@@ -19,9 +21,14 @@ import com.tutorialspoint.model.Product;
 /**
  * Servlet implementation class ShoppingCartServlet
  */
+@ManagedBean
 @WebServlet("/ShoppingCartServlet")
 public class ShoppingCartServlet extends HttpServlet {
 
+	
+	@EJB(mappedName = "cartEJBName")
+    private CartRemote cartRemote;
+	
 	private static final long serialVersionUID = 1L;
 	private static final String CART_SESSION_KEY = "shoppingCart";
 
@@ -55,15 +62,15 @@ public class ShoppingCartServlet extends HttpServlet {
 				// "java:global/EJB-Statefull-SessionBeanEAR/EJB-Statefull-SessionBeanEJB/CartBean!"
 				// + "com.martini.enterprise.ejb.Cart";
 
-				String jndi_Name = "java:global/wservices-sysmartek.rhcloud.com/wservices/CartBeanImpl!com.martini.enterprise.ejb.CartRemote";
-				InitialContext ic = new InitialContext();
-				cartBean1 = (CartRemote) ic.lookup(jndi_Name);
+//				String jndi_Name = "java:global/wservices-sysmartek.rhcloud.com/wservices/CartBeanImpl!com.martini.enterprise.ejb.CartRemote";
+//				InitialContext ic = new InitialContext();
+//				cartBean1 = (CartRemote) ic.lookup(jndi_Name);
+//
+//				ic = new InitialContext();
+//				cartBean2 = (CartRemote) ic.lookup(jndi_Name);
 
-				//cartBean1 = lookupRemoteEJB()
+				cartBean1 = cartRemote;
 				
-				ic = new InitialContext();
-				cartBean2 = (CartRemote) ic.lookup(jndi_Name);
-
 				Product productA1 = new Product();
 				productA1.setType("Livros");
 				cartBean2.addProductToCart(productA1);
@@ -73,13 +80,11 @@ public class ShoppingCartServlet extends HttpServlet {
 				productA2.setType("Onibus");
 				cartBean2.addProductToCart(productA2);
 
-				// cartBean = lookupRemoteEJB(jndi_Name);
-
 				request.getSession().setAttribute(CART_SESSION_KEY, cartBean1);
 
 				System.out.println("Session shoppingCart created");
 
-			} catch (NamingException e) {
+			} catch (Exception e) {
 				throw new ServletException(e);
 			}
 		}
@@ -119,35 +124,6 @@ public class ShoppingCartServlet extends HttpServlet {
 
 	}
 
-	private static CartRemote lookupRemoteEJB(String jndi_name)
-			throws NamingException {
-		final Hashtable jndiProperties = new Hashtable();
-		
-		jndiProperties.put("jboss.naming.client.ejb.context", true);
-		jndiProperties.put(Context.URL_PKG_PREFIXES,
-				"org.jboss.ejb.client.naming");
-
-		final Context context = new InitialContext(jndiProperties);
-
-		final String appName = "";
-		// final String moduleName = "as7project";
-		// final String moduleName = "as7project";
-		final String moduleName = "EJB-Statefull-SessionBeanEAR";
-		final String distinctName = "";
-		final String beanName = CartBeanImpl.class.getSimpleName();
-
-		final String viewClassName = CartRemote.class.getName();
-		System.out.println("Looking EJB via JNDI ");
-		System.out.println("ejb:" + appName + "/" + moduleName + "/"
-				+ distinctName + "/" + beanName + "!" + viewClassName);
-
-		// return (Cart) context.lookup("ejb:" + appName + "/"
-		// + moduleName + "/" + distinctName + "/" + beanName + "!"
-		// + viewClassName);
-
-		return (CartRemote) context.lookup(jndi_name);
-
-	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse

@@ -49,7 +49,7 @@
                 $('#submitJSF').click(function(event){  
 					event.preventDefault();
 			    	
-					$(location).attr('href','http://localhost:8080/cdi-jsf-1.0/');
+					$(location).attr('href','http://wservices-sysmartek.rhcloud.com/cdi-jsf-1.0/');
 //  					$(window).attr('location','http://localhost:8080/cdi-jsf-1.0/');
 //  					$(location).prop('href', 'http://localhost:8080/cdi-jsf-1.0/');
 				

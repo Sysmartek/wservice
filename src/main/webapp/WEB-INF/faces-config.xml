@@ -27,7 +27,7 @@
 		</navigation-case>
 	</navigation-rule>
 
-	<!-- define uma lista para servir como MB para a tela sobre 
+	<!-- define uma lista para servir como MB para a tela sobre -->
 	<managed-bean>
 		<description>Sobre a aplicacao</description>
 		<managed-bean-name>sobreMB</managed-bean-name>
@@ -39,5 +39,5 @@
 			<value>sobre.site</value>
 			<value>sobre.build</value>
 		</list-entries>
-	</managed-bean>-->
+	</managed-bean>
 </faces-config>

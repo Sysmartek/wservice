@@ -1,10 +1,12 @@
 package com.martini.enterprise.ejb;
 
+import javax.ejb.Remote;
+
 import com.tutorialspoint.model.Product;
 
 
 
-//@Local
+@Remote
 public interface CartRemote {
 	
 	String MAPPED_NAME = "cartEJBName";

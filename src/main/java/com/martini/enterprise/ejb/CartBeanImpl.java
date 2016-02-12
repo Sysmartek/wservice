@@ -8,7 +8,6 @@ import java.util.List;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
-import javax.ejb.Remote;
 import javax.ejb.Stateful;
 import javax.ejb.TransactionAttribute;
 import javax.ejb.TransactionAttributeType;
@@ -24,7 +23,7 @@ import com.tutorialspoint.model.Product;
 @Stateful(mappedName = CartRemote.MAPPED_NAME)
 
 //@StatefulTimeout(unit = TimeUnit.SECONDS, value = 20)
-@Remote(CartRemote.class)
+//@Remote(CartRemote.class)
 public class CartBeanImpl implements CartRemote {
 	
 	@PersistenceContext(unitName = "appCDIUnit", type = PersistenceContextType.EXTENDED)

@@ -20,10 +20,10 @@ import com.tutorialspoint.model.Product;
 
 //@Stateful
 //@Stateless(mappedName = CidadeRepositoryRemote.MAPPED_NAME)
-@Stateful(mappedName = CartRemote.MAPPED_NAME)
 
 //@StatefulTimeout(unit = TimeUnit.SECONDS, value = 20)
 //@Remote(CartRemote.class)
+@Stateful(name= CartRemote.MAPPED_NAME, mappedName = CartRemote.MAPPED_NAME)
 public class CartBeanImpl implements CartRemote {
 	
 	@PersistenceContext(unitName = "appCDIUnit", type = PersistenceContextType.EXTENDED)

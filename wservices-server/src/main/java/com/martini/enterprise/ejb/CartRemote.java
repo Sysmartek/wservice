@@ -9,7 +9,7 @@ import com.tutorialspoint.model.Product;
 @Remote
 public interface CartRemote {
 	
-	String MAPPED_NAME = "cartEJBName";
+	String MAPPED_NAME = "CartRemoteNamed";
 	
 	  void addProductToCart(Product product);
 	  

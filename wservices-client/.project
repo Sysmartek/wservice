@@ -3,7 +3,6 @@
 	<name>wservices-client</name>
 	<comment></comment>
 	<projects>
-		<project>wservices-server</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>

@@ -9,9 +9,9 @@
 	<name>wservices</name>
 
 	<modules>
-		<module>wservices-server</module>
 		<module>wservices-client</module>
 		<module>wservices-ear</module>
+		<module>wservices-server</module>
 	</modules>
 
 

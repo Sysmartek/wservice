@@ -1,0 +1,15 @@
+<project>
+	
+	<copy todir="C:\Development\projetos\deploy-weblogic\gpv-web" includeEmptyDirs="yes" verbose="true">
+	  <fileset dir="C:\Development\projetos\gpv\gpv-web\target\gpv-web">
+	    <include name="**/*"/>
+	  </fileset>
+	</copy>	
+
+	<copy todir="C:\Development\projetos\deploy-weblogic\gpv-ear-0.0.1-SNAPSHOT" includeEmptyDirs="yes" verbose="true">
+	  <fileset dir="C:\Development\projetos\gpv\gpv-ear\target\gpv-ear-0.0.1-SNAPSHOT">
+	    <include name="**/*"/>
+	  </fileset>
+	</copy>
+	
+</project>

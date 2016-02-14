@@ -82,17 +82,55 @@
 				});
                 
                
-                  $("a.callEJB").click(function(event) {
+                  $("a.callLocalStatelessEJB").click(function(event) {
 			    	event.preventDefault();
 			    	var url = $(this).attr("href");
 			
 			    	$.get(url, function(data) {
 			    	
 			        	console.log(data);
-			        	$('#responsePerformanceEJB').text(data);    
+			        	$('#responseLocalStatelessEJB').text(data);    
 			        
 			    	});
 				});
+
+
+                  $("a.callRemoteStatelessEJB").click(function(event) {
+			    	event.preventDefault();
+			    	var url = $(this).attr("href");
+			
+			    	$.get(url, function(data) {
+			    	
+			        	console.log(data);
+			        	$('#responseRemoteStatelessEJB').text(data);    
+			        
+			    	});
+				});
+				
+				 $("a.callRemoteStatefulEJB").click(function(event) {
+			    	event.preventDefault();
+			    	var url = $(this).attr("href");
+			
+			    	$.get(url, function(data) {
+			    	
+			        	console.log(data);
+			        	$('#responseRemoteStatefulEJB').text(data);    
+			        
+			    	});
+				});
+				
+				 $("a.callRemoteSingletonEJB").click(function(event) {
+			    	event.preventDefault();
+			    	var url = $(this).attr("href");
+			
+			    	$.get(url, function(data) {
+			    	
+			        	console.log(data);
+			        	$('#responseRemoteSingletonEJB').text(data);    
+			        
+			    	});
+				});
+
             
             });
 		</script>
@@ -102,21 +140,43 @@
 <%--     <% response.sendRedirect("listaMercadorias.jsf"); %> --%>
 	<div class=jumbotron>
 		<div>
-			<h1>Test of CDI!</h1>
-			<br>
-			<h1>
-				<a class="callCDI" href="PerformanceGateCDI">Performance Gate</a>
-			</h1>
+			<h2>Test of CDI!</h2>
+			<h2>
+				<a class="callCDI" href="PerformanceGateCDI">Performance CDI</a>
+			</h2>
 			<div id="responsePerformanceCDI"></div>
 		</div>
 		<div>
-			<h1>Test of Real EJB</h1>
-			<br>
-			<h1>
-				<a class="callEJB" href="PerformanceGateRealEJB">Performance
-					Gate</a>
-			</h1>
-			<div id="responsePerformanceEJB"></div>
+			<h2>Test of @Local @Stateless EJB</h2>
+			<h2>
+				<a class="callLocalStatelessEJB" href="PerformanceLocalEJB">Performance 
+					Local Stateless EJB</a>
+			</h2>
+			<div id="responseLocalStatelessEJB"></div>
+		</div>
+		<div>
+			<h2>Test of @Remote @Stateless EJB</h2>
+			<h2>
+				<a class="callRemoteStatelessEJB" href="PerformanceRemoteStatelessEJB">Performance 
+					Remote Stateless EJB</a>
+			</h2>
+			<div id="responseRemoteStatelessEJB"></div>
+		</div>
+		<div>
+			<h2>Test of @Remote @Stateful EJB</h2>
+			<h2>
+				<a class="callRemoteStatefulEJB" href="PerformanceRemoteStatefulEJB">Performance 
+					Remote Stateful EJB</a>
+			</h2>
+			<div id="responseRemoteStatefulEJB"></div>
+		</div>
+		<div>
+			<h2>Test of @Remote @Singleton EJB</h2>
+			<h2>
+				<a class="callRemoteSingletonEJB" href="PerformanceRemoteSingletonEJB">Performance 
+					Remote Singleton EJB</a>
+			</h2>
+			<div id="responseRemoteSingletonEJB"></div>
 		</div>
 		<br />
 

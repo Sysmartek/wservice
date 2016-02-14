@@ -16,8 +16,7 @@
 		<maven.compiler.source>1.6</maven.compiler.source>
 		<maven.compiler.target>1.6</maven.compiler.target>
 
-		<!-- DEPENDENCY VERSIONS -->
-		<javax.servlet-api>3.0.1</javax.servlet-api>
+		<wservices-server>1</wservices-server>
 	</properties>
 
 
@@ -42,6 +41,12 @@
 	</repositories>
 
 	<dependencies>
+
+		<dependency>
+			<groupId>br.com.wservices</groupId>
+			<artifactId>wservices-server</artifactId>
+			<version>${wservices-server}</version>
+		</dependency>
 
 		<dependency>
 			<groupId>javax</groupId>
@@ -74,6 +79,12 @@
 		<dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>jstl</artifactId>
+		</dependency>
+
+
+		<dependency>
+			<groupId>javax.servlet.jsp</groupId>
+			<artifactId>jsp-api</artifactId>
 		</dependency>
 
 

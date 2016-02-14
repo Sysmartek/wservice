@@ -10,15 +10,16 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.martini.overhead.ejb.RealEJB;
+import com.martini.overhead.ejb.RealLocalStatelessEJB;
 
 /**
- * Servlet implementation class PerformanceGateRealEJB
+ * Servlet implementation class PerformanceLocalEJB
  */
-@WebServlet(name= "PerformanceGateRealEJB", urlPatterns = {"/PerformanceGateRealEJB"})
-public class PerformanceGateRealEJB extends HttpServlet {
+@WebServlet(name= "PerformanceLocalEJB", urlPatterns = {"/PerformanceLocalEJB"})
+public class PerformanceLocalEJB extends HttpServlet {
+	
 	@EJB
-    RealEJB bean;
+	RealLocalStatelessEJB bean;
     
     
     /**

@@ -3,6 +3,7 @@ package com.martini.enterprise.servlet;
 import java.io.IOException;
 import java.util.Hashtable;
 
+import javax.ejb.EJB;
 import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
@@ -14,18 +15,32 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.martini.enterprise.ejb.CartBeanImpl;
 import com.martini.enterprise.ejb.CartRemote;
+import com.martini.overhead.ejb.RealRemoteSingletonEJB;
+import com.martini.overhead.ejb.RealRemoteStatefulEJB;
+import com.martini.overhead.ejb.RealRemoteStatelessEJB;
 import com.tutorialspoint.model.Product;
 
 /**
  * Servlet implementation class ShoppingCartServlet
  */
-@WebServlet("/ShoppingCartServlet")
+// @WebServlet("/ShoppingCartServlet")
+@WebServlet(name = "ShoppingCartServlet", urlPatterns = { "/ShoppingCartServlet" })
 public class ShoppingCartServlet extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;
 	private static final String CART_SESSION_KEY = "shoppingCart";
 
-	CartRemote cartBean2 = null;
+	@EJB
+	CartRemote cartBean2;
+
+	@EJB
+	RealRemoteStatelessEJB realRemoteStateless;
+
+	@EJB
+	RealRemoteStatefulEJB realRemoteStateful;
+
+	@EJB
+	RealRemoteSingletonEJB realRemoteSingleton;
 
 	public ShoppingCartServlet() {
 		super();
@@ -40,7 +55,23 @@ public class ShoppingCartServlet extends HttpServlet {
 			HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 
-		System.out.println("Hello from servlet");
+		try {
+			System.out
+					.println("Hello from servlet \n Real Remote Stateless by @EJB : "
+							+ realRemoteStateless.someOutPut());
+
+			System.out
+			.println("Hello from servlet \n Real Remote Stateful by @EJB : "
+					+ realRemoteStateful.someOutPut());
+
+			System.out
+			.println("Hello from servlet \n Real Remote Singleton by @EJB : "
+					+ realRemoteSingleton.someOutPut());
+
+		} catch (Exception e) {
+			System.out
+					.println("Exception in Capturing EJB Remote from servlet \n RealRemoteStateless by @EJB ");
+		}
 
 		CartRemote cartBean1 = (CartRemote) request.getSession().getAttribute(
 				CART_SESSION_KEY);
@@ -54,16 +85,17 @@ public class ShoppingCartServlet extends HttpServlet {
 				// String jndi_Name =
 				// "java:global/EJB-Statefull-SessionBeanEAR/EJB-Statefull-SessionBeanEJB/CartBean!"
 				// + "com.martini.enterprise.ejb.Cart";
-				//String jndi_Name = "java:global/wservices-sysmartek.rhcloud.com/wservices/CartBeanImpl!com.martini.enterprise.ejb.CartRemote";
+				// String jndi_Name =
+				// "java:global/wservices-sysmartek.rhcloud.com/wservices/CartBeanImpl!com.martini.enterprise.ejb.CartRemote";
 
 				String jndi_Name = "java:jboss/exported/wservices-ear/wservices-server-1/CartRemoteNamed!com.martini.enterprise.ejb.CartRemote";
 				InitialContext ic = new InitialContext();
 				cartBean1 = (CartRemote) ic.lookup(jndi_Name);
 
-				//cartBean1 = lookupRemoteEJB()
-				
-				ic = new InitialContext();
-				cartBean2 = (CartRemote) ic.lookup(jndi_Name);
+				// cartBean1 = lookupRemoteEJB()
+
+				//ic = new InitialContext();
+				//cartBean2 = (CartRemote) ic.lookup(jndi_Name);
 
 				Product productA1 = new Product();
 				productA1.setType("Livros");
@@ -123,7 +155,7 @@ public class ShoppingCartServlet extends HttpServlet {
 	private static CartRemote lookupRemoteEJB(String jndi_name)
 			throws NamingException {
 		final Hashtable jndiProperties = new Hashtable();
-		
+
 		jndiProperties.put("jboss.naming.client.ejb.context", true);
 		jndiProperties.put(Context.URL_PKG_PREFIXES,
 				"org.jboss.ejb.client.naming");

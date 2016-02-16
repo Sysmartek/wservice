@@ -67,12 +67,12 @@ public class ShoppingCartServlet extends HttpServlet {
 			
 			System.out.println("List of products A1: \n"
 					+ cartBean1.listOfProducts());
-			response.getWriter().write("\nCartBean1 List of productsc A1" + cartBean1.listOfProducts());
+			response.getWriter().write("\nCartBean1 List of productsc A1\n" + cartBean1.listOfProducts());
 
 			
 			System.out.println("List of products A2: \n"
 					+ cartBean2.listOfProducts());
-			response.getWriter().write("\nCartBean2 List of productsc A2" + cartBean1.listOfProducts());
+			response.getWriter().write("\nCartBean2 List of productsc A2\n" + cartBean1.listOfProducts());
 			
 			System.out
 					.println("Hello from servlet \n Real Remote Stateless by @EJB : "

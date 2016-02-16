@@ -59,33 +59,54 @@ public class ShoppingCartServlet extends HttpServlet {
 			HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 
+		response.setContentType("text/plain");
+		response.setCharacterEncoding("UTF-8");
+
+		
 		try {
 			
-			System.out.println("List of productsA1: \n"
+			System.out.println("List of products A1: \n"
 					+ cartBean1.listOfProducts());
+			response.getWriter().write("\nCartBean1 List of productsc A1" + cartBean1.listOfProducts());
+
 			
-			System.out.println("List of productsA2: \n"
+			System.out.println("List of products A2: \n"
 					+ cartBean2.listOfProducts());
+			response.getWriter().write("\nCartBean2 List of productsc A2" + cartBean1.listOfProducts());
 			
 			System.out
 					.println("Hello from servlet \n Real Remote Stateless by @EJB : "
 							+ realRemoteStateless.someOutPut());
+			response.getWriter().write("\n\nHello from servlet \n Real Remote Stateless by @EJB : "
+					+ realRemoteStateless.someOutPut());
 
 			System.out
 			.println("Hello from servlet \n Real Remote Stateful by @EJB : "
 					+ realRemoteStateful.someOutPut());
+			
+			response.getWriter().write("\nHello from servlet \n Real Remote Stateful by @EJB : "
+					+ realRemoteStateful.someOutPut());
 
+			
 			System.out
 			.println("Hello from servlet \n Real Remote Singleton by @EJB : "
 					+ realRemoteSingleton.someOutPut());
 
+			response.getWriter().write("\nHello from servlet \n Real Remote Singleton by @EJB : "
+					+ realRemoteSingleton.someOutPut());
+
+			
 		} catch (Exception e) {
 			System.out
 					.println("Exception in Capturing EJB Remote from servlet \n RealRemoteStateless by @EJB ");
+
+			response.getWriter().write("\nException in Capturing EJB Remote from servlet \n RealRemoteStateless by @EJB ");
+
 		}
 
 		CartRemote cartBeanSession = (CartRemote) request.getSession().getAttribute(
 				CART_SESSION_KEY);
+		
 
 		if (cartBeanSession == null) {
 			// EJB is not yet in the HTTP session
@@ -120,15 +141,19 @@ public class ShoppingCartServlet extends HttpServlet {
 				// cartBean = lookupRemoteEJB(jndi_Name);
 
 				request.getSession().setAttribute(CART_SESSION_KEY, cartBean1);
-
+				
+				response.getWriter().write("\nSession shoppingCart created - of CartBean1");
+				
 				System.out.println("Session shoppingCart created");
 
 			//} catch (NamingException e) {
 			//	throw new ServletException(e);
 			//}
-		}else
+		}else{
 			cartBean1 = cartBeanSession;
-
+			response.getWriter().write("\nCartBean1 Session shoppingCart - recovered from Session created ! ");
+		}
+		
 		String productName = request.getParameter("product");
 		if (productName != null && productName.length() > 0) {
 
@@ -137,9 +162,13 @@ public class ShoppingCartServlet extends HttpServlet {
 				Product product1 = new Product();
 				product1.setType(productName);
 				cartBean1.addProductToCart(product1);
+				response.getWriter().write("\nProduct add into CartBean1 shoppingCart : " + productName);
+				
 
 			} catch (Exception ex) {
 				request.getSession().setAttribute(CART_SESSION_KEY, null);
+				response.getWriter().write("\nSet Session into null !");
+
 				throw new ServletException(ex);
 
 			}
@@ -147,20 +176,30 @@ public class ShoppingCartServlet extends HttpServlet {
 			System.out.println("product " + productName + " added");
 			System.out.println("List of productsA1: \n"
 					+ cartBean1.listOfProducts());
+			
+			response.getWriter().write("\nproduct A1 " + cartBean1.listOfProducts());
 
 			System.out.println("\nproduct A2 ");
 			System.out.println("List of productsA2: \n"
 					+ cartBean2.listOfProducts());
+			
+			response.getWriter().write("\nproduct A2 " + cartBean2.listOfProducts());
 
 		}
 
+		
+		
 		String checkout = request.getParameter("checkout");
 		if (checkout != null && checkout.equalsIgnoreCase("yes")) {
 			// Request instructs to complete the purchase
 			cartBean1.checkOut();
 			cartBean2.checkOut();
 			System.out.println("Shopping cart checked out ");
+			
+			response.getWriter().write("\nShopping cart checked out in \n CartBean1 and CartBean2");
 		}
+		
+		
 
 	}
 

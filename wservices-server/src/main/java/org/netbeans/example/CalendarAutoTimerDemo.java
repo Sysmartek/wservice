@@ -11,7 +11,7 @@ import javax.ejb.Timer;
 @LocalBean
 public class CalendarAutoTimerDemo {
 
-    @Schedule(second="13,34,57", minute="*", hour="*")
+    @Schedule(second="55", minute="*", hour="*")
     public String execute(Timer timer) {
         System.out.println("Executing ...");
         System.out.println("Execution Time : " + new Date());

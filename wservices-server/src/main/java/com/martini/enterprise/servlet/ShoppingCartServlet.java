@@ -31,6 +31,10 @@ public class ShoppingCartServlet extends HttpServlet {
 	private static final String CART_SESSION_KEY = "shoppingCart";
 
 	@EJB
+	CartRemote cartBean1;
+
+	
+	@EJB
 	CartRemote cartBean2;
 
 	@EJB
@@ -56,6 +60,13 @@ public class ShoppingCartServlet extends HttpServlet {
 		// TODO Auto-generated method stub
 
 		try {
+			
+			System.out.println("List of productsA1: \n"
+					+ cartBean1.listOfProducts());
+			
+			System.out.println("List of productsA2: \n"
+					+ cartBean2.listOfProducts());
+			
 			System.out
 					.println("Hello from servlet \n Real Remote Stateless by @EJB : "
 							+ realRemoteStateless.someOutPut());
@@ -73,14 +84,14 @@ public class ShoppingCartServlet extends HttpServlet {
 					.println("Exception in Capturing EJB Remote from servlet \n RealRemoteStateless by @EJB ");
 		}
 
-		CartRemote cartBean1 = (CartRemote) request.getSession().getAttribute(
+		CartRemote cartBeanSession = (CartRemote) request.getSession().getAttribute(
 				CART_SESSION_KEY);
 
-		if (cartBean1 == null) {
+		if (cartBeanSession == null) {
 			// EJB is not yet in the HTTP session
 			// This means that the client just sent his first request
 			// We obtain a CartBean instance and add it to the session object.
-			try {
+			//try {
 
 				// String jndi_Name =
 				// "java:global/EJB-Statefull-SessionBeanEAR/EJB-Statefull-SessionBeanEJB/CartBean!"
@@ -88,9 +99,9 @@ public class ShoppingCartServlet extends HttpServlet {
 				// String jndi_Name =
 				// "java:global/wservices-sysmartek.rhcloud.com/wservices/CartBeanImpl!com.martini.enterprise.ejb.CartRemote";
 
-				String jndi_Name = "java:jboss/exported/wservices-ear/wservices-server-1/CartRemoteNamed!com.martini.enterprise.ejb.CartRemote";
-				InitialContext ic = new InitialContext();
-				cartBean1 = (CartRemote) ic.lookup(jndi_Name);
+				//String jndi_Name = "java:jboss/exported/wservices-ear/wservices-server-1/CartRemoteNamed!com.martini.enterprise.ejb.CartRemote";
+				//InitialContext ic = new InitialContext();
+				//cartBean1 = (CartRemote) ic.lookup(jndi_Name);
 
 				// cartBean1 = lookupRemoteEJB()
 
@@ -112,10 +123,11 @@ public class ShoppingCartServlet extends HttpServlet {
 
 				System.out.println("Session shoppingCart created");
 
-			} catch (NamingException e) {
-				throw new ServletException(e);
-			}
-		}
+			//} catch (NamingException e) {
+			//	throw new ServletException(e);
+			//}
+		}else
+			cartBean1 = cartBeanSession;
 
 		String productName = request.getParameter("product");
 		if (productName != null && productName.length() > 0) {

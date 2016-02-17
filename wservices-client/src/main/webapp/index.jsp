@@ -303,7 +303,10 @@
 	<%--     <% response.sendRedirect("listaMercadorias.jsf"); %> --%>
 	<div class=jumbotron>
 		<div>
-			<h3>Teste EJB vs Jquery and  call JSF on Openshift</h3>
+			<h3>Call Servlets with EJBs via Jquery</h3>
+			<h3>Muliple Calls Timers in JavaScript</h3>
+			<h3>Call CRUD EJB - JSF on Openshif</h3>
+			  
 			<div id="setTimerIntervalMessage"
 				style="height: 1.5em; font-size: 2em; color: blue;"></div>
 			<div class="container">

@@ -5,12 +5,14 @@
  */
 package com.martini.overhead.CDI;
 
+import com.martini.utils.Utils;
+
 /**
  *
  * @author omartini
  */
 public class CDIManagedBean {
     public String SomeOutPut(){
-        return "Retorna CDI \n Claudia Time: " + System.currentTimeMillis();
+        return "Te amo Benzin minha Claudinha -> Retorna CDI \n Date: " + Utils.DateNowMMMddyyyyHHmmssSSS(); //System.currentTimeMillis();
     }
 }

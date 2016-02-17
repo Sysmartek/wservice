@@ -13,10 +13,10 @@ import javax.servlet.http.HttpServletResponse;
 import com.martini.overhead.ejb.RealLocalStatelessEJB;
 
 /**
- * Servlet implementation class PerformanceLocalEJB
+ * Servlet implementation class PerformanceLocalStatelessEJB
  */
-@WebServlet(name= "PerformanceLocalEJB", urlPatterns = {"/PerformanceLocalEJB"})
-public class PerformanceLocalEJB extends HttpServlet {
+@WebServlet(name= "PerformanceLocalStatelessEJB", urlPatterns = {"/PerformanceLocalStatelessEJB"})
+public class PerformanceLocalStatelessEJB extends HttpServlet {
 	
 	@EJB
 	RealLocalStatelessEJB bean;

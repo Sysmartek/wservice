@@ -12,6 +12,10 @@
 
 	<dependencies>
 
+		<dependency>
+			<groupId>br.com.sysmartek</groupId>
+			<artifactId>sysmartek-framework</artifactId>
+		</dependency>
 
 		<dependency>
 			<groupId>javax</groupId>
@@ -25,11 +29,11 @@
 
 
 		<!-- JPA / Hibernate -->
-		<dependency>
-			<groupId>org.slf4j</groupId>
-			<artifactId>slf4j-api</artifactId>
-		</dependency>
-		
+<!-- 		<dependency> -->
+<!-- 			<groupId>org.slf4j</groupId> -->
+<!-- 			<artifactId>slf4j-api</artifactId> -->
+<!-- 		</dependency> -->
+
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-core</artifactId>

@@ -89,48 +89,55 @@ public class ShoppingCartServlet extends HttpServlet {
 			// ic = new InitialContext();
 			// cartBean2 = (CartRemote) ic.lookup(jndi_Name);
 
-			Product productA1 = new Product();
-			productA1.setType("Livros");
-			productA1.setClassif("Books");
+			try {
+				Product productA1 = new Product();
+				productA1.setType("Livros");
+				productA1.setClassif("Books");
 
-			cartBean2.addProductToCart(productA1);
-			productA1.setType("Corola");
-			productA1.setClassif("Carros");
+				cartBean2.addProductToCart(productA1);
+				productA1.setType("Corola");
+				productA1.setClassif("Carros");
 
-			cartBean2.addProductToCart(productA1);
-			Product productA2 = new Product();
-			productA2.setType("Onibus");
-			productA2.setClassif("Transporte");
-			cartBean2.addProductToCart(productA2);
+				cartBean2.addProductToCart(productA1);
+				Product productA2 = new Product();
+				productA2.setType("Onibus");
+				productA2.setClassif("Transporte");
+				cartBean2.addProductToCart(productA2);
 
-			// cartBean = lookupRemoteEJB(jndi_Name);
+				// cartBean = lookupRemoteEJB(jndi_Name);
 
-			request.getSession().setAttribute(CART_SESSION_KEY, cartBean1);
+				request.getSession().setAttribute(CART_SESSION_KEY, cartBean1);
 
-			cartBean1.setPropertyObject(new PropertyObject("bean: "
-					+ cartBean2.doSomething()));
+				cartBean1.setPropertyObject(new PropertyObject("bean: "
+						+ cartBean2.doSomething()));
 
-			request.getSession().setAttribute(
-					"bean: " + cartBean1.doSomething(), cartBean1);
-			System.out.println("Session cartBean1: " + "bean: "
-					+ cartBean1.doSomething() + " created.");
+				request.getSession().setAttribute(
+						"bean: " + cartBean1.doSomething(), cartBean1);
+				System.out.println("Session cartBean1: " + "bean: "
+						+ cartBean1.doSomething() + " created.");
 
-			cartBean2.setPropertyObject(new PropertyObject("bean: "
-					+ cartBean2.doSomething()));
+				cartBean2.setPropertyObject(new PropertyObject("bean: "
+						+ cartBean2.doSomething()));
 
-			request.getSession().setAttribute(
-					"bean: " + cartBean2.doSomething(), cartBean2);
-			System.out.println("Session cartBean2: " + "bean: "
-					+ cartBean2.doSomething() + " created.");
+				request.getSession().setAttribute(
+						"bean: " + cartBean2.doSomething(), cartBean2);
+				System.out.println("Session cartBean2: " + "bean: "
+						+ cartBean2.doSomething() + " created.");
 
-			response.getWriter().write(
-					"\nSession shoppingCart created - of CartBean1");
+				response.getWriter().write(
+						"\nSession shoppingCart created - of CartBean1");
 
-			System.out.println("Session shoppingCart created");
+				System.out.println("Session shoppingCart created");
 
-			// } catch (NamingException e) {
-			// throw new ServletException(e);
-			// }
+			} catch (Exception e) {
+				System.out
+						.println("Exception in Capturing EJB Remote from servlet \n CartBean1 and CartBean2!");
+
+				response.getWriter()
+						.write("Exception in Capturing EJB Remote from servlet \n CartBean1 and CartBean2!");
+
+			}
+
 		} else {
 			cartBean1 = cartBeanSession;
 			// cartBean1 = (CartRemote) request.getSession().getAttribute(
@@ -183,9 +190,10 @@ public class ShoppingCartServlet extends HttpServlet {
 
 			} catch (Exception e) {
 				System.out
-						.println("Exception in Capturing EJB Remote from servlet \n RealRemoteStateless by @EJB ");
+						.println("Exception in Capturing EJB Remote from servlet \n CartBean1 and CartBean2!");
 
-				// response.getWriter().write("\nException in Capturing EJB Remote from servlet \n RealRemoteStateless by @EJB ");
+				response.getWriter()
+						.write("Exception in Capturing EJB Remote from servlet \n CartBean1 and CartBean2!");
 
 			}
 
@@ -209,37 +217,69 @@ public class ShoppingCartServlet extends HttpServlet {
 
 			} catch (Exception ex) {
 				request.getSession().setAttribute(CART_SESSION_KEY, null);
-				response.getWriter().write("\nSet Session into null !");
 
-				throw new ServletException(ex);
+				System.out
+						.println("Exception in Capturing EJB Remote from servlet \n CartBean1 and CartBean2!");
+
+				response.getWriter()
+						.write("Exception in Capturing EJB Remote from servlet \n CartBean1 and CartBean2!");
+
+				// throw new ServletException(ex);
 
 			}
 
-			System.out.println("product " + productName + " added");
-			System.out.println("List of productsA1: \n"
-					+ cartBean1.listOfProducts());
+			try {
+				System.out.println("product " + productName + " added");
+				System.out.println("List of productsA1: \n"
+						+ cartBean1.listOfProducts());
 
-			response.getWriter().write(
-					"\nproduct A1 \n" + cartBean1.listOfProducts());
+				response.getWriter().write(
+						"\nproduct A1 \n" + cartBean1.listOfProducts());
 
-			System.out.println("\nproduct A2 ");
-			System.out.println("List of productsA2: \n"
-					+ cartBean2.listOfProducts());
+				System.out.println("\nproduct A2 ");
+				System.out.println("List of productsA2: \n"
+						+ cartBean2.listOfProducts());
 
-			response.getWriter().write(
-					"\nproduct A2 \n" + cartBean2.listOfProducts());
+				response.getWriter().write(
+						"\nproduct A2 \n" + cartBean2.listOfProducts());
 
+			} catch (Exception ex) {
+				request.getSession().setAttribute(CART_SESSION_KEY, null);
+
+				System.out
+						.println("Exception in Capturing EJB Remote from servlet \n CartBean1 and CartBean2!");
+
+				response.getWriter()
+						.write("Exception in Capturing EJB Remote from servlet \n CartBean1 and CartBean2!");
+
+				// throw new ServletException(ex);
+
+			}
 		}
 
 		String checkout = request.getParameter("checkout");
 		if (checkout != null && checkout.equalsIgnoreCase("yes")) {
-			// Request instructs to complete the purchase
-			cartBean1.checkOut();
-			cartBean2.checkOut();
-			System.out.println("Shopping cart checked out ");
+			try {
+				// Request instructs to complete the purchase
+				cartBean1.checkOut();
+				cartBean2.checkOut();
+				System.out.println("Shopping cart checked out ");
 
-			response.getWriter()
-					.write("\nShopping cart checked out in \n CartBean1 and CartBean2");
+				response.getWriter()
+						.write("\nShopping cart checked out in \n CartBean1 and CartBean2");
+
+			} catch (Exception ex) {
+				request.getSession().setAttribute(CART_SESSION_KEY, null);
+
+				System.out
+						.println("Exception in Capturing EJB Remote from servlet \n CartBean1 and CartBean2!");
+
+				response.getWriter()
+						.write("Exception in Capturing EJB Remote from servlet \n CartBean1 and CartBean2!");
+
+				// throw new ServletException(ex);
+
+			}
 		}
 
 	}

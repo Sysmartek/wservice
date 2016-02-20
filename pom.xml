@@ -20,9 +20,10 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<maven.compiler.source>1.6</maven.compiler.source>
 		<maven.compiler.target>1.6</maven.compiler.target>
-
+		<sysmartek-framework>0.0.1-SNAPSHOT</sysmartek-framework>
 		<!-- DEPENDENCY VERSIONS -->
 		<junit>4.11</junit>
+		<junit-dep>4.11</junit-dep>
 
 		<!-- Dependencies for project wservices-server -->
 		<javaee-api>7.0</javaee-api>
@@ -32,7 +33,7 @@
 		<hibernate-core>5.1.0.Final</hibernate-core>
 		<hibernate-validator>5.1.0.Final</hibernate-validator>
 		<hibernate-entitymanager>5.1.0.Final</hibernate-entitymanager>
-		<slf4j-api>1.6.4</slf4j-api>
+		<!-- <slf4j-api>1.7.7</slf4j-api> -->
 
 		<!-- Dependencies for project wservices-client -->
 		<javaee-web-api>7.0</javaee-web-api>
@@ -67,6 +68,13 @@
 		<dependencies>
 
 			<dependency>
+				<groupId>br.com.sysmartek</groupId>
+				<artifactId>sysmartek-framework</artifactId>
+				<version>${sysmartek-framework}</version>
+			</dependency>
+
+
+			<dependency>
 				<groupId>javax</groupId>
 				<artifactId>javaee-api</artifactId>
 				<version>${javaee-api}</version>
@@ -88,11 +96,11 @@
 			</dependency>
 
 			<!-- JPA / Hibernate -->
-			<dependency>
-				<groupId>org.slf4j</groupId>
-				<artifactId>slf4j-api</artifactId>
-				<version>${slf4j-api}</version>
-			</dependency>
+			<!-- <dependency> -->
+			<!-- <groupId>org.slf4j</groupId> -->
+			<!-- <artifactId>slf4j-api</artifactId> -->
+			<!-- <version>${slf4j-api}</version> -->
+			<!-- </dependency> -->
 
 			<dependency>
 				<groupId>org.hibernate</groupId>
@@ -154,6 +162,13 @@
 				<groupId>junit</groupId>
 				<artifactId>junit</artifactId>
 				<version>${junit}</version>
+				<scope>test</scope>
+			</dependency>
+
+			<dependency>
+				<groupId>org.powermock</groupId>
+				<artifactId>powermock-module-junit4</artifactId>
+				<version>${powermock.version}</version>
 				<scope>test</scope>
 			</dependency>
 

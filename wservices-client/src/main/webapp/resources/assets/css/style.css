@@ -16,7 +16,7 @@
 
 html{
 	background:url('../img/bg.jpg') #dbe4e6;
-	overflow:hidden;
+	overflow:auto;
 }
 
 body{
@@ -24,6 +24,7 @@ body{
 	color: #4f4f4f;
 	z-index:1;
 }
+
 
 a, a:visited {
 	outline:none;
@@ -34,9 +35,11 @@ a:hover{
 	text-decoration:none;
 }
 
+
 section, footer, header, aside{
 	display: block;
 }
+
 
 
 /*-------------------------

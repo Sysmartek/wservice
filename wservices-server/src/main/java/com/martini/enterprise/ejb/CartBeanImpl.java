@@ -2,6 +2,7 @@ package com.martini.enterprise.ejb;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
@@ -10,22 +11,26 @@ import javax.ejb.PostActivate;
 import javax.ejb.PrePassivate;
 import javax.ejb.Remove;
 import javax.ejb.Stateful;
+import javax.ejb.StatefulTimeout;
 import javax.ejb.TransactionAttribute;
 import javax.ejb.TransactionAttributeType;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.PersistenceContextType;
 
+import com.martini.enterprise.ejb.property.PropertyObject;
 import com.martini.utils.Utils;
 import com.tutorialspoint.model.Product;
 
 //@Stateful
 //@Stateless(mappedName = CidadeRepositoryRemote.MAPPED_NAME)
 
-//@StatefulTimeout(unit = TimeUnit.SECONDS, value = 20)
 //@Remote(CartRemote.class)
-@Stateful(name = CartRemote.MAPPED_NAME, mappedName = CartRemote.MAPPED_NAME)
+@Stateful(name = CartRemote.MAPPED_NAME, mappedName = CartRemote.MAPPED_NAME, passivationCapable=true)
+//@StatefulTimeout(unit = TimeUnit.SECONDS, value = 10)
 public class CartBeanImpl implements CartRemote {
+	
+	private PropertyObject myProperty;
 	
 	int counter;
 	 
@@ -100,5 +105,29 @@ public class CartBeanImpl implements CartRemote {
 		
 		return listOfProduct;
 	}
+
+	public PropertyObject getMyProperty() {
+		return myProperty;
+	}
+
+	public void setMyProperty(PropertyObject myProperty) {
+		this.myProperty = myProperty;
+	}
+
+	@Override
+	public void setPropertyObject(PropertyObject propertyObject) {
+
+		this.myProperty = propertyObject;
+		
+	}
+
+	@Override
+	public PropertyObject getPropertyObject() {
+
+		return this.myProperty;
+	}
+	
+	
+	
 
 }

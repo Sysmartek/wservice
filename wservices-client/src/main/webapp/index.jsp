@@ -14,6 +14,17 @@
 
 <link rel="stylesheet"
 	href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+
+<link href="resources/assets/css/style.css" rel="stylesheet" />
+
+<script
+	src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+<script
+	src="http://cdnjs.cloudflare.com/ajax/libs/moment.js/2.0.0/moment.min.js"></script>
+
+<script src="resources/assets/js/script.js"></script>
+<script src="resources/javascript/js/callBackAjax.js"></script>
+
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
 <script
@@ -78,182 +89,7 @@
 </style>
 
 <script>
-	var wooYayIntervalId = 0;
 
-	var servicesEJBs = [ 'PerformanceGateCDI', 'PerformanceLocalStatelessEJB',
-			'PerformanceRemoteStatelessEJB', 'PerformanceRemoteStatefulEJB',
-			'PerformanceRemoteSingletonEJB', 'ShoppingCartServlet' ];
-
-	var responsesEJBs = [ '#responsePerformanceCDI',
-			'#responseLocalStatelessEJB', '#responseRemoteStatelessEJB',
-			'#responseRemoteStatefulEJB', '#responseRemoteSingletonEJB',
-			'#responseShopCartBase' ];
-
-	$(function() {
-		$("#aioConceptName").on("change", function() {
-			//$("#debug").text($("#aioConceptName").val());
-		}).trigger("change");
-	});
-
-	function wooYayClickHandler() {
-		if (document.getElementById("wooYayButton").value == "Clicar Aqui Benzinho") {
-			// Start the timer
-			//document.getElementById("wooYayButton").value = "Parar Timer!";
-			$("#wooYayButton").attr('value', 'Parar Timer!');
-
-			wooYayIntervalId = setInterval("wooYay()", $("#aioConceptName")
-					.val());
-		} else {
-			document.getElementById("setTimerIntervalMessage").innerHTML = "Stoped SetInterval";
-			//+ $("#aioConceptName").val();
-
-			//document.getElementById("wooYayButton").value = "Clicar Aqui Benzinho";
-			$("#wooYayButton").attr('value', 'Clicar Aqui Benzinho');
-
-			clearInterval(wooYayIntervalId);
-		}
-	}
-
-	function wooYay() {
-		//if (Math.random() > .5) {
-		document.getElementById("setTimerIntervalMessage").innerHTML = "Iniciado SetInterval";
-		//+ $("#aioConceptName").val();
-		//} else {
-		//	document.getElementById("setTimerIntervalMessage").innerHTML = "Value!";
-		//}
-
-		//setTimeout('document.getElementById("setTimerIntervalMessage").innerHTML = ""',
-		//		500);
-
-		callDirectURIs();
-
-	}
-
-	function callDirectURIs() {
-		// this is how you set it up
-		var synchronizer = new ajaxSynchronizer();
-		synchronizer.add(foo1);
-		synchronizer.add(foo2);
-		synchronizer.add(foo3);
-		synchronizer.add(foo4);
-		synchronizer.add(foo5);
-		synchronizer.add(shopCartBase);
-		synchronizer.callWhenFinished(afterFunction);
-	}
-
-	function foo1(callback) {
-		$.ajax({
-			url : servicesEJBs[0], //'/echo/html/',
-			success : function(data) {
-				//alert('foo1');
-				$(responsesEJBs[0]).text(data).css("font-weight", "Bold").css(
-						'color', 'red');
-				callback();
-			}
-		});
-	}
-
-	function foo1(callback) {
-		$.ajax({
-			url : servicesEJBs[0], //'/echo/html/',
-			success : function(data) {
-				//alert('foo1');
-				$(responsesEJBs[0]).text(data).css("font-weight", "Bold").css(
-						'color', 'red');
-				callback();
-			}
-		});
-	}
-
-	function foo2(callback) {
-		$.ajax({
-			url : servicesEJBs[1], //'/echo/html/',
-			success : function(data) {
-				//alert('foo2');
-				$(responsesEJBs[1]).text(data).css("font-weight", "Bold").css(
-						'color', 'red');
-				callback();
-			}
-		});
-	}
-
-	function foo3(callback) {
-		$.ajax({
-			url : servicesEJBs[2], //'/echo/html/',
-			success : function(data) {
-				//alert('foo2');
-				$(responsesEJBs[2]).text(data).css("font-weight", "Bold").css(
-						'color', 'red');
-				callback();
-			}
-		});
-	}
-
-	function foo4(callback) {
-		$.ajax({
-			url : servicesEJBs[3], //'/echo/html/',
-			success : function(data) {
-				//alert('foo2');
-				$(responsesEJBs[3]).text(data).css("font-weight", "Bold").css(
-						'color', 'red');
-				callback();
-			}
-		});
-	}
-
-	function foo5(callback) {
-		$.ajax({
-			url : servicesEJBs[4], //'/echo/html/',
-			success : function(data) {
-				//alert('foo2');
-				$(responsesEJBs[4]).text(data).css("font-weight", "Bold").css(
-						'color', 'red');
-				callback();
-			}
-		});
-	}
-
-	function shopCartBase(callback) {
-		$.ajax({
-			url : servicesEJBs[5], //'/echo/html/',
-			success : function(data) {
-				//alert('foo1');
-				$(responsesEJBs[5]).text(data).css("font-weight", "Bold").css(
-						'color', 'red');
-				callback();
-			}
-		});
-	}
-
-	// here is my simplified solution
-	ajaxSynchronizer = function() {
-		var funcs = [];
-		var funcsCompleted = 0;
-		var callback;
-
-		this.add = function(f) {
-			funcs.push(f);
-		}
-
-		this.synchronizer = function() {
-			funcsCompleted++;
-			if (funcsCompleted == funcs.length) {
-				callback.call(this);
-			}
-		}
-
-		this.callWhenFinished = function(cb) {
-			callback = cb;
-			for (var i = 0; i < funcs.length; i++) {
-				funcs[i].call(this, this.synchronizer);
-			}
-		}
-	}
-
-	// this is the function that is called when both ajax calls are completed.
-	afterFunction = function() {
-		//alert('All done!');
-	}
 
 	//resize text area
 	function resizeTextArea(elem) {
@@ -375,12 +211,12 @@
 								console.log(data);
 							});
 						});
-						
+
 						$("#callCheckOutProduct").click(function(event) {
 							event.preventDefault();
 							var url = servicesEJBs[5];
 							var checkoutType = 'yes';
-							
+
 							$.get(url, {
 								checkout : checkoutType
 							}, function(data) {
@@ -456,6 +292,68 @@
 </head>
 <body>
 	<%--     <% response.sendRedirect("listaMercadorias.jsf"); %> --%>
+	<details>
+		<summary>Clock and Alarm</summary>
+		<div id="clock" class="light">
+			<div class="display">
+				<div class="weekdays"></div>
+				<div class="ampm"></div>
+				<div class="alarm"></div>
+				<div class="digits"></div>
+			</div>
+		</div>
+
+		<div class="button-holder">
+			<a id="switch-theme" class="button">Switch Theme</a> <a
+				class="alarm-button"></a>
+		</div>
+
+		<!-- The dialog is hidden with css -->
+		<div class="overlay">
+
+			<div id="alarm-dialog">
+
+				<h2>Set alarm after</h2>
+
+				<label class="hours"> Hours <input type="number" value="0"
+					min="0" />
+				</label> <label class="minutes"> Minutes <input type="number"
+					value="0" min="0" />
+				</label> <label class="seconds"> Seconds <input type="number"
+					value="0" min="0" />
+				</label>
+
+				<div class="button-holder">
+					<a id="alarm-set" class="button blue">Set</a> <a id="alarm-clear"
+						class="button red">Clear</a>
+				</div>
+
+				<a class="close"></a>
+
+			</div>
+
+		</div>
+
+		<div class="overlay">
+
+			<div id="time-is-up">
+
+				<h2>Time's up!</h2>
+
+				<div class="button-holder">
+					<a class="button blue">Close</a>
+				</div>
+
+			</div>
+
+		</div>
+
+		<audio id="alarm-ring" preload>
+			<source src="assets/audio/ticktac.mp3" type="audio/mpeg" />
+			<source src="assets/audio/ticktac.ogg" type="audio/ogg" />
+		</audio>
+	</details>
+
 	<div id="header">
 		<div>
 			<h3>Call Servlets with EJBs via Jquery</h3>
@@ -486,8 +384,8 @@
 				<h3>Test JavaScript</h3>
 				<input class="btn btn-primary btn-block" type="button"
 					id="callAddProduct" value="Add Product" /> <input
-					class="form-control" type="text" id="fieldProduct" />
-					<input class="btn btn-primary btn-block" type="button"
+					class="form-control" type="text" id="fieldProduct" /> <input
+					class="btn btn-primary btn-block" type="button"
 					id="callCheckOutProduct" value="Close Cart" />
 				<h3>Test of Shoppipng Cart Servlet</h3>
 				<h3>

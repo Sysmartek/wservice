@@ -16,6 +16,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.PersistenceContextType;
 
+import com.martini.utils.Utils;
 import com.tutorialspoint.model.Product;
 
 //@Stateful
@@ -94,6 +95,9 @@ public class CartBeanImpl implements CartRemote {
 		for (Product product : products) {
 			listOfProduct.append(product.toString() + "\n");
 		}
+
+		listOfProduct.append("Stateful EJB \n Date: " + Utils.DateNowMMMddyyyyHHmmssSSS()  + "\n");
+		
 		return listOfProduct;
 	}
 

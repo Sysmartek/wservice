@@ -67,40 +67,41 @@ public class ShoppingCartServlet extends HttpServlet {
 			
 			System.out.println("List of products A1: \n"
 					+ cartBean1.listOfProducts());
-			response.getWriter().write("\nCartBean1 List of productsc A1\n" + cartBean1.listOfProducts());
+			//response.getWriter().write("\nCartBean1 List of productsc A1\n" + cartBean1.listOfProducts());
 
 			
 			System.out.println("List of products A2: \n"
 					+ cartBean2.listOfProducts());
-			response.getWriter().write("\nCartBean2 List of productsc A2\n" + cartBean1.listOfProducts());
+			
+			//response.getWriter().write("\nCartBean2 List of productsc A2\n" + cartBean1.listOfProducts());
 			
 			System.out
 					.println("Hello from servlet \n Real Remote Stateless by @EJB : "
 							+ realRemoteStateless.someOutPut());
-			response.getWriter().write("\n\nHello from servlet \n Real Remote Stateless by @EJB : "
-					+ realRemoteStateless.someOutPut());
+			//response.getWriter().write("\n\nHello from servlet \n Real Remote Stateless by @EJB : "
+			//		+ realRemoteStateless.someOutPut());
 
 			System.out
 			.println("Hello from servlet \n Real Remote Stateful by @EJB : "
 					+ realRemoteStateful.someOutPut());
 			
-			response.getWriter().write("\nHello from servlet \n Real Remote Stateful by @EJB : "
-					+ realRemoteStateful.someOutPut());
+			//response.getWriter().write("\nHello from servlet \n Real Remote Stateful by @EJB : "
+			//		+ realRemoteStateful.someOutPut());
 
 			
 			System.out
 			.println("Hello from servlet \n Real Remote Singleton by @EJB : "
 					+ realRemoteSingleton.someOutPut());
 
-			response.getWriter().write("\nHello from servlet \n Real Remote Singleton by @EJB : "
-					+ realRemoteSingleton.someOutPut());
+			//response.getWriter().write("\nHello from servlet \n Real Remote Singleton by @EJB : "
+			//		+ realRemoteSingleton.someOutPut());
 
 			
 		} catch (Exception e) {
 			System.out
 					.println("Exception in Capturing EJB Remote from servlet \n RealRemoteStateless by @EJB ");
 
-			response.getWriter().write("\nException in Capturing EJB Remote from servlet \n RealRemoteStateless by @EJB ");
+			//response.getWriter().write("\nException in Capturing EJB Remote from servlet \n RealRemoteStateless by @EJB ");
 
 		}
 
@@ -131,11 +132,16 @@ public class ShoppingCartServlet extends HttpServlet {
 
 				Product productA1 = new Product();
 				productA1.setType("Livros");
+				productA1.setClassif("Books");
+				
 				cartBean2.addProductToCart(productA1);
-				productA1.setType("Carros");
+				productA1.setType("Corola");
+				productA1.setClassif("Carros");
+				
 				cartBean2.addProductToCart(productA1);
 				Product productA2 = new Product();
 				productA2.setType("Onibus");
+				productA2.setClassif("Transporte");
 				cartBean2.addProductToCart(productA2);
 
 				// cartBean = lookupRemoteEJB(jndi_Name);
@@ -152,15 +158,21 @@ public class ShoppingCartServlet extends HttpServlet {
 		}else{
 			cartBean1 = cartBeanSession;
 			response.getWriter().write("\nCartBean1 Session shoppingCart - recovered from Session created ! ");
+			response.getWriter().write("\nproduct A1 \n" + cartBean1.listOfProducts());
+			response.getWriter().write("\nproduct A2 \n" + cartBean2.listOfProducts());
 		}
 		
 		String productName = request.getParameter("product");
+		String classif = request.getParameter("classif");
+
 		if (productName != null && productName.length() > 0) {
 
 			try {
 
 				Product product1 = new Product();
 				product1.setType(productName);
+				product1.setClassif(classif);
+				
 				cartBean1.addProductToCart(product1);
 				response.getWriter().write("\nProduct add into CartBean1 shoppingCart : " + productName);
 				
@@ -177,13 +189,13 @@ public class ShoppingCartServlet extends HttpServlet {
 			System.out.println("List of productsA1: \n"
 					+ cartBean1.listOfProducts());
 			
-			response.getWriter().write("\nproduct A1 " + cartBean1.listOfProducts());
+			response.getWriter().write("\nproduct A1 \n" + cartBean1.listOfProducts());
 
 			System.out.println("\nproduct A2 ");
 			System.out.println("List of productsA2: \n"
 					+ cartBean2.listOfProducts());
 			
-			response.getWriter().write("\nproduct A2 " + cartBean2.listOfProducts());
+			response.getWriter().write("\nproduct A2 \n" + cartBean2.listOfProducts());
 
 		}
 
@@ -203,35 +215,35 @@ public class ShoppingCartServlet extends HttpServlet {
 
 	}
 
-	private static CartRemote lookupRemoteEJB(String jndi_name)
-			throws NamingException {
-		final Hashtable jndiProperties = new Hashtable();
-
-		jndiProperties.put("jboss.naming.client.ejb.context", true);
-		jndiProperties.put(Context.URL_PKG_PREFIXES,
-				"org.jboss.ejb.client.naming");
-
-		final Context context = new InitialContext(jndiProperties);
-
-		final String appName = "";
-		// final String moduleName = "as7project";
-		// final String moduleName = "as7project";
-		final String moduleName = "EJB-Statefull-SessionBeanEAR";
-		final String distinctName = "";
-		final String beanName = CartBeanImpl.class.getSimpleName();
-
-		final String viewClassName = CartRemote.class.getName();
-		System.out.println("Looking EJB via JNDI ");
-		System.out.println("ejb:" + appName + "/" + moduleName + "/"
-				+ distinctName + "/" + beanName + "!" + viewClassName);
-
-		// return (Cart) context.lookup("ejb:" + appName + "/"
-		// + moduleName + "/" + distinctName + "/" + beanName + "!"
-		// + viewClassName);
-
-		return (CartRemote) context.lookup(jndi_name);
-
-	}
+//	private static CartRemote lookupRemoteEJB(String jndi_name)
+//			throws NamingException {
+//		final Hashtable jndiProperties = new Hashtable();
+//
+//		jndiProperties.put("jboss.naming.client.ejb.context", true);
+//		jndiProperties.put(Context.URL_PKG_PREFIXES,
+//				"org.jboss.ejb.client.naming");
+//
+//		final Context context = new InitialContext(jndiProperties);
+//
+//		final String appName = "";
+//		// final String moduleName = "as7project";
+//		// final String moduleName = "as7project";
+//		final String moduleName = "EJB-Statefull-SessionBeanEAR";
+//		final String distinctName = "";
+//		final String beanName = CartBeanImpl.class.getSimpleName();
+//
+//		final String viewClassName = CartRemote.class.getName();
+//		System.out.println("Looking EJB via JNDI ");
+//		System.out.println("ejb:" + appName + "/" + moduleName + "/"
+//				+ distinctName + "/" + beanName + "!" + viewClassName);
+//
+//		// return (Cart) context.lookup("ejb:" + appName + "/"
+//		// + moduleName + "/" + distinctName + "/" + beanName + "!"
+//		// + viewClassName);
+//
+//		return (CartRemote) context.lookup(jndi_name);
+//
+//	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse

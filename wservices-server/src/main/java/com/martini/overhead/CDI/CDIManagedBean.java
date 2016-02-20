@@ -13,6 +13,6 @@ import com.martini.utils.Utils;
  */
 public class CDIManagedBean {
     public String SomeOutPut(){
-        return "Te amo Benzin minha Claudinha -> Retorna CDI \n Date: " + Utils.DateNowMMMddyyyyHHmmssSSS(); //System.currentTimeMillis();
+        return "Retorna CDI \n Date: " + Utils.DateNowMMMddyyyyHHmmssSSS(); //System.currentTimeMillis();
     }
 }

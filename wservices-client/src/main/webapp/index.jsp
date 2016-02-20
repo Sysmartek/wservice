@@ -18,6 +18,9 @@
 	src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
 <script
 	src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<!-- <script src="resources/javascript/jquery.min.js"></script> -->
+<!-- <script src="resources/javascript/jquery.mobile-1.4.5.min.js"></script> -->
 <style>
 .jumbotron {
 	width: 400px;
@@ -34,19 +37,57 @@
 .form-control {
 	margin-top: 5px;
 }
+
+.textarea {
+	overflow: hidden;
+	overflow-x: hidden;
+	overflow-y: hidden;
+	padding: 10px;
+}
+
+#header {
+	background-color: black;
+	color: white;
+	text-align: center;
+	padding: 5px;
+}
+
+#nav {
+	line-height: 30px;
+	background-color: #eeeeee;
+	height: auto;
+	width: 300px;
+	float: left;
+	padding: 5px;
+	width: 300px;
+}
+
+#section {
+	width: 350px;
+	float: left;
+	padding: 10px;
+}
+
+#footer {
+	background-color: black;
+	color: white;
+	clear: both;
+	text-align: center;
+	padding: 5px;
+}
 </style>
-<script src="resources/javascript/jquery.min.js"></script>
-<script src="resources/javascript/jquery.mobile-1.4.5.min.js"></script>
+
 <script>
 	var wooYayIntervalId = 0;
 
 	var servicesEJBs = [ 'PerformanceGateCDI', 'PerformanceLocalStatelessEJB',
 			'PerformanceRemoteStatelessEJB', 'PerformanceRemoteStatefulEJB',
-			'PerformanceRemoteSingletonEJB' ];
+			'PerformanceRemoteSingletonEJB', 'ShoppingCartServlet' ];
 
 	var responsesEJBs = [ '#responsePerformanceCDI',
 			'#responseLocalStatelessEJB', '#responseRemoteStatelessEJB',
-			'#responseRemoteStatefulEJB', '#responseRemoteSingletonEJB' ];
+			'#responseRemoteStatefulEJB', '#responseRemoteSingletonEJB',
+			'#responseShopCartBase' ];
 
 	$(function() {
 		$("#aioConceptName").on("change", function() {
@@ -63,8 +104,8 @@
 			wooYayIntervalId = setInterval("wooYay()", $("#aioConceptName")
 					.val());
 		} else {
-			document.getElementById("setTimerIntervalMessage").innerHTML = "Stoped SetInterval: "
-					+ $("#aioConceptName").val() + " millis";
+			document.getElementById("setTimerIntervalMessage").innerHTML = "Stoped SetInterval";
+			//+ $("#aioConceptName").val();
 
 			//document.getElementById("wooYayButton").value = "Clicar Aqui Benzinho";
 			$("#wooYayButton").attr('value', 'Clicar Aqui Benzinho');
@@ -75,8 +116,8 @@
 
 	function wooYay() {
 		//if (Math.random() > .5) {
-		document.getElementById("setTimerIntervalMessage").innerHTML = "Iniciado SetInterval: "
-				+ $("#aioConceptName").val() + " millis";
+		document.getElementById("setTimerIntervalMessage").innerHTML = "Iniciado SetInterval";
+		//+ $("#aioConceptName").val();
 		//} else {
 		//	document.getElementById("setTimerIntervalMessage").innerHTML = "Value!";
 		//}
@@ -96,7 +137,20 @@
 		synchronizer.add(foo3);
 		synchronizer.add(foo4);
 		synchronizer.add(foo5);
+		synchronizer.add(shopCartBase);
 		synchronizer.callWhenFinished(afterFunction);
+	}
+
+	function foo1(callback) {
+		$.ajax({
+			url : servicesEJBs[0], //'/echo/html/',
+			success : function(data) {
+				//alert('foo1');
+				$(responsesEJBs[0]).text(data).css("font-weight", "Bold").css(
+						'color', 'red');
+				callback();
+			}
+		});
 	}
 
 	function foo1(callback) {
@@ -159,6 +213,18 @@
 		});
 	}
 
+	function shopCartBase(callback) {
+		$.ajax({
+			url : servicesEJBs[5], //'/echo/html/',
+			success : function(data) {
+				//alert('foo1');
+				$(responsesEJBs[5]).text(data).css("font-weight", "Bold").css(
+						'color', 'red');
+				callback();
+			}
+		});
+	}
+
 	// here is my simplified solution
 	ajaxSynchronizer = function() {
 		var funcs = [];
@@ -189,12 +255,59 @@
 		//alert('All done!');
 	}
 
+	//resize text area
+	function resizeTextArea(elem) {
+		elem.height(1);
+		elem.scrollTop(0);
+		elem
+				.height(elem[0].scrollHeight - elem[0].clientHeight
+						+ elem.height());
+	}
+
 	$(document)
 			.ready(
 					function() {
 
-						$('#submit').click(function(event) {
-							var username = $('#user').val();
+						$('#Add')
+								.click(
+										function() {
+											$('#pane')
+													.append(
+															$('<textarea class="new" rows="1" cols="40"></textarea><br/>'));
+											//$('textarea:last').focus();
+										});
+
+						$('#Add2')
+								.click(
+										function() {
+											$('#pane')
+													.append(
+															$('<textarea class="new" rows="1" cols="40">Some text</textarea><br/>'));
+											$('textarea:last').focus();
+										});
+
+						//inital resize
+						resizeTextArea($('#responseShopCartBase'));
+
+						// 						//'live' event
+						// 						$('.textarea').live('keyup', function(event) {
+						// 							event.preventDefault();
+						// 							var elem = $(this);
+
+						// 							//bind scroll
+						// 							if (!elem.data('has-scroll')) {
+						// 								elem.data('has-scroll', true);
+						// 								elem.bind('scroll keyup', function() {
+						// 									resizeTextArea($(this));
+						// 								});
+						// 							}
+
+						// 							resizeTextArea($(this));
+						// 						});
+
+						$('#submitAjax').click(function(event) {
+							event.preventDefault();
+							var username = $('#userTest').val();
 							$.get('ActionServlet', {
 								user : username
 							}, function(responseText) {
@@ -224,7 +337,7 @@
 										function(event) {
 											event.preventDefault();
 
-											alert('Meu amor Preciso Estudar Sprimg MVC');
+											alert('Me	u amor Preciso Estudar Sprimg MVC');
 											return null;
 
 											$(location)
@@ -234,6 +347,48 @@
 											//  					$(location).prop('href', 'http://localhost:8080/cdi-jsf-1.0/');
 
 										});
+
+						$("a.callShoppProductEmpty").click(function(event) {
+							event.preventDefault();
+							var url = $(this).attr("href");
+
+							$.get(url, function(data) {
+
+								console.log(data);
+								$('#responseShopCartBase').text(data);
+
+							});
+						});
+
+						$("#callAddProduct").click(function(event) {
+							event.preventDefault();
+							var url = servicesEJBs[5];
+							var productName = $('#fieldProduct').val();
+							var classifDesc = 'DVD';
+
+							$.get(url, {
+								product : productName,
+								classif : classifDesc
+							}, function(data) {
+
+								$(responsesEJBs[5]).text(data);
+								console.log(data);
+							});
+						});
+						
+						$("#callCheckOutProduct").click(function(event) {
+							event.preventDefault();
+							var url = servicesEJBs[5];
+							var checkoutType = 'yes';
+							
+							$.get(url, {
+								checkout : checkoutType
+							}, function(data) {
+
+								$(responsesEJBs[5]).text(data);
+								console.log(data);
+							});
+						});
 
 						$("a.callCDI").click(function(event) {
 							event.preventDefault();
@@ -301,19 +456,21 @@
 </head>
 <body>
 	<%--     <% response.sendRedirect("listaMercadorias.jsf"); %> --%>
-	<div class=jumbotron>
+	<div id="header">
 		<div>
 			<h3>Call Servlets with EJBs via Jquery</h3>
 			<h3>Muliple Calls Timers in JavaScript</h3>
 			<h3>Call CRUD EJB - JSF on Openshif</h3>
-			  
+		</div>
+	</div>
+	<div id="nav" class=jumbotron>
+		<div class="container">
 			<div id="setTimerIntervalMessage"
 				style="height: 1.5em; font-size: 2em; color: blue;"></div>
-			<div class="container">
-				<input id="wooYayButton" type="button"
-					onclick="wooYayClickHandler()" value="Clicar Aqui Benzinho"
-					class="btn btn-info btn-block"></input>
-			</div>
+
+			<input id="wooYayButton" type="button" onclick="wooYayClickHandler()"
+				value="Clicar Aqui Benzinho" class="btn btn-info btn-block"></input>
+
 			<div>
 				<select id="aioConceptName">
 					<option value="100" selected>100 millis</option>
@@ -324,66 +481,100 @@
 				</select>
 				<!-- 				<div id="debug"></div> -->
 			</div>
-		</div>
-		<div>
-			<h3>Test of CDI!</h3>
-			<h3>
-				<a class="callCDI" href="PerformanceGateCDI">Performance CDI</a>
-			</h3>
-			<div id="responsePerformanceCDI"></div>
-		</div>
-		<div>
-			<h3>Test of @Local @Stateless EJB</h3>
-			<h3>
-				<a class="callLocalStatelessEJB" href="PerformanceLocalStatelessEJB">Performance
-					Local Stateless EJB</a>
-			</h3>
-			<div id="responseLocalStatelessEJB"></div>
-		</div>
-		<div>
-			<h3>Test of @Remote @Stateless EJB</h3>
-			<h3>
-				<a class="callRemoteStatelessEJB"
-					href="PerformanceRemoteStatelessEJB">Performance Remote
-					Stateless EJB</a>
-			</h3>
-			<div id="responseRemoteStatelessEJB"></div>
-		</div>
-		<div>
-			<h3>Test of @Remote @Stateful EJB</h3>
-			<h3>
-				<a class="callRemoteStatefulEJB" href="PerformanceRemoteStatefulEJB">Performance
-					Remote Stateful EJB</a>
-			</h3>
-			<div id="responseRemoteStatefulEJB"></div>
-		</div>
-		<div>
-			<h3>Test of @Remote @Singleton EJB</h3>
-			<h3>
-				<a class="callRemoteSingletonEJB"
-					href="PerformanceRemoteSingletonEJB">Performance Remote
-					Singleton EJB</a>
-			</h3>
-			<div id="responseRemoteSingletonEJB"></div>
-		</div>
-		<br />
 
-		<h3>Test JavaScript</h3>
-		<input class="form-control" type="text" id="user" /> <input
-			class="btn btn-primary btn-block" type="button" id="submit"
-			value="Ajax Submit" />
-		<div id="welcometext"></div>
+			<div>
+				<h3>Test JavaScript</h3>
+				<input class="btn btn-primary btn-block" type="button"
+					id="callAddProduct" value="Add Product" /> <input
+					class="form-control" type="text" id="fieldProduct" />
+					<input class="btn btn-primary btn-block" type="button"
+					id="callCheckOutProduct" value="Close Cart" />
+				<h3>Test of Shoppipng Cart Servlet</h3>
+				<h3>
+					<a class="callShoppProductEmpty" href="ShoppingCartServlet?product">Shopping
+						Product Empty</a>
+				</h3>
+			</div>
+			<div>
+				<h3>Test of CDI</h3>
+				<h3>
+					<a class="callCDI" href="PerformanceGateCDI">Performance CDI</a>
+				</h3>
+				<div id="responsePerformanceCDI"></div>
+			</div>
+			<div>
+				<h3>Test of @Local @Stateless EJB</h3>
+				<h3>
+					<a class="callLocalStatelessEJB"
+						href="PerformanceLocalStatelessEJB">Performance Local
+						Stateless EJB</a>
+				</h3>
+				<div id="responseLocalStatelessEJB"></div>
+			</div>
+			<div>
+				<h3>Test of @Remote @Stateless EJB</h3>
+				<h3>
+					<a class="callRemoteStatelessEJB"
+						href="PerformanceRemoteStatelessEJB">Performance Remote
+						Stateless EJB</a>
+				</h3>
+				<div id="responseRemoteStatelessEJB"></div>
+			</div>
+			<div>
+				<h3>Test of @Remote @Stateful EJB</h3>
+				<h3>
+					<a class="callRemoteStatefulEJB"
+						href="PerformanceRemoteStatefulEJB">Performance Remote
+						Stateful EJB</a>
+				</h3>
+				<div id="responseRemoteStatefulEJB"></div>
+			</div>
+			<div>
+				<h3>Test of @Remote @Singleton EJB</h3>
+				<h3>
+					<a class="callRemoteSingletonEJB"
+						href="PerformanceRemoteSingletonEJB">Performance Remote
+						Singleton EJB</a>
+				</h3>
+				<div id="responseRemoteSingletonEJB"></div>
+			</div>
+			<br />
 
-		<h3>Test JSF Prime EJB 3 Persistence</h3>
-		<input class="btn btn-primary btn-block" type="button"
-			id="submitPrimeJSFEJB3" value="PRIME JSF ManagedBean" /> <br />
+			<h3>Test JavaScript</h3>
+			<input class="form-control" type="text" id="userTest" /> <input
+				class="btn btn-primary btn-block" type="button" id="submitAjax"
+				value="Ajax Submit" />
+			<div id="welcometext"></div>
 
-		<h3>Test Spring MVC</h3>
-		<input class="btn btn-primary btn-block" type="button"
-			id="submitSpringMVC" value="Spring MVC" /> <br />
+			<h3>Test JSF Prime EJB 3 Persistence</h3>
+			<input class="btn btn-primary btn-block" type="button"
+				id="submitPrimeJSFEJB3" value="PRIME JSF ManagedBean" /> <br />
 
+			<h3>Test Spring MVC</h3>
+			<input class="btn btn-primary btn-block" type="button"
+				id="submitSpringMVC" value="Spring MVC" /> <br />
 
+		</div>
 	</div>
+
+	<div id="section">
+		<textarea class="textarea" id="responseShopCartBase" rows="1"
+			cols="40">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque interdum porttitor neque eget consequat. Sed faucibus purus vitae felis facilisis bibendum.</textarea>
+
+		<br /> <br />
+		<button id="Add">Add one</button>
+		<button id="Add2">Add another</button>
+		<div id="pane"></div>
+		<h2>London</h2>
+		<p>London is the capital city of England. It is the most populous
+			city in the United Kingdom, with a metropolitan area of over 13
+			million inhabitants.</p>
+		<p>Standing on the River Thames, London has been a major
+			settlement for two millennia, its history going back to its founding
+			by the Romans, who named it Londinium.</p>
+	</div>
+
+	<div id="footer">Copyright © W3Schools.com</div>
 
 </body>
 

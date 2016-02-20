@@ -24,6 +24,10 @@ public class Product implements Serializable {
   @Column(name = "TYPE", nullable = false)
   private String type;
 
+  @Column(name = "Classif", nullable = false)
+  private String classif;
+
+  
   public int getId() {
 	return id;
   }
@@ -36,9 +40,17 @@ public class Product implements Serializable {
 	this.type = description;
   }
 
-  
-  @Override
+    
+  public String getClassif() {
+	return classif;
+}
+
+public void setClassif(String classif) {
+	this.classif = classif;
+}
+
+@Override
   public String toString(){
-	  return Integer.toString(id) + '-' + type;
+	  return Integer.toString(id) + '-' + type + " Classif: " + classif;
   }
 }

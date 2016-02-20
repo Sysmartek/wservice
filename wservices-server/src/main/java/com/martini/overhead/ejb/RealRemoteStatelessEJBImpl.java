@@ -10,7 +10,7 @@ import com.martini.utils.Utils;
 public class RealRemoteStatelessEJBImpl implements RealRemoteStatelessEJB{
 	
 	public String someOutPut(){
-        return "Te amo Benzin minha Claudinha -> Retorna Remote Stateless EJB \n Date: " + Utils.DateNowMMMddyyyyHHmmssSSS(); //System.currentTimeMillis();
+        return "Retorna Remote Stateless EJB \n Date: " + Utils.DateNowMMMddyyyyHHmmssSSS(); //System.currentTimeMillis();
 	}
 	
 

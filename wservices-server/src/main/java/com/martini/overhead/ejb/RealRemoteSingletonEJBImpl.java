@@ -10,7 +10,7 @@ import com.martini.utils.Utils;
 public class RealRemoteSingletonEJBImpl implements RealRemoteSingletonEJB{
 	
 	public String someOutPut(){
-        return "Te amo Benzin minha Claudinha -> Retorna Remote Singleton EJB \n Date: " + Utils.DateNowMMMddyyyyHHmmssSSS(); //System.currentTimeMillis();
+        return "Retorna Remote Singleton EJB \n Date: " + Utils.DateNowMMMddyyyyHHmmssSSS(); //System.currentTimeMillis();
 	}
 	
 

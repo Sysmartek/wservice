@@ -26,8 +26,8 @@ import com.tutorialspoint.model.Product;
 //@Stateless(mappedName = CidadeRepositoryRemote.MAPPED_NAME)
 
 //@Remote(CartRemote.class)
-@Stateful(name = CartRemote.MAPPED_NAME, mappedName = CartRemote.MAPPED_NAME, passivationCapable=true)
 //@StatefulTimeout(unit = TimeUnit.SECONDS, value = 10)
+@Stateful(name = CartRemote.MAPPED_NAME, mappedName = CartRemote.MAPPED_NAME)
 public class CartBeanImpl implements CartRemote {
 	
 	private PropertyObject myProperty;

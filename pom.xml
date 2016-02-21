@@ -15,10 +15,10 @@
 		<module>wservices-client</module>
 		<module>wservices-ear</module>
 	</modules>
-	
+
 
 	<properties>
-		<sysmartek-framework>1.1.1-RELEASE</sysmartek-framework>
+		<sysmartek-framework>1.1.2-RELEASE</sysmartek-framework>
 		<!-- DEPENDENCY VERSIONS -->
 		<junit>4.11</junit>
 		<testng>6.1.1</testng>
@@ -36,6 +36,7 @@
 		<javaee-web-api>7.0</javaee-web-api>
 		<hibernate>4.3.7.Final</hibernate>
 		<ojdbc6>11.2.0</ojdbc6>
+		<mysql>5.1.37</mysql>
 		<spring-data-jpa>1.7.1.RELEASE</spring-data-jpa>
 		<spring-security>3.2.5.RELEASE</spring-security>
 		<commons-logging>1.2</commons-logging>
@@ -216,13 +217,22 @@
 				<artifactId>hibernate-envers</artifactId>
 				<version>${hibernate}</version>
 			</dependency>
-			<!--dependency>
-				<groupId>com.oracle</groupId>
-				<artifactId>ojdbc6</artifactId>
-				<version>${ojdbc6}</version>
-				<scope>system</scope>
-				<systemPath>D:/Martini/Java/workspace/gpv/lib/ojdbc6.jar</systemPath>
-			</dependency-->
+			<!-- <dependency> -->
+			<!-- <groupId>com.oracle</groupId> -->
+			<!-- <artifactId>ojdbc6</artifactId> -->
+			<!-- <version>${ojdbc6}</version> -->
+			<!-- <scope>system</scope> -->
+			<!-- <systemPath>D:/Martini/Java/workspace/gpv/lib/ojdbc6.jar</systemPath> -->
+			<!-- </dependency> -->
+
+			<dependency>
+				<groupId>mysql</groupId>
+				<artifactId>mysql-connector-java</artifactId>
+				<version>${mysql}</version>
+			</dependency>
+
+
+
 			<dependency>
 				<groupId>org.springframework.security</groupId>
 				<artifactId>spring-security-web</artifactId>
@@ -376,6 +386,13 @@
 
 	<dependencies>
 
+<!-- 		<dependency> -->
+<!-- 			<groupId>br.com.sysmartek</groupId> -->
+<!-- 			<artifactId>sysmartek-framework</artifactId> -->
+<!-- 			<version>${sysmartek-framework}</version>$NO-MVN-MAN-VER$ -->
+<!-- 		</dependency> -->
+
+
 		<!-- <dependency> -->
 		<!-- <groupId>javax.servlet</groupId> -->
 		<!-- <artifactId>javax.servlet-api</artifactId> -->
@@ -458,6 +475,29 @@
 
 	<build>
 		<plugins>
+			 <plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-clean-plugin</artifactId>
+				<version>2.4.1</version>
+				<configuration>
+					<filesets>
+						<fileset>
+							<directory>war</directory>
+							<includes>
+								<include>**/*</include>
+							</includes>
+							<followSymlinks>false</followSymlinks>
+						</fileset>
+						<fileset>
+							<directory>${basedir}</directory>
+							  <includes>
+								<include>**/bin/**</include>
+							  </includes> 
+							  <followSymlinks>false</followSymlinks>
+						</fileset>
+					</filesets>
+				</configuration>
+			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-release-plugin</artifactId>

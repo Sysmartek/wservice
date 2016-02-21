@@ -1,4 +1,6 @@
+
 <project name="wservices" default="remake-all">
+	<record name="build.log" />
 
 	<property environment="env"/>
 	<property file="build.properties"/>

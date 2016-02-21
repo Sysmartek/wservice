@@ -1,0 +1,15 @@
+<project>
+	
+	<copy todir="D:\Martini\Java\workspace_jsf-cdi-ejb3\Sysmartek\Deployment\wservices-client" includeEmptyDirs="yes" verbose="true">
+	  <fileset dir="D:\Martini\Java\workspace_jsf-cdi-ejb3\Sysmartek\wservices\wservices-client\target\wservices-client-1">
+	    <include name="**/*"/>
+	  </fileset>
+	</copy>	
+
+	<copy todir="D:\Martini\Java\workspace_jsf-cdi-ejb3\Sysmartek\Deployment\wservices-ear" includeEmptyDirs="yes" verbose="true">
+	  <fileset dir="D:\Martini\Java\workspace_jsf-cdi-ejb3\Sysmartek\wservices\wservices-ear\target\wservices-ear-1">
+	    <include name="**/*"/>
+	  </fileset>
+	</copy>
+	
+</project>

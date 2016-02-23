@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <checkstyle version="6.1.1">
-<file name="D:\Martini\Java\workspace_jsf-cdi-ejb3\Sysmartek\wservices\wservices-clientTest\src\main\java\com\martini\test\pmd\PMDTest.java">
+<file name="D:\Martini\Java\workspace_jsf-cdi-ejb3\Sysmartek\wservices BKP (11)\wservices\wservices-clientTest\src\main\java\com\martini\test\pmd\PMDTest.java">
 <error line="5" column="36" severity="warning" message="Array brackets at illegal position." source="com.puppycrawl.tools.checkstyle.checks.ArrayTypeStyleCheck"/>
 <error line="10" column="20" severity="warning" message="Nome &apos;CALL_METHOD&apos; deve condizer com o padrão &apos;^[a-z][a-zA-Z0-9]*$&apos;." source="com.puppycrawl.tools.checkstyle.checks.naming.MethodNameCheck"/>
 <error line="10" column="39" severity="warning" message="Nome &apos;INPUT_PARAMETER&apos; deve condizer com o padrão &apos;^[a-z][a-zA-Z0-9]*$&apos;." source="com.puppycrawl.tools.checkstyle.checks.naming.ParameterNameCheck"/>

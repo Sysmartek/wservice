@@ -13,6 +13,7 @@
 		<module>wservices-core-client</module>
 		<module>wservices-webservices</module>
 		<module>wservices-clientForTest</module>
+		<module>wservices-clientTest</module>
 		<module>wservices-ear</module>
 	</modules>
 

@@ -2,14 +2,29 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<artifactId>wservices-webservices</artifactId>
-	<packaging>war</packaging>
 	<name>wservices-webservices</name>
+	<packaging>war</packaging>
+	<url>http://maven.apache.org</url>
 	<parent>
 		<groupId>br.com.wservices</groupId>
 		<artifactId>wservices</artifactId>
-		<version>1</version>
+		<version>1.1.1</version>
 	</parent>
 	<dependencies>
+
+		<!-- Projects Dependency -->
+		<dependency>
+			<groupId>br.com.sysmartek</groupId>
+			<artifactId>sysmartek-framework</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>br.com.wservices</groupId>
+			<artifactId>wservices-core-client</artifactId>
+			<version>${project.parent.version}</version>
+		</dependency>
+		<!-- Projects Dependency -->
+
+
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
@@ -23,12 +38,6 @@
 		<dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>javax.servlet-api</artifactId>
-		</dependency>
-
-		<dependency>
-			<groupId>br.com.sysmartek</groupId>
-			<artifactId>sysmartek-framework</artifactId>
-			<version>1.1.2-RELEASE</version><!--$NO-MVN-MAN-VER$ -->
 		</dependency>
 
 		<dependency>
@@ -47,17 +56,9 @@
 		</dependency>
 
 		<dependency>
-			<groupId>br.com.wservices</groupId>
-			<artifactId>wservices-core-client</artifactId>
-			<version>${project.parent.version}</version>
-		</dependency>
-
-		<dependency>
 			<groupId>com.fasterxml.jackson.module</groupId>
 			<artifactId>jackson-module-jsonSchema</artifactId>
 		</dependency>
-
-
 
 
 		<!-- Resteasy JAXB support -->
@@ -72,7 +73,7 @@
 			</resource>
 		</resources>
 		<plugins>
-			 <plugin>
+			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-clean-plugin</artifactId>
 				<version>2.4.1</version>
@@ -87,10 +88,10 @@
 						</fileset>
 						<fileset>
 							<directory>${basedir}</directory>
-							  <includes>
+							<includes>
 								<include>**/bin/**</include>
-							  </includes> 
-							  <followSymlinks>false</followSymlinks>
+							</includes>
+							<followSymlinks>false</followSymlinks>
 						</fileset>
 					</filesets>
 				</configuration>

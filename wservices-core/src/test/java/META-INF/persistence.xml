@@ -10,34 +10,34 @@
     <jta-data-source>java:jboss/datasources/MySQLDS</jta-data-source>
     <class>com.tutorialspoint.model.Product</class>
 		
-		<class>br.com.netshoes.gpv.core.domain.entity.Pessoa</class>
-		<class>br.com.netshoes.gpv.core.domain.entity.Dominio</class>
-		<class>br.com.netshoes.gpv.core.domain.entity.Endereco</class>
-		<class>br.com.netshoes.gpv.core.domain.entity.Cidade</class>
-		<class>br.com.netshoes.gpv.core.domain.entity.Estado</class>
-		<class>br.com.netshoes.gpv.faturamento.domain.entity.Caixa</class>
-		<class>br.com.netshoes.gpv.faturamento.domain.entity.UnidadeFaturamento</class>
-		<class>br.com.netshoes.gpv.faturamento.domain.entity.Serie</class>
-		<class>br.com.netshoes.gpv.faturamento.domain.entity.UnidadeNegocio</class>
-		<class>br.com.netshoes.gpv.faturamento.domain.entity.ModeloEmail</class>
-		<class>br.com.netshoes.gpv.faturamento.domain.entity.ConfiguracaoEmail</class>
-		<class>br.com.netshoes.gpv.seguranca.domain.entity.Usuario</class>
-		<class>br.com.netshoes.gpv.seguranca.domain.entity.TelaFuncionalidade</class>
-		<class>br.com.netshoes.gpv.seguranca.domain.entity.Tela</class>
-		<class>br.com.netshoes.gpv.seguranca.domain.entity.PerfilTelaFuncionalidade</class>
-		<class>br.com.netshoes.gpv.seguranca.domain.entity.Perfil</class>
-		<class>br.com.netshoes.gpv.seguranca.domain.entity.Funcionalidade</class>
-		<class>br.com.netshoes.gpv.faturamento.domain.entity.Impressora</class>
-		<class>br.com.netshoes.gpv.faturamento.domain.entity.NotaFiscal</class>
-		<class>br.com.netshoes.gpv.faturamento.domain.entity.ItemNotaFiscal</class>
-		<class>br.com.netshoes.gpv.faturamento.domain.entity.EventoNotaFiscal</class>
-		<class>br.com.netshoes.gpv.faturamento.domain.entity.Pagamento</class>
-		<class>br.com.netshoes.gpv.faturamento.domain.entity.TipoOperacao</class>
-		<class>br.com.netshoes.gpv.faturamento.domain.entity.Mensagem</class>
-		<class>br.com.netshoes.gpv.faturamento.domain.entity.Transportadora</class>
-		<class>br.com.netshoes.gpv.faturamento.domain.entity.ServicoEntrega</class>
-		<class>br.com.netshoes.gpv.faturamento.domain.entity.LayoutEtiqueta</class>
-		<class>br.com.netshoes.gpv.faturamento.domain.entity.CampoLayouEtiqueta</class>
+<!-- 		<class>br.com.netshoes.gpv.core.domain.entity.Pessoa</class> -->
+<!-- 		<class>br.com.netshoes.gpv.core.domain.entity.Dominio</class> -->
+<!-- 		<class>br.com.netshoes.gpv.core.domain.entity.Endereco</class> -->
+<!-- 		<class>br.com.netshoes.gpv.core.domain.entity.Cidade</class> -->
+<!-- 		<class>br.com.netshoes.gpv.core.domain.entity.Estado</class> -->
+<!-- 		<class>br.com.netshoes.gpv.faturamento.domain.entity.Caixa</class> -->
+<!-- 		<class>br.com.netshoes.gpv.faturamento.domain.entity.UnidadeFaturamento</class> -->
+<!-- 		<class>br.com.netshoes.gpv.faturamento.domain.entity.Serie</class> -->
+<!-- 		<class>br.com.netshoes.gpv.faturamento.domain.entity.UnidadeNegocio</class> -->
+<!-- 		<class>br.com.netshoes.gpv.faturamento.domain.entity.ModeloEmail</class> -->
+<!-- 		<class>br.com.netshoes.gpv.faturamento.domain.entity.ConfiguracaoEmail</class> -->
+<!-- 		<class>br.com.netshoes.gpv.seguranca.domain.entity.Usuario</class> -->
+<!-- 		<class>br.com.netshoes.gpv.seguranca.domain.entity.TelaFuncionalidade</class> -->
+<!-- 		<class>br.com.netshoes.gpv.seguranca.domain.entity.Tela</class> -->
+<!-- 		<class>br.com.netshoes.gpv.seguranca.domain.entity.PerfilTelaFuncionalidade</class> -->
+<!-- 		<class>br.com.netshoes.gpv.seguranca.domain.entity.Perfil</class> -->
+<!-- 		<class>br.com.netshoes.gpv.seguranca.domain.entity.Funcionalidade</class> -->
+<!-- 		<class>br.com.netshoes.gpv.faturamento.domain.entity.Impressora</class> -->
+<!-- 		<class>br.com.netshoes.gpv.faturamento.domain.entity.NotaFiscal</class> -->
+<!-- 		<class>br.com.netshoes.gpv.faturamento.domain.entity.ItemNotaFiscal</class> -->
+<!-- 		<class>br.com.netshoes.gpv.faturamento.domain.entity.EventoNotaFiscal</class> -->
+<!-- 		<class>br.com.netshoes.gpv.faturamento.domain.entity.Pagamento</class> -->
+<!-- 		<class>br.com.netshoes.gpv.faturamento.domain.entity.TipoOperacao</class> -->
+<!-- 		<class>br.com.netshoes.gpv.faturamento.domain.entity.Mensagem</class> -->
+<!-- 		<class>br.com.netshoes.gpv.faturamento.domain.entity.Transportadora</class> -->
+<!-- 		<class>br.com.netshoes.gpv.faturamento.domain.entity.ServicoEntrega</class> -->
+<!-- 		<class>br.com.netshoes.gpv.faturamento.domain.entity.LayoutEtiqueta</class> -->
+<!-- 		<class>br.com.netshoes.gpv.faturamento.domain.entity.CampoLayouEtiqueta</class> -->
 		
 		<properties>
 			<property name="openjpa.jdbc.Schema" value="PUBLIC"/> 

@@ -4,57 +4,78 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>br.com.wservices</groupId>
 	<artifactId>wservices</artifactId>
+	<name>wservices</name>
 	<packaging>pom</packaging>
 	<version>1.1.1</version>
-	<name>wservices</name>
 
 	<modules>
 		<module>wservices-core</module>
 		<module>wservices-core-client</module>
 		<module>wservices-webservices</module>
-		<module>wservices-client</module>
+		<module>wservices-clientForTest</module>
 		<module>wservices-ear</module>
 	</modules>
 
 
 	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<sysmartek-framework>1.1.2-RELEASE</sysmartek-framework>
-		<!-- DEPENDENCY VERSIONS -->
+
+		<!-- Unit Testing and Code Check -->
 		<junit>4.11</junit>
 		<testng>6.1.1</testng>
+		<omnifaces>1.8.1</omnifaces>
+		<groovy-all>2.3.7</groovy-all>
+		<junit-dep>4.11</junit-dep>
+
+		<!-- Architecture Web an J2EE -->
+		<javax.servlet-api>3.0.1</javax.servlet-api>
+		<javax.inject>1</javax.inject>
+		<javax-ejb-api>3.2</javax-ejb-api>
+		<tomee-embedded>1.7.1</tomee-embedded>
+		<javaee-api>7.0</javaee-api>
+		<jsr250-api>1.0</jsr250-api>
+		<javaee-web-api>7.0</javaee-web-api>
 		<primefaces>5.1</primefaces>
 		<jsf-api>2.1.11</jsf-api>
 		<jsf-impl>2.1.11</jsf-impl>
 		<jstl>1.2</jstl>
 		<jsp-api>2.1</jsp-api>
-		<omnifaces>1.8.1</omnifaces>
-		<groovy-all>2.3.7</groovy-all>
-		<junit-dep>4.11</junit-dep>
-		<javax.servlet-api>3.0.1</javax.servlet-api>
-		<javax.inject>1</javax.inject>
-		<javaee-api>7.0</javaee-api>
-		<javaee-web-api>7.0</javaee-web-api>
-		<hibernate>4.3.7.Final</hibernate>
-		<ojdbc6>11.2.0</ojdbc6>
-		<mysql>5.1.37</mysql>
+
+		<!-- Persistence / Data Manipulation -->
+		<persistence-api>1.0.2</persistence-api>
+		<!-- <hibernate-ehcache>4.3.7.Final</hibernate-ehcache> -->
+		<!-- <hibernate-entitymanager>4.3.7.Final</hibernate-entitymanager> -->
+		<!-- <hibernate-validator>5.1.3.Final</hibernate-validator> -->
+		<querydsl>3.6.0</querydsl>
 		<spring-data-jpa>1.7.1.RELEASE</spring-data-jpa>
+		<spring-data-mongodb>1.6.1.RELEASE</spring-data-mongodb>
+
+		<hibernate-jpa-2.1-api>1.0.0.Final</hibernate-jpa-2.1-api>
+		<hibernate-core>5.1.0.Final</hibernate-core>
+		<hibernate-validator>5.1.0.Final</hibernate-validator>
+		<hibernate-entitymanager>5.1.0.Final</hibernate-entitymanager>
+
+		<!-- Drivesr DataBase -->
+		<mysql>5.1.37</mysql>
+
+		<!-- Access Controle -->
 		<spring-security>3.2.5.RELEASE</spring-security>
+		<spring-security-taglib>0.5</spring-security-taglib>
+
+		<!-- Generic / Printer Objects / Reports -->
 		<commons-logging>1.2</commons-logging>
 		<dozer>5.4.0</dozer>
 		<aspectjrt>1.8.2</aspectjrt>
 		<ehcache>2.6.9</ehcache>
+
+		<!-- Know Framework -->
 		<spring>4.0.7.RELEASE</spring>
-		<tomee-embedded>1.7.1</tomee-embedded>
-		<hibernate-validator>5.1.3.Final</hibernate-validator>
 		<apache-commons-lang3>3.3.1</apache-commons-lang3>
 		<stella>2.1.2</stella>
-		<spring-security-taglib>0.5</spring-security-taglib>
-		<querydsl>3.6.0</querydsl>
 		<commons-collections4>4.0</commons-collections4>
 		<xstream>1.4.7</xstream>
-		<rs-api>2.0.1</rs-api>
-		<spring-data-mongodb>1.6.1.RELEASE</spring-data-mongodb>
-		<hibernate-entitymanager>4.3.7.Final</hibernate-entitymanager>
+		<javax-ws-rs-api>2.0.1</javax-ws-rs-api>
 		<axis2>1.6.2</axis2>
 		<axiom-api>1.2.14</axiom-api>
 		<axiom-impl>1.2.14</axiom-impl>
@@ -66,16 +87,21 @@
 		<powermock.version>1.6.1</powermock.version>
 		<jackson-module-jsonSchema>2.5.0</jackson-module-jsonSchema>
 		<httpClient>4.0.1</httpClient>
+
+		<commons-fileupload>1.3.1</commons-fileupload>
+
 	</properties>
 
 	<dependencyManagement>
 		<dependencies>
-
+			<!-- Projects Dependency -->
 			<dependency>
 				<groupId>br.com.sysmartek</groupId>
 				<artifactId>sysmartek-framework</artifactId>
 				<version>${sysmartek-framework}</version>
 			</dependency>
+			<!-- Projects Dependency -->
+
 			<dependency>
 				<groupId>org.hibernate</groupId>
 				<artifactId>hibernate-entitymanager</artifactId>
@@ -126,7 +152,7 @@
 			<dependency>
 				<groupId>javax.ws.rs</groupId>
 				<artifactId>javax.ws.rs-api</artifactId>
-				<version>${rs-api}</version>
+				<version>${javax-ws-rs-api}</version>
 			</dependency>
 			<dependency>
 				<groupId>org.codehaus.groovy</groupId>
@@ -192,31 +218,57 @@
 				<scope>provided</scope>
 			</dependency>
 			<dependency>
+				<groupId>javax.ejb</groupId>
+				<artifactId>javax.ejb-api</artifactId>
+				<version>${javax-ejb-api}</version>
+				<scope>provided</scope>
+			</dependency>
+			<dependency>
 				<groupId>javax</groupId>
 				<artifactId>javaee-api</artifactId>
 				<version>${javaee-api}</version>
 				<scope>provided</scope>
 			</dependency>
+			
+			<dependency>
+				<groupId>javax.annotation</groupId>
+				<artifactId>jsr250-api</artifactId>
+				<version>${jsr250-api}</version>
+			</dependency>
+
+			
+			<dependency>
+				<groupId>javax.persistence</groupId>
+				<artifactId>persistence-api</artifactId>
+				<version>${persistence-api}</version>
+				<scope>provided</scope>
+			</dependency>
 			<dependency>
 				<groupId>org.hibernate</groupId>
 				<artifactId>hibernate-ehcache</artifactId>
-				<version>${hibernate}</version>
+				<version>${hibernate-ehcache}</version>
 			</dependency>
 			<dependency>
 				<groupId>org.hibernate.javax.persistence</groupId>
 				<artifactId>hibernate-jpa-2.1-api</artifactId>
-				<version>1.0.0.Final</version>
+				<version>${hibernate-jpa-2.1-api}</version>
 			</dependency>
+			<dependency>
+				<groupId>org.hibernate</groupId>
+				<artifactId>hibernate-core</artifactId>
+				<version>${hibernate-core}</version>
+			</dependency>
+
 			<dependency>
 				<groupId>org.hibernate</groupId>
 				<artifactId>hibernate-validator</artifactId>
 				<version>${hibernate-validator}</version>
 			</dependency>
-			<dependency>
-				<groupId>org.hibernate</groupId>
-				<artifactId>hibernate-envers</artifactId>
-				<version>${hibernate}</version>
-			</dependency>
+			<!-- <dependency>	-->
+			<!-- 	<groupId>org.hibernate</groupId>	-->
+			<!-- 	<artifactId>hibernate-envers</artifactId>	-->
+			<!-- 	<version>${hibernate-envers}</version>	-->
+			<!-- </dependency>	-->
 			<!-- <dependency> -->
 			<!-- <groupId>com.oracle</groupId> -->
 			<!-- <artifactId>ojdbc6</artifactId> -->
@@ -357,7 +409,11 @@
 				<version>${httpClient}</version>
 			</dependency>
 
-
+			<dependency>
+				<groupId>commons-fileupload</groupId>
+				<artifactId>commons-fileupload</artifactId>
+				<version>${commons-fileupload}</version>
+			</dependency>
 
 
 		</dependencies>
@@ -386,11 +442,11 @@
 
 	<dependencies>
 
-<!-- 		<dependency> -->
-<!-- 			<groupId>br.com.sysmartek</groupId> -->
-<!-- 			<artifactId>sysmartek-framework</artifactId> -->
-<!-- 			<version>${sysmartek-framework}</version>$NO-MVN-MAN-VER$ -->
-<!-- 		</dependency> -->
+		<!-- <dependency> -->
+		<!-- <groupId>br.com.sysmartek</groupId> -->
+		<!-- <artifactId>sysmartek-framework</artifactId> -->
+		<!-- <version>${sysmartek-framework}</version>$NO-MVN-MAN-VER$ -->
+		<!-- </dependency> -->
 
 
 		<!-- <dependency> -->
@@ -475,7 +531,7 @@
 
 	<build>
 		<plugins>
-			 <plugin>
+			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-clean-plugin</artifactId>
 				<version>2.4.1</version>
@@ -490,10 +546,10 @@
 						</fileset>
 						<fileset>
 							<directory>${basedir}</directory>
-							  <includes>
+							<includes>
 								<include>**/bin/**</include>
-							  </includes> 
-							  <followSymlinks>false</followSymlinks>
+							</includes>
+							<followSymlinks>false</followSymlinks>
 						</fileset>
 					</filesets>
 				</configuration>

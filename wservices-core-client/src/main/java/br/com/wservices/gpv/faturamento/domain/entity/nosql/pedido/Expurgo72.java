@@ -21,7 +21,7 @@ public class Expurgo72 implements Serializable {
 
 	// Anotação Id do pacote org.springframework.data.annotation
 	@Id
-	@NotNull(message = "O c�digo do expurgo não pode ser nulo")
+	@NotNull(message = "O codigo do expurgo não pode ser nulo")
 	private int codigoExpurgo;
 
 	@NotNull(message = "O cpf não pode ser nulo")

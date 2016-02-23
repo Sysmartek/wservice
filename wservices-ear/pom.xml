@@ -7,7 +7,7 @@
 	<parent>
 		<groupId>br.com.wservices</groupId>
 		<artifactId>wservices</artifactId>
-		<version>1</version>
+		<version>1.1.1</version>
 	</parent>
 	<dependencies>
 		<!-- PROJETOS -->
@@ -30,10 +30,11 @@
 		</dependency>
 		<dependency>
 			<groupId>br.com.wservices</groupId>
-			<artifactId>wservices-client</artifactId>
+			<artifactId>wservices-clientForTest</artifactId>
 			<version>${project.parent.version}</version>
 			<type>war</type>
 		</dependency>
+		<!-- PROJETOS -->
 		<!-- BIBLIOTECAS -->
 
 		<dependency>

@@ -3,6 +3,7 @@ package br.com.yaw.prime.service;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.PersistenceContextType;
 
 import br.com.yaw.prime.model.Mercadoria;
 
@@ -19,7 +20,7 @@ public class MercadoriaService extends AbstractPersistence<Mercadoria, Long>{
 	/**
 	 * O container injeta a referência para o <code>EntityManager</code>.
 	 */
-	@PersistenceContext
+	@PersistenceContext(unitName = "appCDIUnit", type = PersistenceContextType.EXTENDED)
 	private EntityManager em;
 	
 	@Override

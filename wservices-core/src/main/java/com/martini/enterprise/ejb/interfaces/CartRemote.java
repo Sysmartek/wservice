@@ -3,7 +3,7 @@ package com.martini.enterprise.ejb.interfaces;
 import javax.ejb.Remote;
 
 import com.martini.enterprise.ejb.property.PropertyObject;
-import com.tutorialspoint.model.Product;
+import com.tutorialspoint.model.ProductTest;
 
 @Remote
 public interface CartRemote {
@@ -13,7 +13,7 @@ public interface CartRemote {
 
 	PropertyObject getPropertyObject();
 
-	void addProductToCart(Product product);
+	void addProductToCart(ProductTest product);
 
 	void checkOut();
 

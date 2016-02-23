@@ -1,68 +1,18 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<persistence xmlns="http://java.sun.com/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence
-     http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd"
-	version="2.0">
-
-	<persistence-unit name="teste" transaction-type="JTA">
-		<provider>org.hibernate.ejb.HibernatePersistence</provider>
-	<!--     <jta-data-source>java:/MySqlDsSwing</jta-data-source> -->
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<persistence xmlns="http://java.sun.com/xml/ns/persistence"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.0"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">
+	<persistence-unit name="appCDIUnit">
+<!--     <jta-data-source>java:/MySqlDsSwing</jta-data-source> -->
     <jta-data-source>java:jboss/datasources/MySQLDS</jta-data-source>
-    <class>com.tutorialspoint.model.Product</class>
-		
-<!-- 		<class>br.com.netshoes.gpv.core.domain.entity.Pessoa</class> -->
-<!-- 		<class>br.com.netshoes.gpv.core.domain.entity.Dominio</class> -->
-<!-- 		<class>br.com.netshoes.gpv.core.domain.entity.Endereco</class> -->
-<!-- 		<class>br.com.netshoes.gpv.core.domain.entity.Cidade</class> -->
-<!-- 		<class>br.com.netshoes.gpv.core.domain.entity.Estado</class> -->
-<!-- 		<class>br.com.netshoes.gpv.faturamento.domain.entity.Caixa</class> -->
-<!-- 		<class>br.com.netshoes.gpv.faturamento.domain.entity.UnidadeFaturamento</class> -->
-<!-- 		<class>br.com.netshoes.gpv.faturamento.domain.entity.Serie</class> -->
-<!-- 		<class>br.com.netshoes.gpv.faturamento.domain.entity.UnidadeNegocio</class> -->
-<!-- 		<class>br.com.netshoes.gpv.faturamento.domain.entity.ModeloEmail</class> -->
-<!-- 		<class>br.com.netshoes.gpv.faturamento.domain.entity.ConfiguracaoEmail</class> -->
-<!-- 		<class>br.com.netshoes.gpv.seguranca.domain.entity.Usuario</class> -->
-<!-- 		<class>br.com.netshoes.gpv.seguranca.domain.entity.TelaFuncionalidade</class> -->
-<!-- 		<class>br.com.netshoes.gpv.seguranca.domain.entity.Tela</class> -->
-<!-- 		<class>br.com.netshoes.gpv.seguranca.domain.entity.PerfilTelaFuncionalidade</class> -->
-<!-- 		<class>br.com.netshoes.gpv.seguranca.domain.entity.Perfil</class> -->
-<!-- 		<class>br.com.netshoes.gpv.seguranca.domain.entity.Funcionalidade</class> -->
-<!-- 		<class>br.com.netshoes.gpv.faturamento.domain.entity.Impressora</class> -->
-<!-- 		<class>br.com.netshoes.gpv.faturamento.domain.entity.NotaFiscal</class> -->
-<!-- 		<class>br.com.netshoes.gpv.faturamento.domain.entity.ItemNotaFiscal</class> -->
-<!-- 		<class>br.com.netshoes.gpv.faturamento.domain.entity.EventoNotaFiscal</class> -->
-<!-- 		<class>br.com.netshoes.gpv.faturamento.domain.entity.Pagamento</class> -->
-<!-- 		<class>br.com.netshoes.gpv.faturamento.domain.entity.TipoOperacao</class> -->
-<!-- 		<class>br.com.netshoes.gpv.faturamento.domain.entity.Mensagem</class> -->
-<!-- 		<class>br.com.netshoes.gpv.faturamento.domain.entity.Transportadora</class> -->
-<!-- 		<class>br.com.netshoes.gpv.faturamento.domain.entity.ServicoEntrega</class> -->
-<!-- 		<class>br.com.netshoes.gpv.faturamento.domain.entity.LayoutEtiqueta</class> -->
-<!-- 		<class>br.com.netshoes.gpv.faturamento.domain.entity.CampoLayouEtiqueta</class> -->
-		
+    <class>com.tutorialspoint.model.ProductTest</class>
+    
+<!-- 		<jta-data-source>/jdbc/MysqlDS_GPV</jta-data-source> -->
 		<properties>
-			<property name="openjpa.jdbc.Schema" value="PUBLIC"/> 
-			<property name="openjpa.jdbc.SynchronizeMappings"
-                value="buildSchema(foreignKeys=true)" />
-            <property name="openjpa.jdbc.SchemaFactory" value="native(foreignKeys=true)" />
-            <property name="openjpa.jdbc.MappingDefaults"
-                value="ForeignKeyDeleteAction=restrict, JoinForeignKeyDeleteAction=restrict" />
-			<!-- Configuração Hibernate -->
-			<!-- property name="hibernate.dialect" value="org.hibernate.dialect.SQLServerDialect"></property-->
-			<property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5InnoDBDialect"></property>
-
+			<property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect" />
 			<property name="hibernate.show_sql" value="true" />
 			<property name="hibernate.hbm2ddl.auto" value="update" />
-			<!-- Second level cache and query cache -->
-			<property name="hibernate.cache.use_second_level_cache" value="false" />
-
-			<!-- Configuracao do Envers -->
-			<property name="org.hibernate.envers.audit_table_suffix" value="_HIST" />
-			<property name="org.hibernate.envers.revision_field_name" value="REVISAO" />
-			<property name="org.hibernate.envers.audit_strategy" value="org.hibernate.envers.strategy.ValidityAuditStrategy" />
-			<property name="org.hibernate.envers.audit_strategy_validity_end_rev_field_name" value="REVISAO_FINAL" />
-			<property name="org.hibernate.envers.audit_strategy_validity_store_revend_timestamp" value="true" />
-			<property name="org.hibernate.envers.audit_strategy_validity_revend_timestamp_field_name" value="DATA_ALTERACAO" />
-
+			<property name="hibernate.connection.charSet" value="UTF-8" />
 		</properties>
 	</persistence-unit>
 </persistence>

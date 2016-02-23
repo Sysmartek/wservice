@@ -5,7 +5,7 @@
 	<persistence-unit name="appCDIUnit">
 <!--     <jta-data-source>java:/MySqlDsSwing</jta-data-source> -->
     <jta-data-source>java:jboss/datasources/MySQLDS</jta-data-source>
-    <class>com.tutorialspoint.model.Product</class>
+    <class>com.tutorialspoint.model.ProductTest</class>
     
 <!-- 		<jta-data-source>/jdbc/MysqlDS_GPV</jta-data-source> -->
 		<properties>

@@ -21,13 +21,18 @@ import javax.persistence.PersistenceContextType;
 import com.martini.enterprise.ejb.interfaces.CartRemote;
 import com.martini.enterprise.ejb.property.PropertyObject;
 import com.martini.utils.Utils;
-import com.tutorialspoint.model.Product;
+import com.tutorialspoint.model.ProductTest;
+
+//Resurge esse no casod e confusáo KKK
+//MUITO BOM PARA ANALILSAR A MIGRACAO
+//import br.com.wservices.gpv.faturamento.domain.entity.Product;
+
 
 //@Stateful
 //@Stateless(mappedName = CidadeRepositoryRemote.MAPPED_NAME)
 
 //@Remote(CartRemote.class)
-@StatefulTimeout(unit = TimeUnit.SECONDS, value = 10)
+@StatefulTimeout(unit = TimeUnit.SECONDS, value = 30)
 @Stateful(name = CartRemote.MAPPED_NAME, mappedName = CartRemote.MAPPED_NAME)
 public class CartBeanImpl implements CartRemote {
 	
@@ -45,11 +50,11 @@ public class CartBeanImpl implements CartRemote {
 	@PersistenceContext(unitName = "appCDIUnit", type = PersistenceContextType.EXTENDED)
 	private EntityManager entityManager;
 
-	private List<Product> products;
+	private List<ProductTest> products;
 
 	@PostConstruct
 	private void initializeBean() {
-		products = new ArrayList<Product>();
+		products = new ArrayList<ProductTest>();
 		System.out.println("Post Construct");
 	}
 
@@ -80,7 +85,7 @@ public class CartBeanImpl implements CartRemote {
 	}
 
 	@Override
-	public void addProductToCart(Product product) {
+	public void addProductToCart(ProductTest product) {
 		products.add(product);
 
 	}
@@ -88,7 +93,7 @@ public class CartBeanImpl implements CartRemote {
 	@Override
 	@TransactionAttribute(TransactionAttributeType.REQUIRED)
 	public void checkOut() {
-		for (Product product : products) {
+		for (ProductTest product : products) {
 			entityManager.persist(product);
 		}
 		products.clear();
@@ -98,7 +103,7 @@ public class CartBeanImpl implements CartRemote {
 	@Override
 	public StringBuilder listOfProducts() {
 		StringBuilder listOfProduct = new StringBuilder();
-		for (Product product : products) {
+		for (ProductTest product : products) {
 			listOfProduct.append(product.toString() + "\n");
 		}
 

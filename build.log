@@ -1,0 +1,639 @@
+
+remake-all:
+
+clean:
+
+mvn:
+     [exec] [INFO] Scanning for projects...
+     [exec] [INFO] ------------------------------------------------------------------------
+     [exec] [INFO] Reactor Build Order:
+     [exec] [INFO] 
+     [exec] [INFO] wservices
+     [exec] [INFO] wservices-core
+     [exec] [INFO] wservices-core-client
+     [exec] [INFO] wservices-webservices
+     [exec] [INFO] wservices-clientForTest
+     [exec] [INFO] wservices-ear
+     [exec] [INFO]                                                                         
+     [exec] [INFO] ------------------------------------------------------------------------
+     [exec] [INFO] Building wservices 1.1.1
+     [exec] [INFO] ------------------------------------------------------------------------
+     [exec] [INFO] 
+     [exec] [INFO] --- maven-clean-plugin:2.4.1:clean (default-clean) @ wservices ---
+     [exec] [INFO] Deleting D:\Martini\Java\workspace_jsf-cdi-ejb3\Sysmartek\wservices\target
+     [exec] [INFO] Deleting D:\Martini\Java\workspace_jsf-cdi-ejb3\Sysmartek\wservices (includes = [**/bin/**], excludes = [])
+     [exec] [INFO]                                                                         
+     [exec] [INFO] ------------------------------------------------------------------------
+     [exec] [INFO] Building wservices-core 1.1.1
+     [exec] [INFO] ------------------------------------------------------------------------
+     [exec] [INFO] 
+     [exec] [INFO] --- maven-clean-plugin:2.4.1:clean (default-clean) @ wservices-core ---
+     [exec] [INFO] Deleting D:\Martini\Java\workspace_jsf-cdi-ejb3\Sysmartek\wservices\wservices-core\target
+     [exec] [INFO] Deleting D:\Martini\Java\workspace_jsf-cdi-ejb3\Sysmartek\wservices\wservices-core (includes = [**/bin/**], excludes = [])
+     [exec] [INFO]                                                                         
+     [exec] [INFO] ------------------------------------------------------------------------
+     [exec] [INFO] Building wservices-core-client 1.1.1
+     [exec] [INFO] ------------------------------------------------------------------------
+     [exec] [INFO] 
+     [exec] [INFO] --- maven-clean-plugin:2.4.1:clean (default-clean) @ wservices-core-client ---
+     [exec] [INFO] Deleting D:\Martini\Java\workspace_jsf-cdi-ejb3\Sysmartek\wservices\wservices-core-client\target
+     [exec] [INFO] ------------------------------------------------------------------------
+     [exec] [INFO] Reactor Summary:
+     [exec] [INFO] 
+     [exec] [INFO] wservices .......................................... SUCCESS [  1.361 s]
+     [exec] [INFO] wservices-core ..................................... SUCCESS [  0.128 s]
+     [exec] [INFO] wservices-core-client .............................. FAILURE [  0.187 s]
+     [exec] [INFO] wservices-webservices .............................. SKIPPED
+     [exec] [INFO] wservices-clientForTest ............................ SKIPPED
+     [exec] [INFO] wservices-ear ...................................... SKIPPED
+     [exec] [INFO] ------------------------------------------------------------------------
+     [exec] [INFO] BUILD FAILURE
+     [exec] [INFO] ------------------------------------------------------------------------
+     [exec] [INFO] Total time: 3.368 s
+     [exec] [INFO] Finished at: 2016-02-21T20:05:10-03:00
+     [exec] [INFO] Final Memory: 6M/155M
+     [exec] [INFO] ------------------------------------------------------------------------
+     [exec] [ERROR] Failed to execute goal org.apache.maven.plugins:maven-clean-plugin:2.4.1:clean (default-clean) on project wservices-core-client: Failed to clean project: Failed to delete D:\Martini\Java\workspace_jsf-cdi-ejb3\Sysmartek\wservices\wservices-core-client\target\classes\br\com\wservices\gpv\faturamento\domain\entity -> [Help 1]
+     [exec] [ERROR] 
+     [exec] [ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+     [exec] [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+     [exec] [ERROR] 
+     [exec] [ERROR] For more information about the errors and possible solutions, please read the following articles:
+     [exec] [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoExecutionException
+     [exec] [ERROR] 
+     [exec] [ERROR] After correcting the problems, you can resume the build with the command
+     [exec] [ERROR]   mvn <goals> -rf :wservices-core-client
+     [exec] Result: 1
+
+install:
+
+mvn:
+     [exec] [INFO] Scanning for projects...
+     [exec] [INFO] ------------------------------------------------------------------------
+     [exec] [INFO] Reactor Build Order:
+     [exec] [INFO] 
+     [exec] [INFO] wservices
+     [exec] [INFO] wservices-core
+     [exec] [INFO] wservices-core-client
+     [exec] [INFO] wservices-webservices
+     [exec] [INFO] wservices-clientForTest
+     [exec] [INFO] wservices-ear
+     [exec] [INFO]                                                                         
+     [exec] [INFO] ------------------------------------------------------------------------
+     [exec] [INFO] Building wservices 1.1.1
+     [exec] [INFO] ------------------------------------------------------------------------
+     [exec] [INFO] 
+     [exec] [INFO] --- maven-checkstyle-plugin:2.13:check (test) @ wservices ---
+     [exec] [INFO] 
+     [exec] [INFO] 
+     [exec] [INFO] --- maven-install-plugin:2.4:install (default-install) @ wservices ---
+     [exec] [INFO] Installing D:\Martini\Java\workspace_jsf-cdi-ejb3\Sysmartek\wservices\pom.xml to C:\Users\omartini\.m2\repository\br\com\wservices\wservices\1.1.1\wservices-1.1.1.pom
+     [exec] [INFO]                                                                         
+     [exec] [INFO] ------------------------------------------------------------------------
+     [exec] [INFO] Building wservices-core 1.1.1
+     [exec] [INFO] ------------------------------------------------------------------------
+     [exec] [INFO] 
+     [exec] [INFO] --- apt-maven-plugin:1.1.3:process (default) @ wservices-core ---
+     [exec] [INFO] 
+     [exec] [INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ wservices-core ---
+     [exec] [INFO] Using 'UTF-8' encoding to copy filtered resources.
+     [exec] [INFO] Copying 5 resources
+     [exec] [INFO] skip non existing resourceDirectory D:\Martini\Java\workspace_jsf-cdi-ejb3\Sysmartek\wservices\wservices-core\src\main\resources.dev
+     [exec] [INFO] 
+     [exec] [INFO] --- maven-compiler-plugin:3.2:compile (default-compile) @ wservices-core ---
+     [exec] [INFO] Changes detected - recompiling the module!
+     [exec] [INFO] Compiling 33 source files to D:\Martini\Java\workspace_jsf-cdi-ejb3\Sysmartek\wservices\wservices-core\target\classes
+     [exec] [INFO] /D:/Martini/Java/workspace_jsf-cdi-ejb3/Sysmartek/wservices/wservices-core/src/main/java/br/com/yaw/prime/service/AbstractPersistence.java: D:\Martini\Java\workspace_jsf-cdi-ejb3\Sysmartek\wservices\wservices-core\src\main\java\br\com\yaw\prime\service\AbstractPersistence.java uses unchecked or unsafe operations.
+     [exec] [INFO] /D:/Martini/Java/workspace_jsf-cdi-ejb3/Sysmartek/wservices/wservices-core/src/main/java/br/com/yaw/prime/service/AbstractPersistence.java: Recompile with -Xlint:unchecked for details.
+     [exec] [INFO] 
+     [exec] [INFO] --- aspectj-maven-plugin:1.7:compile (default) @ wservices-core ---
+     [exec] [INFO] Showing AJC message detail for messages of types: [error, warning, fail]
+     [exec] [WARNING] advice defined in br.com.sysmartek.framework.logging.aspect.LoggingAspect has not been applied [Xlint:adviceDidNotMatch]
+     [exec] 	C:\Users\omartini\.m2\repository\br\com\sysmartek\sysmartek-framework\1.1.2-RELEASE\sysmartek-framework-1.1.2-RELEASE.jar!br\com\sysmartek\framework\logging\aspect\LoggingAspect.class:0
+     [exec] 
+     [exec] [INFO] 
+     [exec] [INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ wservices-core ---
+     [exec] [INFO] Not copying test resources
+     [exec] [INFO] 
+     [exec] [INFO] --- maven-compiler-plugin:3.2:testCompile (default-testCompile) @ wservices-core ---
+     [exec] [INFO] Not compiling test sources
+     [exec] [INFO] 
+     [exec] [INFO] --- maven-surefire-plugin:2.18:test (default-test) @ wservices-core ---
+     [exec] [INFO] Tests are skipped.
+     [exec] [INFO] 
+     [exec] [INFO] --- maven-ejb-plugin:2.4:ejb (default-ejb) @ wservices-core ---
+     [exec] [INFO] Building EJB wservices-core-1.1.1 with EJB version 2.1
+     [exec] [INFO] Building jar: D:\Martini\Java\workspace_jsf-cdi-ejb3\Sysmartek\wservices\wservices-core\target\wservices-core-1.1.1.jar
+     [exec] [INFO] 
+     [exec] [INFO] --- maven-checkstyle-plugin:2.13:check (test) @ wservices-core ---
+     [exec] [INFO] 
+     [exec] [INFO] 
+     [exec] [INFO] --- maven-install-plugin:2.4:install (default-install) @ wservices-core ---
+     [exec] [INFO] Installing D:\Martini\Java\workspace_jsf-cdi-ejb3\Sysmartek\wservices\wservices-core\target\wservices-core-1.1.1.jar to C:\Users\omartini\.m2\repository\br\com\wservices\wservices-core\1.1.1\wservices-core-1.1.1.jar
+     [exec] [INFO] Installing D:\Martini\Java\workspace_jsf-cdi-ejb3\Sysmartek\wservices\wservices-core\pom.xml to C:\Users\omartini\.m2\repository\br\com\wservices\wservices-core\1.1.1\wservices-core-1.1.1.pom
+     [exec] [INFO]                                                                         
+     [exec] [INFO] ------------------------------------------------------------------------
+     [exec] [INFO] Building wservices-core-client 1.1.1
+     [exec] [INFO] ------------------------------------------------------------------------
+     [exec] [INFO] 
+     [exec] [INFO] --- apt-maven-plugin:1.1.3:process (default) @ wservices-core-client ---
+     [exec] [INFO] 
+     [exec] [INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ wservices-core-client ---
+     [exec] [INFO] Using 'UTF-8' encoding to copy filtered resources.
+     [exec] [INFO] skip non existing resourceDirectory D:\Martini\Java\workspace_jsf-cdi-ejb3\Sysmartek\wservices\wservices-core-client\src\main\resources
+     [exec] [INFO] 
+     [exec] [INFO] --- maven-compiler-plugin:3.2:compile (default-compile) @ wservices-core-client ---
+     [exec] [INFO] Changes detected - recompiling the module!
+     [exec] [INFO] Compiling 209 source files to D:\Martini\Java\workspace_jsf-cdi-ejb3\Sysmartek\wservices\wservices-core-client\target\classes
+     [exec] [INFO] /D:/Martini/Java/workspace_jsf-cdi-ejb3/Sysmartek/wservices/wservices-core-client/src/main/java/br/com/wservices/gpv/faturamento/domain/repository/remote/UnidadeNegocioRepositoryRemote.java: D:\Martini\Java\workspace_jsf-cdi-ejb3\Sysmartek\wservices\wservices-core-client\src\main\java\br\com\wservices\gpv\faturamento\domain\repository\remote\UnidadeNegocioRepositoryRemote.java uses unchecked or unsafe operations.
+     [exec] [INFO] /D:/Martini/Java/workspace_jsf-cdi-ejb3/Sysmartek/wservices/wservices-core-client/src/main/java/br/com/wservices/gpv/faturamento/domain/repository/remote/UnidadeNegocioRepositoryRemote.java: Recompile with -Xlint:unchecked for details.
+     [exec] [INFO] 
+     [exec] [INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ wservices-core-client ---
+     [exec] [INFO] Not copying test resources
+     [exec] [INFO] 
+     [exec] [INFO] --- maven-compiler-plugin:3.2:testCompile (default-testCompile) @ wservices-core-client ---
+     [exec] [INFO] Not compiling test sources
+     [exec] [INFO] 
+     [exec] [INFO] --- maven-surefire-plugin:2.18:test (default-test) @ wservices-core-client ---
+     [exec] [INFO] Tests are skipped.
+     [exec] [INFO] 
+     [exec] [INFO] --- maven-jar-plugin:2.4:jar (default-jar) @ wservices-core-client ---
+     [exec] [INFO] Building jar: D:\Martini\Java\workspace_jsf-cdi-ejb3\Sysmartek\wservices\wservices-core-client\target\wservices-core-client-1.1.1.jar
+     [exec] [INFO] 
+     [exec] [INFO] --- maven-checkstyle-plugin:2.13:check (test) @ wservices-core-client ---
+     [exec] [INFO] 
+     [exec] [INFO] 
+     [exec] [INFO] --- maven-install-plugin:2.4:install (default-install) @ wservices-core-client ---
+     [exec] [INFO] Installing D:\Martini\Java\workspace_jsf-cdi-ejb3\Sysmartek\wservices\wservices-core-client\target\wservices-core-client-1.1.1.jar to C:\Users\omartini\.m2\repository\br\com\wservices\wservices-core-client\1.1.1\wservices-core-client-1.1.1.jar
+     [exec] [INFO] Installing D:\Martini\Java\workspace_jsf-cdi-ejb3\Sysmartek\wservices\wservices-core-client\pom.xml to C:\Users\omartini\.m2\repository\br\com\wservices\wservices-core-client\1.1.1\wservices-core-client-1.1.1.pom
+     [exec] [INFO]                                                                         
+     [exec] [INFO] ------------------------------------------------------------------------
+     [exec] [INFO] Building wservices-webservices 1.1.1
+     [exec] [INFO] ------------------------------------------------------------------------
+     [exec] [INFO] 
+     [exec] [INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ wservices-webservices ---
+     [exec] [INFO] Using 'UTF-8' encoding to copy filtered resources.
+     [exec] [INFO] skip non existing resourceDirectory D:\Martini\Java\workspace_jsf-cdi-ejb3\Sysmartek\wservices\wservices-webservices\src\main\resources
+     [exec] [INFO] 
+     [exec] [INFO] --- maven-compiler-plugin:3.2:compile (default-compile) @ wservices-webservices ---
+     [exec] [INFO] Changes detected - recompiling the module!
+     [exec] [INFO] Compiling 11 source files to D:\Martini\Java\workspace_jsf-cdi-ejb3\Sysmartek\wservices\wservices-webservices\target\classes
+     [exec] [INFO] 
+     [exec] [INFO] --- aspectj-maven-plugin:1.7:compile (default) @ wservices-webservices ---
+     [exec] [INFO] Showing AJC message detail for messages of types: [error, warning, fail]
+     [exec] [WARNING] advice defined in br.com.sysmartek.framework.logging.aspect.LoggingAspect has not been applied [Xlint:adviceDidNotMatch]
+     [exec] 	C:\Users\omartini\.m2\repository\br\com\sysmartek\sysmartek-framework\1.1.2-RELEASE\sysmartek-framework-1.1.2-RELEASE.jar!br\com\sysmartek\framework\logging\aspect\LoggingAspect.class:0
+     [exec] 
+     [exec] [INFO] 
+     [exec] [INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ wservices-webservices ---
+     [exec] [INFO] Not copying test resources
+     [exec] [INFO] 
+     [exec] [INFO] --- maven-compiler-plugin:3.2:testCompile (default-testCompile) @ wservices-webservices ---
+     [exec] [INFO] Not compiling test sources
+     [exec] [INFO] 
+     [exec] [INFO] --- maven-surefire-plugin:2.18:test (default-test) @ wservices-webservices ---
+     [exec] [INFO] Tests are skipped.
+     [exec] [INFO] 
+     [exec] [INFO] --- maven-war-plugin:2.2:war (default-war) @ wservices-webservices ---
+     [exec] [INFO] Packaging webapp
+     [exec] [INFO] Assembling webapp [wservices-webservices] in [D:\Martini\Java\workspace_jsf-cdi-ejb3\Sysmartek\wservices\wservices-webservices\target\wservices-webservices]
+     [exec] [INFO] Processing war project
+     [exec] [INFO] Copying webapp resources [D:\Martini\Java\workspace_jsf-cdi-ejb3\Sysmartek\wservices\wservices-webservices\src\main\webapp]
+     [exec] [INFO] Webapp assembled in [4447 msecs]
+     [exec] [INFO] Building war: D:\Martini\Java\workspace_jsf-cdi-ejb3\Sysmartek\wservices\wservices-webservices\target\wservices-webservices.war
+     [exec] [INFO] WEB-INF\web.xml already added, skipping
+     [exec] [INFO] 
+     [exec] [INFO] --- maven-checkstyle-plugin:2.13:check (test) @ wservices-webservices ---
+     [exec] [INFO] 
+     [exec] [INFO] 
+     [exec] [INFO] --- maven-install-plugin:2.4:install (default-install) @ wservices-webservices ---
+     [exec] [INFO] Installing D:\Martini\Java\workspace_jsf-cdi-ejb3\Sysmartek\wservices\wservices-webservices\target\wservices-webservices.war to C:\Users\omartini\.m2\repository\br\com\wservices\wservices-webservices\1.1.1\wservices-webservices-1.1.1.war
+     [exec] [INFO] Installing D:\Martini\Java\workspace_jsf-cdi-ejb3\Sysmartek\wservices\wservices-webservices\pom.xml to C:\Users\omartini\.m2\repository\br\com\wservices\wservices-webservices\1.1.1\wservices-webservices-1.1.1.pom
+     [exec] [INFO]                                                                         
+     [exec] [INFO] ------------------------------------------------------------------------
+     [exec] [INFO] Building wservices-clientForTest 1.1.1
+     [exec] [INFO] ------------------------------------------------------------------------
+     [exec] [INFO] 
+     [exec] [INFO] --- apt-maven-plugin:1.1.3:process (default) @ wservices-clientForTest ---
+     [exec] D:\Martini\Java\workspace_jsf-cdi-ejb3\Sysmartek\wservices\wservices-clientForTest\src\main\java\com\martini\enterprise\servlet\PassivationServlet.java:18: error: unmappable character for encoding UTF-8
+     [exec]  * That?s it. Now to be convinced that the session beans we actually serialized to the disc you can go to
+     [exec]        ^
+     [exec] [INFO] 
+     [exec] [INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ wservices-clientForTest ---
+     [exec] [INFO] Using 'UTF-8' encoding to copy filtered resources.
+     [exec] [INFO] Copying 0 resource
+     [exec] [INFO] 
+     [exec] [INFO] --- maven-compiler-plugin:3.2:compile (default-compile) @ wservices-clientForTest ---
+     [exec] [INFO] Changes detected - recompiling the module!
+     [exec] [INFO] Compiling 4 source files to D:\Martini\Java\workspace_jsf-cdi-ejb3\Sysmartek\wservices\wservices-clientForTest\target\classes
+     [exec] [ERROR] /D:/Martini/Java/workspace_jsf-cdi-ejb3/Sysmartek/wservices/wservices-clientForTest/src/main/java/com/martini/enterprise/servlet/PassivationServlet.java:[18,8] unmappable character for encoding UTF-8
+     [exec] [INFO] 
+     [exec] [INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ wservices-clientForTest ---
+     [exec] [INFO] Not copying test resources
+     [exec] [INFO] 
+     [exec] [INFO] --- maven-compiler-plugin:3.2:testCompile (default-testCompile) @ wservices-clientForTest ---
+     [exec] [INFO] Not compiling test sources
+     [exec] [INFO] 
+     [exec] [INFO] --- maven-surefire-plugin:2.18:test (default-test) @ wservices-clientForTest ---
+     [exec] [INFO] Tests are skipped.
+     [exec] [INFO] 
+     [exec] [INFO] --- maven-war-plugin:2.2:war (default-war) @ wservices-clientForTest ---
+     [exec] [INFO] Packaging webapp
+     [exec] [INFO] Assembling webapp [wservices-clientForTest] in [D:\Martini\Java\workspace_jsf-cdi-ejb3\Sysmartek\wservices\wservices-clientForTest\target\wservices-clientForTest-1.1.1]
+     [exec] [INFO] Processing war project
+     [exec] [INFO] Copying webapp resources [D:\Martini\Java\workspace_jsf-cdi-ejb3\Sysmartek\wservices\wservices-clientForTest\src\main\webapp]
+     [exec] [INFO] Webapp assembled in [3895 msecs]
+     [exec] [INFO] Building war: D:\Martini\Java\workspace_jsf-cdi-ejb3\Sysmartek\wservices\wservices-clientForTest\target\wservices-clientForTest-1.1.1.war
+     [exec] [INFO] WEB-INF\web.xml already added, skipping
+     [exec] [INFO] 
+     [exec] [INFO] --- maven-checkstyle-plugin:2.13:check (test) @ wservices-clientForTest ---
+     [exec] [INFO] 
+     [exec] [INFO] 
+     [exec] [INFO] --- maven-install-plugin:2.4:install (default-install) @ wservices-clientForTest ---
+     [exec] [INFO] Installing D:\Martini\Java\workspace_jsf-cdi-ejb3\Sysmartek\wservices\wservices-clientForTest\target\wservices-clientForTest-1.1.1.war to C:\Users\omartini\.m2\repository\br\com\wservices\wservices-clientForTest\1.1.1\wservices-clientForTest-1.1.1.war
+     [exec] [INFO] Installing D:\Martini\Java\workspace_jsf-cdi-ejb3\Sysmartek\wservices\wservices-clientForTest\pom.xml to C:\Users\omartini\.m2\repository\br\com\wservices\wservices-clientForTest\1.1.1\wservices-clientForTest-1.1.1.pom
+     [exec] [INFO]                                                                         
+     [exec] [INFO] ------------------------------------------------------------------------
+     [exec] [INFO] Building wservices-ear 1.1.1
+     [exec] [INFO] ------------------------------------------------------------------------
+     [exec] [INFO] 
+     [exec] [INFO] --- maven-ear-plugin:2.9.1:generate-application-xml (default-generate-application-xml) @ wservices-ear ---
+     [exec] [INFO] Generating application.xml
+     [exec] [INFO] 
+     [exec] [INFO] --- maven-resources-plugin:2.4.3:resources (default-resources) @ wservices-ear ---
+     [exec] [INFO] Using 'UTF-8' encoding to copy filtered resources.
+     [exec] [INFO] skip non existing resourceDirectory D:\Martini\Java\workspace_jsf-cdi-ejb3\Sysmartek\wservices\wservices-ear\src\main\resources
+     [exec] [INFO] 
+     [exec] [INFO] --- maven-ear-plugin:2.9.1:ear (default-ear) @ wservices-ear ---
+     [exec] [INFO] Copying artifact [ejb:br.com.wservices:wservices-core:1.1.1] to [wservices-core-1.1.1.jar]
+     [exec] [INFO] Copying artifact [jar:br.com.sysmartek:sysmartek-framework:1.1.2-RELEASE] to [lib/sysmartek-framework-1.1.2-RELEASE.jar]
+     [exec] [INFO] Copying artifact [jar:org.hibernate:hibernate-envers:4.3.7.Final] to [lib/hibernate-envers-4.3.7.Final.jar]
+     [exec] [INFO] Copying artifact [jar:org.jboss.logging:jboss-logging-annotations:1.2.0.Beta1] to [lib/jboss-logging-annotations-1.2.0.Beta1.jar]
+     [exec] [INFO] Copying artifact [jar:org.apache.logging.log4j:log4j-slf4j-impl:2.1] to [lib/log4j-slf4j-impl-2.1.jar]
+     [exec] [INFO] Copying artifact [jar:org.apache.logging.log4j:log4j-api:2.1] to [lib/log4j-api-2.1.jar]
+     [exec] [INFO] Copying artifact [jar:org.apache.logging.log4j:log4j-core:2.1] to [lib/log4j-core-2.1.jar]
+     [exec] [INFO] Copying artifact [jar:org.aspectj:aspectjrt:1.8.2] to [lib/aspectjrt-1.8.2.jar]
+     [exec] [INFO] Copying artifact [jar:org.aspectj:aspectjweaver:1.8.2] to [lib/aspectjweaver-1.8.2.jar]
+     [exec] [INFO] Copying artifact [jar:org.slf4j:slf4j-api:1.7.7] to [lib/slf4j-api-1.7.7.jar]
+     [exec] [INFO] Copying artifact [jar:org.perf4j:perf4j:0.9.16] to [lib/perf4j-0.9.16.jar]
+     [exec] [INFO] Copying artifact [jar:com.fasterxml.jackson.core:jackson-databind:2.4.4] to [lib/jackson-databind-2.4.4.jar]
+     [exec] [INFO] Copying artifact [jar:com.fasterxml.jackson.core:jackson-core:2.4.4] to [lib/jackson-core-2.4.4.jar]
+     [exec] [INFO] Copying artifact [jar:com.fasterxml.jackson.core:jackson-annotations:2.4.4] to [lib/jackson-annotations-2.4.4.jar]
+     [exec] [INFO] Copying artifact [jar:org.apache.commons:commons-lang3:3.3.1] to [lib/commons-lang3-3.3.1.jar]
+     [exec] [INFO] Copying artifact [jar:javax.mail:mail:1.4.7] to [lib/mail-1.4.7.jar]
+     [exec] [INFO] Copying artifact [jar:javax.activation:activation:1.1] to [lib/activation-1.1.jar]
+     [exec] [INFO] Copying artifact [jar:net.sf.jasperreports:jasperreports:6.0.0] to [lib/jasperreports-6.0.0.jar]
+     [exec] [INFO] Copying artifact [jar:commons-digester:commons-digester:2.1] to [lib/commons-digester-2.1.jar]
+     [exec] [INFO] Copying artifact [jar:com.itextpdf:itext-pdfa:5.5.0] to [lib/itext-pdfa-5.5.0.jar]
+     [exec] [INFO] Copying artifact [jar:jfree:jcommon:1.0.15] to [lib/jcommon-1.0.15.jar]
+     [exec] [INFO] Copying artifact [jar:jfree:jfreechart:1.0.12] to [lib/jfreechart-1.0.12.jar]
+     [exec] [INFO] Copying artifact [jar:xml-apis:xml-apis:1.3.02] to [lib/xml-apis-1.3.02.jar]
+     [exec] [INFO] Copying artifact [jar:org.codehaus.castor:castor:1.2] to [lib/castor-1.2.jar]
+     [exec] [INFO] Copying artifact [jar:org.apache.lucene:lucene-core:4.5.1] to [lib/lucene-core-4.5.1.jar]
+     [exec] [INFO] Copying artifact [jar:org.apache.lucene:lucene-analyzers-common:4.5.1] to [lib/lucene-analyzers-common-4.5.1.jar]
+     [exec] [INFO] Copying artifact [jar:org.apache.lucene:lucene-queryparser:4.5.1] to [lib/lucene-queryparser-4.5.1.jar]
+     [exec] [INFO] Copying artifact [jar:org.apache.lucene:lucene-queries:4.5.1] to [lib/lucene-queries-4.5.1.jar]
+     [exec] [INFO] Copying artifact [jar:org.apache.lucene:lucene-sandbox:4.5.1] to [lib/lucene-sandbox-4.5.1.jar]
+     [exec] [INFO] Copying artifact [jar:jakarta-regexp:jakarta-regexp:1.4] to [lib/jakarta-regexp-1.4.jar]
+     [exec] [INFO] Copying artifact [jar:org.olap4j:olap4j:0.9.7.309-JS-3] to [lib/olap4j-0.9.7.309-JS-3.jar]
+     [exec] [INFO] Copying artifact [jar:commons-beanutils:commons-beanutils:1.9.2] to [lib/commons-beanutils-1.9.2.jar]
+     [exec] [INFO] Copying artifact [jar:commons-collections:commons-collections:3.2.1] to [lib/commons-collections-3.2.1.jar]
+     [exec] [INFO] Copying artifact [jar:org.apache.commons:commons-digester3:3.2] to [lib/commons-digester3-3.2.jar]
+     [exec] [INFO] Copying artifact [jar:cglib:cglib:2.2.2] to [lib/cglib-2.2.2.jar]
+     [exec] [INFO] Copying artifact [jar:asm:asm:3.3.1] to [lib/asm-3.3.1.jar]
+     [exec] [INFO] Copying artifact [jar:commons-logging:commons-logging:1.2] to [lib/commons-logging-1.2.jar]
+     [exec] [INFO] Copying artifact [jar:org.codehaus.groovy:groovy-all:2.3.7] to [lib/groovy-all-2.3.7.jar]
+     [exec] [INFO] Copying artifact [jar:com.itextpdf:itextpdf:5.4.0] to [lib/itextpdf-5.4.0.jar]
+     [exec] [INFO] Copying artifact [jar:org.apache.poi:poi:3.10.1] to [lib/poi-3.10.1.jar]
+     [exec] [INFO] Copying artifact [jar:commons-codec:commons-codec:1.5] to [lib/commons-codec-1.5.jar]
+     [exec] [INFO] Copying artifact [jar:org.eclipse.jdt.core.compiler:ecj:4.4] to [lib/ecj-4.4.jar]
+     [exec] [INFO] Copying artifact [jar:xalan:xalan:2.7.2] to [lib/xalan-2.7.2.jar]
+     [exec] [INFO] Copying artifact [jar:xalan:serializer:2.7.2] to [lib/serializer-2.7.2.jar]
+     [exec] [INFO] Copying artifact [jar:net.sf.jasperreports:jasperreports-fonts:6.0.0] to [lib/jasperreports-fonts-6.0.0.jar]
+     [exec] [INFO] Copying artifact [jar:net.sourceforge.barbecue:barbecue:1.5-beta1] to [lib/barbecue-1.5-beta1.jar]
+     [exec] [INFO] Copying artifact [jar:javax.annotation:jsr250-api:1.0] to [lib/jsr250-api-1.0.jar]
+     [exec] [INFO] Copying artifact [jar:org.hibernate:hibernate-core:5.1.0.Final] to [lib/hibernate-core-5.1.0.Final.jar]
+     [exec] [INFO] Copying artifact [jar:org.jboss.logging:jboss-logging:3.3.0.Final] to [lib/jboss-logging-3.3.0.Final.jar]
+     [exec] [INFO] Copying artifact [jar:org.hibernate.javax.persistence:hibernate-jpa-2.1-api:1.0.0.Final] to [lib/hibernate-jpa-2.1-api-1.0.0.Final.jar]
+     [exec] [INFO] Copying artifact [jar:org.javassist:javassist:3.20.0-GA] to [lib/javassist-3.20.0-GA.jar]
+     [exec] [INFO] Copying artifact [jar:antlr:antlr:2.7.7] to [lib/antlr-2.7.7.jar]
+     [exec] [INFO] Copying artifact [jar:org.apache.geronimo.specs:geronimo-jta_1.1_spec:1.1.1] to [lib/geronimo-jta_1.1_spec-1.1.1.jar]
+     [exec] [INFO] Copying artifact [jar:org.jboss:jandex:2.0.0.Final] to [lib/jandex-2.0.0.Final.jar]
+     [exec] [INFO] Copying artifact [jar:com.fasterxml:classmate:1.3.0] to [lib/classmate-1.3.0.jar]
+     [exec] [INFO] Copying artifact [jar:dom4j:dom4j:1.6.1] to [lib/dom4j-1.6.1.jar]
+     [exec] [INFO] Copying artifact [jar:org.hibernate.common:hibernate-commons-annotations:5.0.1.Final] to [lib/hibernate-commons-annotations-5.0.1.Final.jar]
+     [exec] [INFO] Copying artifact [jar:org.hibernate:hibernate-entitymanager:5.1.0.Final] to [lib/hibernate-entitymanager-5.1.0.Final.jar]
+     [exec] [INFO] Copying artifact [jar:org.hibernate:hibernate-validator:5.1.0.Final] to [lib/hibernate-validator-5.1.0.Final.jar]
+     [exec] [INFO] Copying artifact [jar:javax.validation:validation-api:1.1.0.Final] to [lib/validation-api-1.1.0.Final.jar]
+     [exec] [INFO] Copying artifact [jar:commons-fileupload:commons-fileupload:1.3.1] to [lib/commons-fileupload-1.3.1.jar]
+     [exec] [INFO] Copying artifact [jar:commons-io:commons-io:2.2] to [lib/commons-io-2.2.jar]
+     [exec] [INFO] Copying artifact [jar:com.mysema.querydsl:querydsl-jpa:3.6.0] to [lib/querydsl-jpa-3.6.0.jar]
+     [exec] [INFO] Copying artifact [jar:com.mysema.querydsl:querydsl-core:3.6.0] to [lib/querydsl-core-3.6.0.jar]
+     [exec] [INFO] Copying artifact [jar:com.google.guava:guava:18.0] to [lib/guava-18.0.jar]
+     [exec] [INFO] Copying artifact [jar:com.google.code.findbugs:jsr305:1.3.9] to [lib/jsr305-1.3.9.jar]
+     [exec] [INFO] Copying artifact [jar:com.mysema.commons:mysema-commons-lang:0.2.4] to [lib/mysema-commons-lang-0.2.4.jar]
+     [exec] [INFO] Copying artifact [jar:com.infradna.tool:bridge-method-annotation:1.13] to [lib/bridge-method-annotation-1.13.jar]
+     [exec] [INFO] Copying artifact [jar:br.com.wservices:wservices-core-client:1.1.1] to [lib/wservices-core-client-1.1.1.jar]
+     [exec] [INFO] Copying artifact [jar:org.springframework.data:spring-data-mongodb:1.6.1.RELEASE] to [lib/spring-data-mongodb-1.6.1.RELEASE.jar]
+     [exec] [INFO] Copying artifact [jar:org.springframework:spring-tx:4.0.7.RELEASE] to [lib/spring-tx-4.0.7.RELEASE.jar]
+     [exec] [INFO] Copying artifact [jar:org.springframework:spring-context:4.0.7.RELEASE] to [lib/spring-context-4.0.7.RELEASE.jar]
+     [exec] [INFO] Copying artifact [jar:org.springframework:spring-aop:4.0.7.RELEASE] to [lib/spring-aop-4.0.7.RELEASE.jar]
+     [exec] [INFO] Copying artifact [jar:org.springframework:spring-beans:4.0.7.RELEASE] to [lib/spring-beans-4.0.7.RELEASE.jar]
+     [exec] [INFO] Copying artifact [jar:org.springframework:spring-core:4.0.7.RELEASE] to [lib/spring-core-4.0.7.RELEASE.jar]
+     [exec] [INFO] Copying artifact [jar:org.springframework:spring-expression:4.0.7.RELEASE] to [lib/spring-expression-4.0.7.RELEASE.jar]
+     [exec] [INFO] Copying artifact [jar:org.springframework.data:spring-data-commons:1.9.1.RELEASE] to [lib/spring-data-commons-1.9.1.RELEASE.jar]
+     [exec] [INFO] Copying artifact [jar:org.mongodb:mongo-java-driver:2.12.3] to [lib/mongo-java-driver-2.12.3.jar]
+     [exec] [INFO] Copying artifact [jar:org.slf4j:jcl-over-slf4j:1.7.7] to [lib/jcl-over-slf4j-1.7.7.jar]
+     [exec] [INFO] Copying artifact [jar:net.sf.dozer:dozer:5.4.0] to [lib/dozer-5.4.0.jar]
+     [exec] [INFO] Copying artifact [jar:org.slf4j:slf4j-log4j12:1.6.6] to [lib/slf4j-log4j12-1.6.6.jar]
+     [exec] [INFO] Copying artifact [jar:log4j:log4j:1.2.17] to [lib/log4j-1.2.17.jar]
+     [exec] [INFO] Copying artifact [jar:org.springframework.security:spring-security-ldap:3.2.5.RELEASE] to [lib/spring-security-ldap-3.2.5.RELEASE.jar]
+     [exec] [INFO] Copying artifact [jar:org.springframework.ldap:spring-ldap-core:1.3.2.RELEASE] to [lib/spring-ldap-core-1.3.2.RELEASE.jar]
+     [exec] [INFO] Copying artifact [jar:commons-lang:commons-lang:2.4] to [lib/commons-lang-2.4.jar]
+     [exec] [INFO] Copying artifact [jar:org.springframework.security:spring-security-core:3.2.5.RELEASE] to [lib/spring-security-core-3.2.5.RELEASE.jar]
+     [exec] [INFO] Copying artifact [jar:aopalliance:aopalliance:1.0] to [lib/aopalliance-1.0.jar]
+     [exec] [INFO] Copying artifact [jar:br.com.caelum.stella:caelum-stella-bean-validation:2.1.2] to [lib/caelum-stella-bean-validation-2.1.2.jar]
+     [exec] [INFO] Copying artifact [jar:br.com.caelum.stella:caelum-stella-core:2.1.2] to [lib/caelum-stella-core-2.1.2.jar]
+     [exec] [INFO] Copying artifact [jar:net.vidageek:mirror:1.5] to [lib/mirror-1.5.jar]
+     [exec] [INFO] Copying artifact [war:br.com.wservices:wservices-webservices:1.1.1] to [wservices-webservices-1.1.1.war]
+     [exec] [INFO] Copying artifact [war:br.com.wservices:wservices-clientForTest:1.1.1] to [wservices-clientForTest-1.1.1.war]
+     [exec] [INFO] Copy ear sources to D:\Martini\Java\workspace_jsf-cdi-ejb3\Sysmartek\wservices\wservices-ear\target\wservices-ear-1.1.1
+     [exec] [INFO] Could not find manifest file: D:\Martini\Java\workspace_jsf-cdi-ejb3\Sysmartek\wservices\wservices-ear\target\wservices-ear-1.1.1\META-INF\MANIFEST.MF - Generating one
+     [exec] [INFO] Building jar: D:\Martini\Java\workspace_jsf-cdi-ejb3\Sysmartek\wservices\wservices-ear\target\wservices-ear-1.1.1.ear
+     [exec] [INFO] 
+     [exec] [INFO] --- maven-ear-plugin:2.9.1:generate-application-xml (yomama) @ wservices-ear ---
+     [exec] [INFO] Generating application.xml
+     [exec] [INFO] 
+     [exec] [INFO] --- maven-ear-plugin:2.9.1:ear (yomama) @ wservices-ear ---
+     [exec] [INFO] Copy ear sources to D:\Martini\Java\workspace_jsf-cdi-ejb3\Sysmartek\wservices\wservices-ear\target\wservices-ear-1.1.1
+     [exec] [INFO] Could not find manifest file: D:\Martini\Java\workspace_jsf-cdi-ejb3\Sysmartek\wservices\wservices-ear\target\wservices-ear-1.1.1\META-INF\MANIFEST.MF - Generating one
+     [exec] [INFO] Building jar: D:\Martini\Java\workspace_jsf-cdi-ejb3\Sysmartek\wservices\wservices-ear\target\wservices-ear-1.1.1.ear
+     [exec] [INFO] 
+     [exec] [INFO] --- maven-checkstyle-plugin:2.13:check (test) @ wservices-ear ---
+     [exec] [INFO] 
+     [exec] [INFO] 
+     [exec] [INFO] --- maven-install-plugin:2.4:install (default-install) @ wservices-ear ---
+     [exec] [INFO] Installing D:\Martini\Java\workspace_jsf-cdi-ejb3\Sysmartek\wservices\wservices-ear\target\wservices-ear-1.1.1.ear to C:\Users\omartini\.m2\repository\br\com\wservices\wservices-ear\1.1.1\wservices-ear-1.1.1.ear
+     [exec] [INFO] Installing D:\Martini\Java\workspace_jsf-cdi-ejb3\Sysmartek\wservices\wservices-ear\pom.xml to C:\Users\omartini\.m2\repository\br\com\wservices\wservices-ear\1.1.1\wservices-ear-1.1.1.pom
+     [exec] [INFO] ------------------------------------------------------------------------
+     [exec] [INFO] Reactor Summary:
+     [exec] [INFO] 
+     [exec] [INFO] wservices .......................................... SUCCESS [  6.026 s]
+     [exec] [INFO] wservices-core ..................................... SUCCESS [ 13.232 s]
+     [exec] [INFO] wservices-core-client .............................. SUCCESS [ 11.916 s]
+     [exec] [INFO] wservices-webservices .............................. SUCCESS [ 14.434 s]
+     [exec] [INFO] wservices-clientForTest ............................ SUCCESS [  8.127 s]
+     [exec] [INFO] wservices-ear ...................................... SUCCESS [ 17.522 s]
+     [exec] [INFO] ------------------------------------------------------------------------
+     [exec] [INFO] BUILD SUCCESS
+     [exec] [INFO] ------------------------------------------------------------------------
+     [exec] [INFO] Total time: 01:12 min
+     [exec] [INFO] Finished at: 2016-02-21T20:06:27-03:00
+     [exec] [INFO] Final Memory: 49M/613M
+     [exec] [INFO] ------------------------------------------------------------------------
+
+eclipse:clean:
+
+mvn:
+     [exec] [INFO] Scanning for projects...
+     [exec] [INFO] ------------------------------------------------------------------------
+     [exec] [INFO] Reactor Build Order:
+     [exec] [INFO] 
+     [exec] [INFO] wservices
+     [exec] [INFO] wservices-core
+     [exec] [INFO] wservices-core-client
+     [exec] [INFO] wservices-webservices
+     [exec] [INFO] wservices-clientForTest
+     [exec] [INFO] wservices-ear
+     [exec] [WARNING] The POM for org.eclipse.m2e:lifecycle-mapping:jar:1.0.0 is missing, no dependency information available
+     [exec] [WARNING] Failed to retrieve plugin descriptor for org.eclipse.m2e:lifecycle-mapping:1.0.0: Plugin org.eclipse.m2e:lifecycle-mapping:1.0.0 or one of its dependencies could not be resolved: Failure to find org.eclipse.m2e:lifecycle-mapping:jar:1.0.0 in http://localhost:8081/nexus/content/groups/public/ was cached in the local repository, resolution will not be reattempted until the update interval of nexus has elapsed or updates are forced
+     [exec] [INFO]                                                                         
+     [exec] [INFO] ------------------------------------------------------------------------
+     [exec] [INFO] Building wservices 1.1.1
+     [exec] [INFO] ------------------------------------------------------------------------
+     [exec] [WARNING] The POM for org.eclipse.m2e:lifecycle-mapping:jar:1.0.0 is missing, no dependency information available
+     [exec] [WARNING] Failed to retrieve plugin descriptor for org.eclipse.m2e:lifecycle-mapping:1.0.0: Plugin org.eclipse.m2e:lifecycle-mapping:1.0.0 or one of its dependencies could not be resolved: Failure to find org.eclipse.m2e:lifecycle-mapping:jar:1.0.0 in http://localhost:8081/nexus/content/groups/public/ was cached in the local repository, resolution will not be reattempted until the update interval of nexus has elapsed or updates are forced
+     [exec] [INFO] 
+     [exec] [INFO] --- maven-eclipse-plugin:2.10:clean (default-cli) @ wservices ---
+     [exec] [INFO]                                                                         
+     [exec] [INFO] ------------------------------------------------------------------------
+     [exec] [INFO] Building wservices-core 1.1.1
+     [exec] [INFO] ------------------------------------------------------------------------
+     [exec] [WARNING] The POM for org.eclipse.m2e:lifecycle-mapping:jar:1.0.0 is missing, no dependency information available
+     [exec] [WARNING] Failed to retrieve plugin descriptor for org.eclipse.m2e:lifecycle-mapping:1.0.0: Plugin org.eclipse.m2e:lifecycle-mapping:1.0.0 or one of its dependencies could not be resolved: Failure to find org.eclipse.m2e:lifecycle-mapping:jar:1.0.0 in http://localhost:8081/nexus/content/groups/public/ was cached in the local repository, resolution will not be reattempted until the update interval of nexus has elapsed or updates are forced
+     [exec] [INFO] 
+     [exec] [INFO] --- maven-eclipse-plugin:2.10:clean (default-cli) @ wservices-core ---
+     [exec] [INFO] Deleting file: .project
+     [exec] [INFO] Deleting file: .classpath
+     [exec] [INFO] Deleting file: .wtpmodules
+     [exec] [INFO] Deleting directory: .settings
+     [exec] [INFO]                                                                         
+     [exec] [INFO] ------------------------------------------------------------------------
+     [exec] [INFO] Building wservices-core-client 1.1.1
+     [exec] [INFO] ------------------------------------------------------------------------
+     [exec] [WARNING] The POM for org.eclipse.m2e:lifecycle-mapping:jar:1.0.0 is missing, no dependency information available
+     [exec] [WARNING] Failed to retrieve plugin descriptor for org.eclipse.m2e:lifecycle-mapping:1.0.0: Plugin org.eclipse.m2e:lifecycle-mapping:1.0.0 or one of its dependencies could not be resolved: Failure to find org.eclipse.m2e:lifecycle-mapping:jar:1.0.0 in http://localhost:8081/nexus/content/groups/public/ was cached in the local repository, resolution will not be reattempted until the update interval of nexus has elapsed or updates are forced
+     [exec] [INFO] 
+     [exec] [INFO] --- maven-eclipse-plugin:2.10:clean (default-cli) @ wservices-core-client ---
+     [exec] [INFO] Deleting file: .project
+     [exec] [INFO] Deleting file: .classpath
+     [exec] [INFO] Deleting file: .wtpmodules
+     [exec] [INFO] Deleting directory: .settings
+     [exec] [INFO]                                                                         
+     [exec] [INFO] ------------------------------------------------------------------------
+     [exec] [INFO] Building wservices-webservices 1.1.1
+     [exec] [INFO] ------------------------------------------------------------------------
+     [exec] [WARNING] The POM for org.eclipse.m2e:lifecycle-mapping:jar:1.0.0 is missing, no dependency information available
+     [exec] [WARNING] Failed to retrieve plugin descriptor for org.eclipse.m2e:lifecycle-mapping:1.0.0: Plugin org.eclipse.m2e:lifecycle-mapping:1.0.0 or one of its dependencies could not be resolved: Failure to find org.eclipse.m2e:lifecycle-mapping:jar:1.0.0 in http://localhost:8081/nexus/content/groups/public/ was cached in the local repository, resolution will not be reattempted until the update interval of nexus has elapsed or updates are forced
+     [exec] [INFO] 
+     [exec] [INFO] --- maven-eclipse-plugin:2.10:clean (default-cli) @ wservices-webservices ---
+     [exec] [INFO] Deleting file: .project
+     [exec] [INFO] Deleting file: .classpath
+     [exec] [INFO] Deleting file: .wtpmodules
+     [exec] [INFO] Deleting directory: .settings
+     [exec] [INFO]                                                                         
+     [exec] [INFO] ------------------------------------------------------------------------
+     [exec] [INFO] Building wservices-clientForTest 1.1.1
+     [exec] [INFO] ------------------------------------------------------------------------
+     [exec] [WARNING] The POM for org.eclipse.m2e:lifecycle-mapping:jar:1.0.0 is missing, no dependency information available
+     [exec] [WARNING] Failed to retrieve plugin descriptor for org.eclipse.m2e:lifecycle-mapping:1.0.0: Plugin org.eclipse.m2e:lifecycle-mapping:1.0.0 or one of its dependencies could not be resolved: Failure to find org.eclipse.m2e:lifecycle-mapping:jar:1.0.0 in http://localhost:8081/nexus/content/groups/public/ was cached in the local repository, resolution will not be reattempted until the update interval of nexus has elapsed or updates are forced
+     [exec] [INFO] 
+     [exec] [INFO] --- maven-eclipse-plugin:2.10:clean (default-cli) @ wservices-clientForTest ---
+     [exec] [INFO] Deleting file: .project
+     [exec] [INFO] Deleting file: .classpath
+     [exec] [INFO] Deleting file: .wtpmodules
+     [exec] [INFO] Deleting directory: .settings
+     [exec] [INFO]                                                                         
+     [exec] [INFO] ------------------------------------------------------------------------
+     [exec] [INFO] Building wservices-ear 1.1.1
+     [exec] [INFO] ------------------------------------------------------------------------
+     [exec] [WARNING] The POM for org.eclipse.m2e:lifecycle-mapping:jar:1.0.0 is missing, no dependency information available
+     [exec] [WARNING] Failed to retrieve plugin descriptor for org.eclipse.m2e:lifecycle-mapping:1.0.0: Plugin org.eclipse.m2e:lifecycle-mapping:1.0.0 or one of its dependencies could not be resolved: Failure to find org.eclipse.m2e:lifecycle-mapping:jar:1.0.0 in http://localhost:8081/nexus/content/groups/public/ was cached in the local repository, resolution will not be reattempted until the update interval of nexus has elapsed or updates are forced
+     [exec] [INFO] 
+     [exec] [INFO] --- maven-eclipse-plugin:2.10:clean (default-cli) @ wservices-ear ---
+     [exec] [INFO] Deleting file: .project
+     [exec] [INFO] Deleting file: .classpath
+     [exec] [INFO] Deleting file: .wtpmodules
+     [exec] [INFO] Deleting directory: .settings
+     [exec] [INFO] ------------------------------------------------------------------------
+     [exec] [INFO] Reactor Summary:
+     [exec] [INFO] 
+     [exec] [INFO] wservices .......................................... SUCCESS [  1.927 s]
+     [exec] [INFO] wservices-core ..................................... SUCCESS [  0.243 s]
+     [exec] [INFO] wservices-core-client .............................. SUCCESS [  0.049 s]
+     [exec] [INFO] wservices-webservices .............................. SUCCESS [  0.050 s]
+     [exec] [INFO] wservices-clientForTest ............................ SUCCESS [  0.033 s]
+     [exec] [INFO] wservices-ear ...................................... SUCCESS [  0.056 s]
+     [exec] [INFO] ------------------------------------------------------------------------
+     [exec] [INFO] BUILD SUCCESS
+     [exec] [INFO] ------------------------------------------------------------------------
+     [exec] [INFO] Total time: 3.933 s
+     [exec] [INFO] Finished at: 2016-02-21T20:06:34-03:00
+     [exec] [INFO] Final Memory: 14M/155M
+     [exec] [INFO] ------------------------------------------------------------------------
+
+eclipse:eclipse:
+
+mvn:
+     [exec] [INFO] Scanning for projects...
+     [exec] [INFO] ------------------------------------------------------------------------
+     [exec] [INFO] Reactor Build Order:
+     [exec] [INFO] 
+     [exec] [INFO] wservices
+     [exec] [INFO] wservices-core
+     [exec] [INFO] wservices-core-client
+     [exec] [INFO] wservices-webservices
+     [exec] [INFO] wservices-clientForTest
+     [exec] [INFO] wservices-ear
+     [exec] [WARNING] The POM for org.eclipse.m2e:lifecycle-mapping:jar:1.0.0 is missing, no dependency information available
+     [exec] [WARNING] Failed to retrieve plugin descriptor for org.eclipse.m2e:lifecycle-mapping:1.0.0: Plugin org.eclipse.m2e:lifecycle-mapping:1.0.0 or one of its dependencies could not be resolved: Failure to find org.eclipse.m2e:lifecycle-mapping:jar:1.0.0 in http://localhost:8081/nexus/content/groups/public/ was cached in the local repository, resolution will not be reattempted until the update interval of nexus has elapsed or updates are forced
+     [exec] [INFO]                                                                         
+     [exec] [INFO] ------------------------------------------------------------------------
+     [exec] [INFO] Building wservices 1.1.1
+     [exec] [INFO] ------------------------------------------------------------------------
+     [exec] [WARNING] The POM for org.eclipse.m2e:lifecycle-mapping:jar:1.0.0 is missing, no dependency information available
+     [exec] [WARNING] Failed to retrieve plugin descriptor for org.eclipse.m2e:lifecycle-mapping:1.0.0: Plugin org.eclipse.m2e:lifecycle-mapping:1.0.0 or one of its dependencies could not be resolved: Failure to find org.eclipse.m2e:lifecycle-mapping:jar:1.0.0 in http://localhost:8081/nexus/content/groups/public/ was cached in the local repository, resolution will not be reattempted until the update interval of nexus has elapsed or updates are forced
+     [exec] [INFO] 
+     [exec] [INFO] >>> maven-eclipse-plugin:2.10:eclipse (default-cli) > generate-resources @ wservices >>>
+     [exec] [INFO] 
+     [exec] [INFO] <<< maven-eclipse-plugin:2.10:eclipse (default-cli) < generate-resources @ wservices <<<
+     [exec] [INFO] 
+     [exec] [INFO] --- maven-eclipse-plugin:2.10:eclipse (default-cli) @ wservices ---
+     [exec] [INFO] Not running eclipse plugin goal for pom project
+     [exec] [INFO] Using Eclipse Workspace: D:\Martini\Java\workspace_jsf-cdi-ejb3\Sysmartek\wservices\.
+     [exec] [INFO] Adding default classpath container: org.eclipse.jdt.launching.JRE_CONTAINER
+     [exec] [INFO]                                                                         
+     [exec] [INFO] ------------------------------------------------------------------------
+     [exec] [INFO] Building wservices-core 1.1.1
+     [exec] [INFO] ------------------------------------------------------------------------
+     [exec] [WARNING] The POM for org.eclipse.m2e:lifecycle-mapping:jar:1.0.0 is missing, no dependency information available
+     [exec] [WARNING] Failed to retrieve plugin descriptor for org.eclipse.m2e:lifecycle-mapping:1.0.0: Plugin org.eclipse.m2e:lifecycle-mapping:1.0.0 or one of its dependencies could not be resolved: Failure to find org.eclipse.m2e:lifecycle-mapping:jar:1.0.0 in http://localhost:8081/nexus/content/groups/public/ was cached in the local repository, resolution will not be reattempted until the update interval of nexus has elapsed or updates are forced
+     [exec] [INFO] 
+     [exec] [INFO] >>> maven-eclipse-plugin:2.10:eclipse (default-cli) > generate-resources @ wservices-core >>>
+     [exec] [INFO] 
+     [exec] [INFO] --- apt-maven-plugin:1.1.3:process (default) @ wservices-core ---
+     [exec] [INFO] 
+     [exec] [INFO] <<< maven-eclipse-plugin:2.10:eclipse (default-cli) < generate-resources @ wservices-core <<<
+     [exec] [INFO] 
+     [exec] [INFO] --- maven-eclipse-plugin:2.10:eclipse (default-cli) @ wservices-core ---
+     [exec] [INFO] Using Eclipse Workspace: D:\Martini\Java\workspace_jsf-cdi-ejb3\Sysmartek\wservices\.
+     [exec] [INFO] Adding default classpath container: org.eclipse.jdt.launching.JRE_CONTAINER
+     [exec] [INFO] Wrote settings to D:\Martini\Java\workspace_jsf-cdi-ejb3\Sysmartek\wservices\wservices-core\.settings\org.eclipse.jdt.core.prefs
+     [exec] [INFO] Wrote Eclipse project for "wservices-core" to D:\Martini\Java\workspace_jsf-cdi-ejb3\Sysmartek\wservices\wservices-core.
+     [exec] [INFO] 
+     [exec] [INFO]                                                                         
+     [exec] [INFO] ------------------------------------------------------------------------
+     [exec] [INFO] Building wservices-core-client 1.1.1
+     [exec] [INFO] ------------------------------------------------------------------------
+     [exec] [WARNING] The POM for org.eclipse.m2e:lifecycle-mapping:jar:1.0.0 is missing, no dependency information available
+     [exec] [WARNING] Failed to retrieve plugin descriptor for org.eclipse.m2e:lifecycle-mapping:1.0.0: Plugin org.eclipse.m2e:lifecycle-mapping:1.0.0 or one of its dependencies could not be resolved: Failure to find org.eclipse.m2e:lifecycle-mapping:jar:1.0.0 in http://localhost:8081/nexus/content/groups/public/ was cached in the local repository, resolution will not be reattempted until the update interval of nexus has elapsed or updates are forced
+     [exec] [INFO] 
+     [exec] [INFO] >>> maven-eclipse-plugin:2.10:eclipse (default-cli) > generate-resources @ wservices-core-client >>>
+     [exec] [INFO] 
+     [exec] [INFO] --- apt-maven-plugin:1.1.3:process (default) @ wservices-core-client ---
+     [exec] [INFO] 
+     [exec] [INFO] <<< maven-eclipse-plugin:2.10:eclipse (default-cli) < generate-resources @ wservices-core-client <<<
+     [exec] [INFO] 
+     [exec] [INFO] --- maven-eclipse-plugin:2.10:eclipse (default-cli) @ wservices-core-client ---
+     [exec] [INFO] Using Eclipse Workspace: D:\Martini\Java\workspace_jsf-cdi-ejb3\Sysmartek\wservices\.
+     [exec] [INFO] Adding default classpath container: org.eclipse.jdt.launching.JRE_CONTAINER
+     [exec] [INFO] Wrote settings to D:\Martini\Java\workspace_jsf-cdi-ejb3\Sysmartek\wservices\wservices-core-client\.settings\org.eclipse.jdt.core.prefs
+     [exec] [INFO] Wrote Eclipse project for "wservices-core-client" to D:\Martini\Java\workspace_jsf-cdi-ejb3\Sysmartek\wservices\wservices-core-client.
+     [exec] [INFO] 
+     [exec] [INFO]                                                                         
+     [exec] [INFO] ------------------------------------------------------------------------
+     [exec] [INFO] Building wservices-webservices 1.1.1
+     [exec] [INFO] ------------------------------------------------------------------------
+     [exec] [WARNING] The POM for org.eclipse.m2e:lifecycle-mapping:jar:1.0.0 is missing, no dependency information available
+     [exec] [WARNING] Failed to retrieve plugin descriptor for org.eclipse.m2e:lifecycle-mapping:1.0.0: Plugin org.eclipse.m2e:lifecycle-mapping:1.0.0 or one of its dependencies could not be resolved: Failure to find org.eclipse.m2e:lifecycle-mapping:jar:1.0.0 in http://localhost:8081/nexus/content/groups/public/ was cached in the local repository, resolution will not be reattempted until the update interval of nexus has elapsed or updates are forced
+     [exec] [INFO] 
+     [exec] [INFO] >>> maven-eclipse-plugin:2.10:eclipse (default-cli) > generate-resources @ wservices-webservices >>>
+     [exec] [INFO] 
+     [exec] [INFO] <<< maven-eclipse-plugin:2.10:eclipse (default-cli) < generate-resources @ wservices-webservices <<<
+     [exec] [INFO] 
+     [exec] [INFO] --- maven-eclipse-plugin:2.10:eclipse (default-cli) @ wservices-webservices ---
+     [exec] [INFO] Using Eclipse Workspace: D:\Martini\Java\workspace_jsf-cdi-ejb3\Sysmartek\wservices\.
+     [exec] [INFO] Adding default classpath container: org.eclipse.jdt.launching.JRE_CONTAINER
+     [exec] [INFO] Wrote settings to D:\Martini\Java\workspace_jsf-cdi-ejb3\Sysmartek\wservices\wservices-webservices\.settings\org.eclipse.jdt.core.prefs
+     [exec] [INFO] Wrote Eclipse project for "wservices-webservices" to D:\Martini\Java\workspace_jsf-cdi-ejb3\Sysmartek\wservices\wservices-webservices.
+     [exec] [INFO] 
+     [exec] [INFO]                                                                         
+     [exec] [INFO] ------------------------------------------------------------------------
+     [exec] [INFO] Building wservices-clientForTest 1.1.1
+     [exec] [INFO] ------------------------------------------------------------------------
+     [exec] [WARNING] The POM for org.eclipse.m2e:lifecycle-mapping:jar:1.0.0 is missing, no dependency information available
+     [exec] [WARNING] Failed to retrieve plugin descriptor for org.eclipse.m2e:lifecycle-mapping:1.0.0: Plugin org.eclipse.m2e:lifecycle-mapping:1.0.0 or one of its dependencies could not be resolved: Failure to find org.eclipse.m2e:lifecycle-mapping:jar:1.0.0 in http://localhost:8081/nexus/content/groups/public/ was cached in the local repository, resolution will not be reattempted until the update interval of nexus has elapsed or updates are forced
+     [exec] [INFO] 
+     [exec] [INFO] >>> maven-eclipse-plugin:2.10:eclipse (default-cli) > generate-resources @ wservices-clientForTest >>>
+     [exec] [INFO] 
+     [exec] [INFO] --- apt-maven-plugin:1.1.3:process (default) @ wservices-clientForTest ---
+     [exec] D:\Martini\Java\workspace_jsf-cdi-ejb3\Sysmartek\wservices\wservices-clientForTest\src\main\java\com\martini\enterprise\servlet\PassivationServlet.java:18: error: unmappable character for encoding UTF-8
+     [exec]  * That?s it. Now to be convinced that the session beans we actually serialized to the disc you can go to
+     [exec]        ^
+     [exec] [INFO] 
+     [exec] [INFO] <<< maven-eclipse-plugin:2.10:eclipse (default-cli) < generate-resources @ wservices-clientForTest <<<
+     [exec] [INFO] 
+     [exec] [INFO] --- maven-eclipse-plugin:2.10:eclipse (default-cli) @ wservices-clientForTest ---
+     [exec] [INFO] Using Eclipse Workspace: D:\Martini\Java\workspace_jsf-cdi-ejb3\Sysmartek\wservices\.
+     [exec] [INFO] Adding default classpath container: org.eclipse.jdt.launching.JRE_CONTAINER
+     [exec] [INFO] Wrote settings to D:\Martini\Java\workspace_jsf-cdi-ejb3\Sysmartek\wservices\wservices-clientForTest\.settings\org.eclipse.jdt.core.prefs
+     [exec] [INFO] Wrote Eclipse project for "wservices-clientForTest" to D:\Martini\Java\workspace_jsf-cdi-ejb3\Sysmartek\wservices\wservices-clientForTest.
+     [exec] [INFO] 
+     [exec] [INFO]                                                                         
+     [exec] [INFO] ------------------------------------------------------------------------
+     [exec] [INFO] Building wservices-ear 1.1.1
+     [exec] [INFO] ------------------------------------------------------------------------
+     [exec] [WARNING] The POM for org.eclipse.m2e:lifecycle-mapping:jar:1.0.0 is missing, no dependency information available
+     [exec] [WARNING] Failed to retrieve plugin descriptor for org.eclipse.m2e:lifecycle-mapping:1.0.0: Plugin org.eclipse.m2e:lifecycle-mapping:1.0.0 or one of its dependencies could not be resolved: Failure to find org.eclipse.m2e:lifecycle-mapping:jar:1.0.0 in http://localhost:8081/nexus/content/groups/public/ was cached in the local repository, resolution will not be reattempted until the update interval of nexus has elapsed or updates are forced
+     [exec] [INFO] 
+     [exec] [INFO] >>> maven-eclipse-plugin:2.10:eclipse (default-cli) > generate-resources @ wservices-ear >>>
+     [exec] [INFO] 
+     [exec] [INFO] --- maven-ear-plugin:2.9.1:generate-application-xml (default-generate-application-xml) @ wservices-ear ---
+     [exec] [INFO] Generating application.xml
+     [exec] [INFO] 
+     [exec] [INFO] <<< maven-eclipse-plugin:2.10:eclipse (default-cli) < generate-resources @ wservices-ear <<<
+     [exec] [INFO] 
+     [exec] [INFO] --- maven-eclipse-plugin:2.10:eclipse (default-cli) @ wservices-ear ---
+     [exec] [INFO] Using Eclipse Workspace: D:\Martini\Java\workspace_jsf-cdi-ejb3\Sysmartek\wservices\.
+     [exec] [INFO] Adding default classpath container: org.eclipse.jdt.launching.JRE_CONTAINER
+     [exec] [INFO] Wrote settings to D:\Martini\Java\workspace_jsf-cdi-ejb3\Sysmartek\wservices\wservices-ear\.settings\org.eclipse.jdt.core.prefs
+     [exec] [INFO] Wrote Eclipse project for "wservices-ear" to D:\Martini\Java\workspace_jsf-cdi-ejb3\Sysmartek\wservices\wservices-ear.
+     [exec] [INFO] 
+     [exec] [INFO] ------------------------------------------------------------------------
+     [exec] [INFO] Reactor Summary:
+     [exec] [INFO] 
+     [exec] [INFO] wservices .......................................... SUCCESS [  0.712 s]
+     [exec] [INFO] wservices-core ..................................... SUCCESS [  9.394 s]
+     [exec] [INFO] wservices-core-client .............................. SUCCESS [  2.405 s]
+     [exec] [INFO] wservices-webservices .............................. SUCCESS [  0.356 s]
+     [exec] [INFO] wservices-clientForTest ............................ SUCCESS [  1.329 s]
+     [exec] [INFO] wservices-ear ...................................... SUCCESS [  1.343 s]
+     [exec] [INFO] ------------------------------------------------------------------------
+     [exec] [INFO] BUILD SUCCESS
+     [exec] [INFO] ------------------------------------------------------------------------
+     [exec] [INFO] Total time: 16.499 s
+     [exec] [INFO] Finished at: 2016-02-21T20:06:55-03:00
+     [exec] [INFO] Final Memory: 35M/281M
+     [exec] [INFO] ------------------------------------------------------------------------
+
+BUILD SUCCESSFUL

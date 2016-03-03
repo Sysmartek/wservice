@@ -1,7 +1,17 @@
-
 <project name="wservices" default="remake-all">
-	<record name="build.log" />
+	<!--record name="build.log" /-->
 
+	  <tstamp>
+		<format property="timestamp" pattern="yyyy-MM-dd_HH-mm-ss"/>
+	  </tstamp>
+	  <property name="build.log.dir" location="${basedir}/buildlogs"/>
+	  <mkdir dir="${build.log.dir}"/>
+	  <property name="build.log.filename" value="build_${timestamp}.log"/>
+	  <!--record name="${build.log.dir}/${build.log.filename}" loglevel="verbose" append="false"/-->
+	  <record name="${build.log.dir}/${build.log.filename}" append="false"/>
+	  <echo message="Build logged to ${build.log.filename}"/>
+	
+	
 	<property environment="env"/>
 	<property file="build.properties"/>
 	
@@ -25,14 +35,29 @@
 	<target name="remake-all">
 		<antcall target="clean"/>
 		<antcall target="install"/>
-		<antcall target="eclipse:clean"/>
-		<antcall target="eclipse:eclipse"/>
+<!-- 		<antcall target="eclipse:clean"/> -->
+<!-- 		<antcall target="eclipse:eclipse"/> -->
 	</target>
 	
 	<target name="install">
 		<antcall target="mvn">
 				<param name="mvn.command" value="install"/>
 		</antcall>
+	</target>
+
+	<target name="test">
+		<exec executable="${env.MAVEN_HOME}/bin/mvn.bat">
+			<arg value="install"/>
+			<arg value="-Dmaven.test.skip=false"/>
+		</exec>
+	</target>
+	
+	
+	<target name="integration-test">
+		<exec executable="${env.MAVEN_HOME}/bin/mvn.bat">
+			<arg value="integration-test"/>
+			<arg value="-Dmaven.test.skip=false"/>
+		</exec>
 	</target>
 	
 	<target name="install.POWER">
@@ -69,7 +94,13 @@
 			<arg value="-Dmaven.test.skip=true"/>
 		</exec>
 	</target>
-
+	
+	<target name="mvnTest">
+		<exec executable="${env.MAVEN_HOME}/bin/mvn.bat">
+			<arg value="-Dmaven.test.skip=false"/>
+		</exec>
+	</target>
+	
 	<target name="depgraph">
 		<exec executable="${env.MAVEN_HOME}/bin/mvn.bat">
 			<arg value="install"/>
@@ -96,18 +127,7 @@
 			<arg value="-Ddepgraph.ext=svg"/>
 		</exec>
 	</target>
-
 	
-	<target name="init">
-	  <tstamp>
-		<format property="timestamp" pattern="yyyy-MM-dd_HH-mm-ss"/>
-	  </tstamp>
-	  <property name="build.log.dir" location="${basedir}/buildlogs"/>
-	  <mkdir dir="${build.log.dir}"/>
-	  <property name="build.log.filename" value="build_${timestamp}.log"/>
-	  <record name="${build.log.dir}/${build.log.filename}" 
- 		loglevel="verbose" append="false"/>
-	  <echo message="Build logged to ${build.log.filename}"/>
-	</target>
+		
+	
 </project>
-

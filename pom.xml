@@ -10,9 +10,8 @@
 
 	<modules>
 		<module>wservices-core</module>
-		<module>wservices-core-client</module>
-		<module>wservices-webservices</module>
-		<module>wservices-clientForTest</module>
+		<!-- <module>wservices-core-client</module> -->
+		<!-- <module>wservices-webservices</module> -->
 		<module>wservices-clientTest</module>
 		<module>wservices-ear</module>
 	</modules>
@@ -29,7 +28,9 @@
 		<junit-dep>4.11</junit-dep>
 
 		<!-- Architecture Web an J2EE -->
-		<javax.servlet-api>3.0.1</javax.servlet-api>
+		<jsp-api>2.1</jsp-api>
+		<servlet-api>3.0.1</servlet-api>
+
 		<javax.inject>1</javax.inject>
 		<javax-ejb-api>3.2</javax-ejb-api>
 		<tomee-embedded>1.7.1</tomee-embedded>
@@ -39,7 +40,6 @@
 		<jsf-api>2.1.11</jsf-api>
 		<jsf-impl>2.1.11</jsf-impl>
 		<jstl>1.2</jstl>
-		<jsp-api>2.1</jsp-api>
 
 		<!-- Persistence / Data Manipulation -->
 		<persistence-api>1.0.2</persistence-api>
@@ -101,6 +101,7 @@
 				<groupId>br.com.sysmartek</groupId>
 				<artifactId>sysmartek-framework</artifactId>
 				<version>${sysmartek-framework}</version>
+				<scope>compile</scope>
 			</dependency>
 			<!-- Projects Dependency -->
 
@@ -201,18 +202,18 @@
 				<artifactId>omnifaces</artifactId>
 				<version>${omnifaces}</version>
 			</dependency>
-			<dependency>
-				<groupId>javax.servlet.jsp</groupId>
-				<artifactId>jsp-api</artifactId>
-				<version>${jsp-api}</version>
-				<scope>provided</scope>
-			</dependency>
-			<dependency>
-				<groupId>javax.servlet</groupId>
-				<artifactId>javax.servlet-api</artifactId>
-				<version>${javax.servlet-api}</version>
-				<scope>provided</scope>
-			</dependency>
+			<!-- <dependency> -->
+			<!-- <groupId>javax.servlet.jsp</groupId> -->
+			<!-- <artifactId>jsp-api</artifactId> -->
+			<!-- <version>${jsp-api}</version> -->
+			<!-- <scope>provided</scope> -->
+			<!-- </dependency> -->
+			<!-- <dependency> -->
+			<!-- <groupId>javax.servlet</groupId> -->
+			<!-- <artifactId>javax.servlet-api</artifactId> -->
+			<!-- <version>${servlet-api}</version> -->
+			<!-- <scope>provided</scope> -->
+			<!-- </dependency> -->
 			<dependency>
 				<groupId>javax.servlet</groupId>
 				<artifactId>jstl</artifactId>
@@ -473,14 +474,18 @@
 		<!-- </dependency> -->
 
 
-		<!-- <dependency> -->
-		<!-- <groupId>javax.servlet</groupId> -->
-		<!-- <artifactId>javax.servlet-api</artifactId> -->
-		<!-- <version>${javax-servlet-api}</version> -->
-		<!-- <scope>provided</scope> -->
-		<!-- </dependency> -->
-
-
+		<dependency>
+			<groupId>javax.servlet.jsp</groupId>
+			<artifactId>jsp-api</artifactId>
+			<version>${jsp-api}</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet-api</artifactId>
+			<version>${servlet-api}</version>
+			<scope>provided</scope>
+		</dependency>
 	</dependencies>
 
 	<scm>

@@ -14,17 +14,17 @@
 	<dependencies>
 
 		<!-- Projects Dependency -->
-<!-- 		<dependency> -->
-<!-- 			<groupId>br.com.sysmartek</groupId> -->
-<!-- 			<artifactId>sysmartek-framework</artifactId> -->
-<!-- 		</dependency> -->
+		<!-- <dependency> -->
+		<!-- <groupId>br.com.sysmartek</groupId> -->
+		<!-- <artifactId>sysmartek-framework</artifactId> -->
+		<!-- </dependency> -->
 		<dependency>
 			<groupId>br.com.wservices</groupId>
 			<artifactId>wservices-core</artifactId>
 			<version>${project.parent.version}</version>
 		</dependency>
 		<!-- Projects Dependency -->
-		
+
 		<dependency>
 			<groupId>org.jboss.spec</groupId>
 			<artifactId>jboss-javaee-6.0</artifactId>
@@ -39,25 +39,25 @@
 			<artifactId>junit</artifactId>
 		</dependency>
 
-<!-- 		<dependency> -->
-<!-- 			<groupId>org.springframework.data</groupId> -->
-<!-- 			<artifactId>spring-data-mongodb</artifactId> -->
-<!-- 		</dependency> -->
+		<!-- <dependency> -->
+		<!-- <groupId>org.springframework.data</groupId> -->
+		<!-- <artifactId>spring-data-mongodb</artifactId> -->
+		<!-- </dependency> -->
 
-<!-- 		<dependency> -->
-<!-- 			<groupId>net.sf.dozer</groupId> -->
-<!-- 			<artifactId>dozer</artifactId> -->
-<!-- 		</dependency> -->
+		<!-- <dependency> -->
+		<!-- <groupId>net.sf.dozer</groupId> -->
+		<!-- <artifactId>dozer</artifactId> -->
+		<!-- </dependency> -->
 
-<!-- 		<dependency> -->
-<!-- 			<groupId>com.mysema.querydsl</groupId> -->
-<!-- 			<artifactId>querydsl-apt</artifactId> -->
-<!-- 		</dependency> -->
+		<!-- <dependency> -->
+		<!-- <groupId>com.mysema.querydsl</groupId> -->
+		<!-- <artifactId>querydsl-apt</artifactId> -->
+		<!-- </dependency> -->
 
-<!-- 		<dependency> -->
-<!-- 			<groupId>com.mysema.querydsl</groupId> -->
-<!-- 			<artifactId>querydsl-jpa</artifactId> -->
-<!-- 		</dependency> -->
+		<!-- <dependency> -->
+		<!-- <groupId>com.mysema.querydsl</groupId> -->
+		<!-- <artifactId>querydsl-jpa</artifactId> -->
+		<!-- </dependency> -->
 
 		<dependency>
 			<groupId>javax</groupId>
@@ -68,31 +68,16 @@
 		<!-- <artifactId>javaee-api</artifactId> -->
 		<!-- </dependency> -->
 
-		<dependency>
-			<groupId>javax.servlet.jsp</groupId>
-			<artifactId>jsp-api</artifactId>
-			<version>${jsp-api}</version><!--$NO-MVN-MAN-VER$ -->
-			<scope>provided</scope>
-		</dependency>
-		<dependency>
-			<groupId>javax.servlet</groupId>
-			<artifactId>javax.servlet-api</artifactId>
-			<version>${javax.servlet-api}</version><!--$NO-MVN-MAN-VER$ -->
-			<scope>provided</scope>
-		</dependency>
 
+		<!-- <dependency> -->
+		<!-- <groupId>org.springframework.security</groupId> -->
+		<!-- <artifactId>spring-security-ldap</artifactId> -->
+		<!-- </dependency> -->
 
-
-
-<!-- 		<dependency> -->
-<!-- 			<groupId>org.springframework.security</groupId> -->
-<!-- 			<artifactId>spring-security-ldap</artifactId> -->
-<!-- 		</dependency> -->
-
-<!-- 		<dependency> -->
-<!-- 			<groupId>br.com.caelum.stella</groupId> -->
-<!-- 			<artifactId>caelum-stella-bean-validation</artifactId> -->
-<!-- 		</dependency> -->
+		<!-- <dependency> -->
+		<!-- <groupId>br.com.caelum.stella</groupId> -->
+		<!-- <artifactId>caelum-stella-bean-validation</artifactId> -->
+		<!-- </dependency> -->
 	</dependencies>
 	<build>
 		<resources>

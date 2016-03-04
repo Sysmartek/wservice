@@ -18,8 +18,8 @@
 
 
 	<properties>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<sysmartek-framework>1.1.2-RELEASE</sysmartek-framework>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
 		<!-- Unit Testing and Code Check -->
 		<junit>4.11</junit>

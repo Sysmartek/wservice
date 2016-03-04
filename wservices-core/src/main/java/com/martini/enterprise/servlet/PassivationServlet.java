@@ -15,7 +15,7 @@ import com.martini.enterprise.ejb.property.PropertyObject;
  * Example of usage Made of Osvaldo Martini
  * http://localhost:8080/wservices-client/PassivationServlet?count=100
  * http://localhost:8080/wservices-client/PassivationServlet?activate=51
- * That’s it. Now to be convinced that the session beans we actually serialized to the disc you can go to
+ * That it. Now to be convinced that the session beans we actually serialized to the disc you can go to
  * Glassfish_installation_folder/glassfish4/glassfish/domains/domain1/session-store
  * Depends on the server
  * 

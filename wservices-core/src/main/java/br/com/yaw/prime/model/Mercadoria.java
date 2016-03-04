@@ -8,11 +8,11 @@ import javax.persistence.Table;
 
 
 /**
- * Classe de modelo que representa uma mercadoria. A mercadoria é um objeto persistido, por isso utilizamos o nome entidade.
+ * Classe de modelo que representa uma mercadoria. A mercadoria EH um objeto persistido, por isso utilizamos o nome entidade.
  * 
- * <p>As funcionalidades desse sistema demonstração são concentradas no cadastro (CRUD) de mercadorias.</p>
+ * <p>As funcionalidades desse sistema DEMONSTRACAO SAO concentradas no cadastro (CRUD) de mercadorias.</p>
  * 
- * <p>Essa entidade é mapeada com anotações da <code>JPA</code>, o mecanismo padrão Java para resolver o Mapeamento Objeto Relacional (<code>ORM</code>).</p>
+ * <p>Essa entidade EH mapeada com ANOTACOES da <code>JPA</code>, o mecanismo PADRAO Java para resolver o Mapeamento Objeto Relacional (<code>ORM</code>).</p>
  * 
  * @author Osvaldo Martini
  */

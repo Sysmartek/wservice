@@ -17,15 +17,15 @@ import br.com.yaw.prime.model.Mercadoria;
 import br.com.yaw.prime.service.MercadoriaService;
 
 /**
- * Componente responsável por integrar o front-end (páginas JSF) c/ camada de serviço (EJB), para resolver 
+ * Componente RESPONSAVEL por integrar o front-end (PAGINA JSF) c/ camada de SERVICO (EJB), para resolver 
  * o cadastro de <code>Mercadoria</code>.
  * 
- * <p>Trata-se de um <code>Managed Bean</code>, ou seja, as instâncias dessa classe são controladas pelo <code>JSF</code>. 
- * Um objeto é criado ao carregar alguma página do cadastro (Lista / Novo / Editar). Enquanto a página permanecer aberta no browser, 
+ * <p>Trata-se de um <code>Managed Bean</code>, ou seja, as INSTANCIAS dessa classe SAO controladas pelo <code>JSF</code>. 
+ * Um objeto E criado ao carregar alguma PAGINA do cadastro (Lista / Novo / Editar). Enquanto a PAGINA permanecer aberta no browser, 
  * o objeto <code>MercadoriaMB</code> permanece no servidor.</p>
  * 
  * <p>Esse componente atua com um papel parecido com o <code>Controller</code> de outros frameworks <code>MVC</code>, 
- * ele resolve o fluxo de navegação e liga os componentes visuais com os dados.</p>
+ * ele resolve o fluxo de NAVEGACAO e liga os componentes visuais com os dados.</p>
  * 
  * @author Adaptado Osvaldo Martini
  */
@@ -50,7 +50,7 @@ public class MercadoriaMB implements Serializable {
 	private List<Mercadoria> mercadorias;
 	
 	/**
-	 * Referência para a mercadoria utiliza na inclusão (nova) ou edição.
+	 * REFERENCIA para a mercadoria utiliza na INCLUSAO (nova) ou EDICAO.
 	 */
 	private Mercadoria mercadoria;
 	

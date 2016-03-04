@@ -8,9 +8,9 @@ import javax.persistence.PersistenceContextType;
 import br.com.yaw.prime.model.Mercadoria;
 
 /**
- * Componente EJB que define as operações de negócio da entidade <code>Mercadoria</code>.
+ * Componente EJB que define as OPERACOES de NEGOCIO da entidade <code>Mercadoria</code>.
  * 
- * <p>Herda <code>AbstractPersistence</code> para resolver as operações básicas da persistência de <code>Mercadoria</code>.</p>
+ * <p>Herda <code>AbstractPersistence</code> para resolver as OPERACOES básicas da PERSISTENCIA de <code>Mercadoria</code>.</p>
  * 
  * @author Osvaldo Martini
  */
@@ -18,7 +18,7 @@ import br.com.yaw.prime.model.Mercadoria;
 public class MercadoriaService extends AbstractPersistence<Mercadoria, Long>{
 
 	/**
-	 * O container injeta a referência para o <code>EntityManager</code>.
+	 * O container injeta a REFERENCIA para o <code>EntityManager</code>.
 	 */
 	@PersistenceContext(unitName = "appCDIUnit", type = PersistenceContextType.EXTENDED)
 	private EntityManager em;

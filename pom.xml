@@ -18,6 +18,7 @@
 
 
 	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<sysmartek-framework>1.1.2-RELEASE</sysmartek-framework>
 
 		<!-- Unit Testing and Code Check -->

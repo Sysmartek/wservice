@@ -1,0 +1,128 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<artifactId>wservices-ear</artifactId>
+	<packaging>ear</packaging>
+	<name>wservices-ear</name>
+	<parent>
+		<groupId>br.com.wservices</groupId>
+		<artifactId>wservices</artifactId>
+		<version>1.1.1</version>
+	</parent>
+	<dependencies>
+		<!-- PROJETOS -->
+		<dependency>
+			<groupId>br.com.wservices</groupId>
+			<artifactId>wservices-core</artifactId>
+			<version>${project.parent.version}</version>
+			<type>ejb</type>
+		</dependency>
+<!-- 		<dependency> -->
+<!-- 			<groupId>br.com.wservices</groupId> -->
+<!-- 			<artifactId>wservices-core-client</artifactId> -->
+<!-- 			<version>${project.parent.version}</version> -->
+<!-- 		</dependency> -->
+		<!-- <dependency> -->
+		<!-- <groupId>br.com.wservices</groupId> -->
+		<!-- <artifactId>wservices-webservices</artifactId> -->
+		<!-- <version>${project.parent.version}</version> -->
+		<!-- <type>war</type> -->
+		<!-- </dependency> -->
+<!-- 		<dependency> -->
+<!-- 			<groupId>br.com.wservices</groupId> -->
+<!-- 			<artifactId>wservices-clientForTest</artifactId> -->
+<!-- 			<version>${project.parent.version}</version> -->
+<!-- 			<type>war</type> -->
+<!-- 		</dependency> -->
+		<dependency>
+			<groupId>br.com.wservices</groupId>
+			<artifactId>wservices-clientTest</artifactId>
+			<version>${project.parent.version}</version>
+			<type>war</type>
+		</dependency>
+		<!-- PROJETOS -->
+		<!-- BIBLIOTECAS -->
+
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+		</dependency>
+	</dependencies>
+	<build>
+		<resources>
+			<resource>
+				<directory>src/main/resources</directory>
+			</resource>
+		</resources>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-clean-plugin</artifactId>
+				<version>2.4.1</version>
+				<configuration>
+					<filesets>
+						<fileset>
+							<directory>war</directory>
+							<includes>
+								<include>**/*</include>
+							</includes>
+							<followSymlinks>false</followSymlinks>
+						</fileset>
+						<fileset>
+							<directory>${basedir}</directory>
+							<includes>
+								<include>**/bin/**</include>
+							</includes>
+							<followSymlinks>false</followSymlinks>
+						</fileset>
+					</filesets>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.2</version>
+				<configuration>
+					<source>1.8</source>
+					<target>1.8</target>
+				</configuration>
+			</plugin>
+			<plugin>
+				<artifactId>maven-ear-plugin</artifactId>
+				<version>2.9.1</version>
+				<configuration>
+					<archive>
+						<manifest>
+							<addClasspath>true</addClasspath>
+						</manifest>
+					</archive>
+					<defaultLibBundleDir>lib/</defaultLibBundleDir>
+				</configuration>
+				<executions>
+					<execution>
+						<id>yomama</id>
+						<phase>package</phase>
+						<goals>
+							<goal>generate-application-xml</goal>
+							<goal>ear</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+
+	<distributionManagement>
+		<repository>
+			<id>releases</id>
+			<name>Releases</name>
+			<url>http://localhost:8081/nexus/content/repositories/releases/</url>
+		</repository>
+		<snapshotRepository>
+			<id>snapshots</id>
+			<name>Snapshots</name>
+			<url>http://localhost:8081/nexus/content/repositories/snapshots/</url>
+		</snapshotRepository>
+	</distributionManagement>
+
+</project>

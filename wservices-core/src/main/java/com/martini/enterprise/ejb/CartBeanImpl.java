@@ -23,7 +23,7 @@ import com.martini.enterprise.ejb.property.PropertyObject;
 import com.martini.utils.Utils;
 import com.tutorialspoint.model.ProductTest;
 
-//Resurge esse no casod e confusáo KKK
+//Resurge esse no casod e confusao KKK
 //MUITO BOM PARA ANALILSAR A MIGRACAO
 //import br.com.wservices.gpv.faturamento.domain.entity.Product;
 

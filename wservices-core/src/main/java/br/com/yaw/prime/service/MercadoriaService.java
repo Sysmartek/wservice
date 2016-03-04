@@ -10,7 +10,7 @@ import br.com.yaw.prime.model.Mercadoria;
 /**
  * Componente EJB que define as OPERACOES de NEGOCIO da entidade <code>Mercadoria</code>.
  * 
- * <p>Herda <code>AbstractPersistence</code> para resolver as OPERACOES básicas da PERSISTENCIA de <code>Mercadoria</code>.</p>
+ * <p>Herda <code>AbstractPersistence</code> para resolver as OPERACOES basicas da PERSISTENCIA de <code>Mercadoria</code>.</p>
  * 
  * @author Osvaldo Martini
  */

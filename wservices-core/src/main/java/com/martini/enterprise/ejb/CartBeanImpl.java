@@ -32,7 +32,7 @@ import com.tutorialspoint.model.ProductTest;
 //@Stateless(mappedName = CidadeRepositoryRemote.MAPPED_NAME)
 
 //@Remote(CartRemote.class)
-@StatefulTimeout(unit = TimeUnit.SECONDS, value = 30)
+//@StatefulTimeout(unit = TimeUnit.SECONDS, value = 30)
 @Stateful(name = CartRemote.MAPPED_NAME, mappedName = CartRemote.MAPPED_NAME)
 public class CartBeanImpl implements CartRemote {
 	

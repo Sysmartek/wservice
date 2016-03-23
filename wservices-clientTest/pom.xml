@@ -6,6 +6,7 @@
 	<artifactId>wservices-clientTest</artifactId>
 	<name>wservices-clientTest</name>
 	<url>http://maven.apache.org</url>
+	<packaging>war</packaging>
 	<parent>
 		<groupId>br.com.wservices</groupId>
 		<artifactId>wservices</artifactId>
@@ -80,12 +81,17 @@
 		<!-- </dependency> -->
 	</dependencies>
 	<build>
-	
 		<resources>
 			<resource>
 				<directory>src/main/resources</directory>
 			</resource>
 		</resources>
+		<testResources>
+			<testResource>
+				<directory>src/test/resources</directory>
+				<filtering>true</filtering>
+			</testResource>
+		</testResources>
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
@@ -156,5 +162,4 @@
 		</snapshotRepository>
 	</distributionManagement>
 
-	<packaging>war</packaging>
 </project>

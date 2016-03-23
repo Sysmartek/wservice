@@ -17,29 +17,41 @@
 			<version>${project.parent.version}</version>
 			<type>ejb</type>
 		</dependency>
-<!-- 		<dependency> -->
-<!-- 			<groupId>br.com.wservices</groupId> -->
-<!-- 			<artifactId>wservices-core-client</artifactId> -->
-<!-- 			<version>${project.parent.version}</version> -->
-<!-- 		</dependency> -->
+		<!-- <dependency> -->
+		<!-- <groupId>br.com.wservices</groupId> -->
+		<!-- <artifactId>wservices-core-client</artifactId> -->
+		<!-- <version>${project.parent.version}</version> -->
+		<!-- </dependency> -->
 		<!-- <dependency> -->
 		<!-- <groupId>br.com.wservices</groupId> -->
 		<!-- <artifactId>wservices-webservices</artifactId> -->
 		<!-- <version>${project.parent.version}</version> -->
 		<!-- <type>war</type> -->
 		<!-- </dependency> -->
-<!-- 		<dependency> -->
-<!-- 			<groupId>br.com.wservices</groupId> -->
-<!-- 			<artifactId>wservices-clientForTest</artifactId> -->
-<!-- 			<version>${project.parent.version}</version> -->
-<!-- 			<type>war</type> -->
-<!-- 		</dependency> -->
+		<!-- <dependency> -->
+		<!-- <groupId>br.com.wservices</groupId> -->
+		<!-- <artifactId>wservices-clientForTest</artifactId> -->
+		<!-- <version>${project.parent.version}</version> -->
+		<!-- <type>war</type> -->
+		<!-- </dependency> -->
 		<dependency>
 			<groupId>br.com.wservices</groupId>
 			<artifactId>wservices-clientTest</artifactId>
 			<version>${project.parent.version}</version>
 			<type>war</type>
 		</dependency>
+		<dependency>
+			<groupId>br.com.wservices</groupId>
+			<artifactId>wservices-crud-ejb</artifactId>
+			<version>${project.parent.version}</version>
+			<type>war</type>
+		</dependency>
+		<!-- <dependency> -->
+		<!-- <groupId>br.com.wservices</groupId> -->
+		<!-- <artifactId>wservices-crud-ejb</artifactId> -->
+		<!-- <version>${project.parent.version}</version> -->
+		<!-- <type>war</type> -->
+		<!-- </dependency> -->
 		<!-- PROJETOS -->
 		<!-- BIBLIOTECAS -->
 

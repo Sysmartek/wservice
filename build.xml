@@ -46,7 +46,7 @@
 	</target>
 
 	<target name="test">
-		<exec executable="${env.MAVEN_HOME}/bin/mvn.bat">
+		<exec executable="${env.MAVEN_HOME}/bin/mvn.cmd">
 			<arg value="install"/>
 			<arg value="-Dmaven.test.skip=false"/>
 		</exec>
@@ -54,7 +54,7 @@
 	
 	
 	<target name="integration-test">
-		<exec executable="${env.MAVEN_HOME}/bin/mvn.bat">
+		<exec executable="${env.MAVEN_HOME}/bin/mvn.cmd">
 			<arg value="integration-test"/>
 			<arg value="-Dmaven.test.skip=false"/>
 		</exec>
@@ -89,20 +89,20 @@
 	</target>
 
 	<target name="mvn">
-		<exec executable="${env.MAVEN_HOME}/bin/mvn.bat">
+		<exec executable="${env.MAVEN_HOME}/bin/mvn.cmd">
 			<arg value="${mvn.command}"/>
 			<arg value="-Dmaven.test.skip=true"/>
 		</exec>
 	</target>
 	
 	<target name="mvnTest">
-		<exec executable="${env.MAVEN_HOME}/bin/mvn.bat">
+		<exec executable="${env.MAVEN_HOME}/bin/mvn.cmd">
 			<arg value="-Dmaven.test.skip=false"/>
 		</exec>
 	</target>
 	
 	<target name="depgraph">
-		<exec executable="${env.MAVEN_HOME}/bin/mvn.bat">
+		<exec executable="${env.MAVEN_HOME}/bin/mvn.cmd">
 			<arg value="install"/>
 			<arg value="depgraph:fullgraph"/>
 			<arg value="-Dmaven.test.skip=true"/>
@@ -111,7 +111,7 @@
 	</target>
 	
 	<target name="depgraph:all">
-		<exec executable="${env.MAVEN_HOME}/bin/mvn.bat">
+		<exec executable="${env.MAVEN_HOME}/bin/mvn.cmd">
 			<arg value="install"/>
 			<arg value="depgraph:fullgraph"/>
 			<arg value="-Dmaven.test.skip=true"/>
@@ -119,7 +119,7 @@
 	</target>
 
 	<target name="depgraph:file:svg">
-		<exec executable="${env.MAVEN_HOME}/bin/mvn.bat">
+		<exec executable="${env.MAVEN_HOME}/bin/mvn.cmd">
 			<arg value="install"/>
 			<arg value="depgraph:fullgraph"/>
 			<arg value="-Dmaven.test.skip=true"/>

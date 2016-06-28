@@ -280,7 +280,7 @@
 			by the Romans, who named it Londinium.</p>
 	</div>
 
-	<div id="footer">Copyright © W3Schools.com</div>
+	<div id="footer">Copyright © Sysmartek.com (Sysmartek-Inc)</div>
 
 </body>
 

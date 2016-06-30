@@ -11,7 +11,7 @@ import br.com.crudejb.bean.abstracts.AbstractBean;
 public abstract class AbstractDao<T extends AbstractBean> {
 	private Class<T> entityClass;
 	
-	@PersistenceContext(unitName="crudEjb")
+	@PersistenceContext(unitName="appCDIUnit")
 	protected EntityManager entityManager;
 
 	public AbstractDao(Class<T> entityClass) {

@@ -74,13 +74,12 @@ $(document)
 
 									$(location)
 											.attr('href',
-													'../wservices-crud-ejb/pages/pessoa.jsf');
+													//'../wservices-crud-ejb/pages/pessoa.jsf');
+													window.location.href + 'pages/pessoa.jsf');
 
 								});
 						
-						
-						
-
+									
 						$('#submitSpringMVC')
 								.click(
 										function(event) {

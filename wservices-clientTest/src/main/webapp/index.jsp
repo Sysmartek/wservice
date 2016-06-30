@@ -259,8 +259,8 @@
 		<h3>Test CRUD EJB</h3>
 			<input class="btn btn-primary btn-block" type="button"
 				id="submitCRUDEJB" value="CRUD EJB" /> <br />
-
-			<h3>Test Spring MVC</h3>
+		
+					<h3>Test Spring MVC</h3>
 			<input class="btn btn-primary btn-block" type="button"
 				id="submitSpringMVC" value="Spring MVC" /> <br />
 

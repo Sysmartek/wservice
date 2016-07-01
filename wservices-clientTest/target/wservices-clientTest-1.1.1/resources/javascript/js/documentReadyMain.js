@@ -67,20 +67,6 @@ $(document)
 
 										});
 						
-						$('#submitCRUDEJB')
-						.click(
-								function(event) {
-									event.preventDefault();
-
-									$(location)
-											.attr('href',
-													'../wservices-crud-ejb/pages/pessoa.jsf');
-
-								});
-						
-						
-						
-
 						$('#submitSpringMVC')
 								.click(
 										function(event) {

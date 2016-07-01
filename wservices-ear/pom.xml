@@ -41,18 +41,12 @@
 			<version>${project.parent.version}</version>
 			<type>war</type>
 		</dependency>
-		<dependency>
-			<groupId>br.com.wservices</groupId>
-			<artifactId>wservices-crud-ejb</artifactId>
-			<version>${project.parent.version}</version>
-			<type>war</type>
-		</dependency>
-		<!-- <dependency> -->
-		<!-- <groupId>br.com.wservices</groupId> -->
-		<!-- <artifactId>wservices-crud-ejb</artifactId> -->
-		<!-- <version>${project.parent.version}</version> -->
-		<!-- <type>war</type> -->
-		<!-- </dependency> -->
+<!-- 		<dependency> -->
+<!-- 			<groupId>br.com.wservices</groupId> -->
+<!-- 			<artifactId>wservices-crud-ejb</artifactId> -->
+<!-- 			<version>${project.parent.version}</version> -->
+<!-- 			<type>war</type> -->
+<!-- 		</dependency> -->
 		<!-- PROJETOS -->
 		<!-- BIBLIOTECAS -->
 

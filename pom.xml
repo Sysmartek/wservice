@@ -9,7 +9,7 @@
 	<version>1.1.1</version>
 
 	<modules>
-		<module>wservices-crud-ejb</module>
+<!-- 		<module>wservices-crud-ejb</module> -->
 		<module>wservices-core</module>
 		<!-- <module>wservices-core-client</module> -->
 		<!-- <module>wservices-webservices</module> -->
@@ -39,8 +39,8 @@
 		<javaee-api>7.0</javaee-api>
 		<javaee-web-api>7.0</javaee-web-api>
 		
-		<jsf-api>2.1.11</jsf-api>
-		<jsf-impl>2.1.11</jsf-impl>
+		<jsf-api>2.1.13</jsf-api>
+		<jsf-impl>2.1.13</jsf-impl>
 		<jstl>1.2</jstl>
 
 		<!-- Persistence / Data Manipulation -->

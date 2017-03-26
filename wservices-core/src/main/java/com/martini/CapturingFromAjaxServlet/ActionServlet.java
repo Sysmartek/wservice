@@ -37,7 +37,7 @@ public class ActionServlet extends HttpServlet {
 			name = "Hello User";
 		}
 		response.setContentType("text/plain");
-		((ServletRequest) response).setCharacterEncoding("UTF-8");
+		//((ServletRequest) response).setCharacterEncoding("UTF-8");
 		response.getWriter().write(name);
 
 	}

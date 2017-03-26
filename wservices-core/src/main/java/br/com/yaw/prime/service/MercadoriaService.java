@@ -20,7 +20,7 @@ public class MercadoriaService extends AbstractPersistence<Mercadoria, Long>{
 	/**
 	 * O container injeta a REFERENCIA para o <code>EntityManager</code>.
 	 */
-	@PersistenceContext(unitName = "appCDIUnit", type = PersistenceContextType.EXTENDED)
+	@PersistenceContext(unitName = "appCDIUnit")//, type = PersistenceContextType.EXTENDED)
 	private EntityManager em;
 	
 	@Override

@@ -60,23 +60,24 @@ $(document)
 
 											$(location)
 													.attr('href',
-															'http://wservices-sysmartek.rhcloud.com/listaMercadorias.jsf');
+															window.location.href + 'listaMercadorias.jsf');
+											//				'http://wservices-sysmartek.rhcloud.com/listaMercadorias.jsf');
 											//  					$(window).attr('location','http://localhost:8080/cdi-jsf-1.0/');
 											//  					$(location).prop('href', 'http://localhost:8080/cdi-jsf-1.0/');
 
 										});
-
+						
 						$('#submitSpringMVC')
 								.click(
 										function(event) {
 											event.preventDefault();
 
-											alert('Me	u amor Preciso Estudar Sprimg MVC');
+											alert('Meu amor Preciso Estudar Sprimg MVC');
 											return null;
 
 											$(location)
 													.attr('href',
-															'http://wservices-sysmartek.rhcloud.com/listaMercadorias.jsf');
+															window.location.href + 'listaMercadorias.jsf');
 											//  					$(window).attr('location','http://localhost:8080/cdi-jsf-1.0/');
 											//  					$(location).prop('href', 'http://localhost:8080/cdi-jsf-1.0/');
 

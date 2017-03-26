@@ -256,7 +256,8 @@
 			<input class="btn btn-primary btn-block" type="button"
 				id="submitPrimeJSFEJB3" value="PRIME JSF ManagedBean" /> <br />
 
-			<h3>Test Spring MVC</h3>
+		
+		<h3>Test Spring MVC</h3>
 			<input class="btn btn-primary btn-block" type="button"
 				id="submitSpringMVC" value="Spring MVC" /> <br />
 
@@ -280,7 +281,7 @@
 			by the Romans, who named it Londinium.</p>
 	</div>
 
-	<div id="footer">Copyright © W3Schools.com</div>
+	<div id="footer">Copyright © Sysmartek.com (Sysmartek-Inc)</div>
 
 </body>
 

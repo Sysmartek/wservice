@@ -16,10 +16,10 @@
 	});
 
 	function wooYayClickHandler() {
-		if (document.getElementById("wooYayButton").value == "Clicar Aqui Benzinho") {
+		if (document.getElementById("wooYayButton").value == "Click Here To Start") {
 			// Start the timer
 			//document.getElementById("wooYayButton").value = "Parar Timer!";
-			$("#wooYayButton").attr('value', 'Parar Timer!');
+			$("#wooYayButton").attr('value', 'Stop Timer!');
 
 			wooYayIntervalId = setInterval("wooYay()", $("#aioConceptName")
 					.val());

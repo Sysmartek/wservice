@@ -27,8 +27,8 @@
 			document.getElementById("setTimerIntervalMessage").innerHTML = "Stoped SetInterval";
 			//+ $("#aioConceptName").val();
 
-			//document.getElementById("wooYayButton").value = "Clicar Aqui Benzinho";
-			$("#wooYayButton").attr('value', 'Clicar Aqui Benzinho');
+			//document.getElementById("wooYayButton").value = "Click Here To Start";
+			$("#wooYayButton").attr('value', 'Click Here To Start');
 
 			clearInterval(wooYayIntervalId);
 		}
@@ -36,7 +36,7 @@
 
 	function wooYay() {
 		//if (Math.random() > .5) {
-		document.getElementById("setTimerIntervalMessage").innerHTML = "Iniciado SetInterval";
+		document.getElementById("setTimerIntervalMessage").innerHTML = "Initiated SetInterval";
 		//+ $("#aioConceptName").val();
 		//} else {
 		//	document.getElementById("setTimerIntervalMessage").innerHTML = "Value!";

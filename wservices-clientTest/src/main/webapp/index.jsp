@@ -166,7 +166,7 @@
 		<div>
 			<h3>Call Servlets with EJBs via Jquery</h3>
 			<h3>Muliple Calls Timers in JavaScript</h3>
-			<h3>Call CRUD EJB - JSF on Openshif</h3>
+			<h3>Call CRUD EJB - JSF on Openshif V2</h3>
 		</div>
 	</div>
 	<div id="nav" class=jumbotron>
@@ -175,7 +175,7 @@
 				style="height: 1.5em; font-size: 2em; color: blue;"></div>
 
 			<input id="wooYayButton" type="button" onclick="wooYayClickHandler()"
-				value="Clicar Aqui Benzinho" class="btn btn-info btn-block"></input>
+				value="Click Here To Start" class="btn btn-info btn-block"></input>
 
 			<div>
 				<select id="aioConceptName">

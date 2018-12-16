@@ -25,7 +25,12 @@
 			<param name="mvn.command" value="clean"/>
 		</antcall>
 	</target>
-		
+
+	<target name="tree">
+		<antcall target="mvn">
+			<param name="mvn.command" value="dependency:tree"/>
+		</antcall>
+	</target>	
 	
 	<!-- clean limpa artefatos da pasta target -->
 	<!-- install intala nossos artefatos baixa nossas dependencias -->

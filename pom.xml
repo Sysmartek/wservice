@@ -685,6 +685,11 @@
 				<artifactId>depgraph-maven-plugin</artifactId>
 				<version>3.2.2</version>
 			</plugin>
+			<!-- <plugin>
+				<groupId>ch.elca.el4j.maven.plugins</groupId>
+				<artifactId>maven-depgraph-plugin</artifactId>
+				<version>3.1</version>
+			</plugin> -->
 		</plugins>
 		<pluginManagement>
 			<plugins>
@@ -720,10 +725,15 @@
 						</lifecycleMappingMetadata>
 					</configuration>
 				</plugin>
-				<!-- <plugin>
+				<plugin>
 					<groupId>com.github.ferstl</groupId>
 					<artifactId>depgraph-maven-plugin</artifactId>
 					<version>3.2.2</version>
+				</plugin>
+				<!-- <plugin>
+					<groupId>ch.elca.el4j.maven.plugins</groupId>
+					<artifactId>maven-depgraph-plugin</artifactId>
+					<version>3.1</version>
 				</plugin> -->
 			</plugins>
 		</pluginManagement>

@@ -1,4 +1,10 @@
-/target/
+# sbteclipse plugin
+#.target
+# ignore anything in the target directory
+[Tt]arget
+
+wservices-clientTest/target/checkstyle-cachefile
+
 ### Java ###
 *.class
 
@@ -43,8 +49,6 @@ cwallet.sso.lck
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
 
-# ignore anything in the target directory
-[Tt]arget/
 
 
 # Created by https://www.gitignore.io/api/eclipse
@@ -100,8 +104,6 @@ bld/
 [Dd]eploy/
 [Tt]arget/
 
-# sbteclipse plugin
-.target
 
 # Tern plugin
 .tern-project

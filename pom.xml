@@ -559,11 +559,11 @@
 							<skipTests>true</skipTests>
 						</configuration>
 					</plugin>
-					<plugin>
+					<!-- <plugin>
 						<groupId>com.github.ferstl</groupId>
 						<artifactId>depgraph-maven-plugin</artifactId>
 						<version>3.2.2</version>
-					</plugin>
+					</plugin> -->
 				</plugins>
 			</build>
 		</profile>
@@ -720,11 +720,11 @@
 						</lifecycleMappingMetadata>
 					</configuration>
 				</plugin>
-				<plugin>
+				<!-- <plugin>
 					<groupId>com.github.ferstl</groupId>
 					<artifactId>depgraph-maven-plugin</artifactId>
 					<version>3.2.2</version>
-				</plugin>
+				</plugin> -->
 			</plugins>
 		</pluginManagement>
 	</build>

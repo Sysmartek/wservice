@@ -1,0 +1,121 @@
+WProject-Server
+-Desenvolvimento do Projeto Util, que será a Base do Nosso Sistema
+-Desenvolvendo o Módulo DataBase	
+
+ Classe  Base Entity
+
+	Add New Class BaseEntity
+	Class base para todas as nossas *Entitades
+	Realiza o mapeamento das nossas Entidades do Banco com as nossa Entidades do nosso código
+	
+	*Entidade no Banco mapeada *Entidade no nosso código
+		
+	"extends AbstractPersistable<PK>"
+	Disponibiliza um método para "set" e "get" o nosso Id da chave primaria
+	Disponibilzar para quaquer classe alterar nossos Ids das entidades
+	@Override
+	public void setId(PK id){
+		super.serId(id);
+	}
+
+	*Estou usando a commons.lang3 para imprimir informações dos objetos
+	@Override
+	public String toString(){
+		return TostringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
+	}
+
+	@Override
+	public boolean equals(Object obj){
+		return EqualsBuilder.reflectionEquals(this. obj);
+	}
+	Criar os pacotes e classes:
+	org.wproject.server.utils
+		BaseEntity
+		BaseKey
+	org.wproject.server.utils.entities  "Mapeamento" inicial entre Entidade "Classe" e Entidade "Tabela" (BD)
+		CategoryEntity
+	
+	Chave Primaria "simples" (com tipos primitivos: int; string; long; char ...)
+	Chave composta "Mais de um valor fazendo parte da minha tabela"
+	
+	Criar a Class BaseKey para ser herdada por chaves compostas
+	
+	Criar a Classe de Mapeamento mais Básico em Utils 
+	Entidade : "CategoryEntity"
+	
+	extends BaseEntity<Long> que é o nosso PK
+	
+	Annotations
+	@Entity  			--> Nossa classe é uma entidade
+	@XmlRootElement  	--> Serve Para Serializar nosso objeto
+	@Table(name="Categories") 	-->O Nome da Tabela relacionada no Banco
+	@AttributeOverride(name="id", column= @Column(name="CategoryID"))	-->Sobrescrever nome padrao da nossa classe base entity / Override de Attribute
+
+	
+Agora vamos desenvolver nosso MODULO DATABASE COM SPRING DATA
+
+Modulo DataBase vai ser simples pois iremos trabalhar com Spring Data
+explicação sobre DAO e Repositorio
+	Diferenças entre DAO e Repositórios
+	
+	DAO colocamos nossos códigos SQL, HQL e serve para gerenciar nossas informações no Banco de Dados, tudo a nível de query
+	aqui devo criar toda a consulta detalhada a nível de sql , com Likes, Unios, etc..
+	Tenho que criar toda a implementação da nossa classe concreta (implementação de um interface)
+	
+	vs
+	
+	Repositorio iremos trabalhar com consultas baseadas em nome de métodos
+	Faço a mesma consulta baseado no nome sem fazer a query  (exemplo:)
+	cria consultas a nível de execução
+	Também dá para criar a consulta a nível de SQL caso precisar
+	Nao preciso criar a implementação da classe concreta, o Spring-Data-Jpa já FAZ  todo o CRUD da minha interface
+	
+No Modulo DataBase criar o pacote
+
+	org.wproject.server.database.repositories
+		ICategoryRepository 	--> Repository de Category  "extends JpaRepository<CategoryEntity, Long>"
+	
+	"JpaRepository<T, Serializable>" 	--> Esta interface JpaREpository disponibiliza todo CRUD de nossa Entidade
+	
+	
+	extends JpaRepository<CategoryEntity, Long>
+	
+	Já Estamos prontos para fazer Testes de CRUD
+	
+	Criar o arquivo dentro do "recources" do Módulo DataBase --> "ctx-wproject-server-database.xml"
+	Criar Pasta META-INF  dentro da Pastas "resources"
+	Criar o arquivo "persistence.xml" dentro da pasta "META-INF"
+	
+	Dentro da pasta "resources" do Módulo "UTILS" criar o arquivo "log4j.xml" temos 6 Níveis de logs
+	Nível mais baixo é o "trace" do log4j
+	
+	
+	Construir o Context Spring do Database "ctx-wproject-server-database.xml"
+	Construir o "Persistence.xml"
+	 e Mapear a Entidade que deseja ser controlada pelo Spring-Data <class>org.wproject.server.utils.entities.CategoryEntity</class>
+	 
+	  
+	  Atalho do Eclipse:
+		No pacote de Entidades mapeadas "Utils" em cima da Entidade  Botão Direito "Copy Qualified Name"
+	
+	
+	Para Fazer TESTES:
+	Criar o arquivo o Arquivo "ctx-wproject-server-teste-database.xml"  --> vai carregar o contexto "ctx-wproject-server-database.xml" indiretamente
+	
+	Criar a Class Abstrata "AbstractDatabaseTest"
+	
+	Criar a Pasta repositories dentro de "test"
+	org.wproject.server.test.database.reporitories;
+	Criar a Class para testar 
+		CategoryRepositoryTest
+		
+		Rodar em Modo Debug
+		
+		No "Console" OutPut  com botao direito tirar o "Limit console output"
+	
+	
+	Assistir os videso do WPattern Frameworks "Spring"
+	
+	
+	Proxima aula 3)
+	-Continuação da Configuração dos nossos Repositórios

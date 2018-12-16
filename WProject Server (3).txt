@@ -1,0 +1,28 @@
+WProject-Server
+-Continuação da Configuração dos nossos Repositórios
+  Criando outras pesquisas
+  
+  public interface ICategoryRepository extends JpaRepository<CategoryEntity, Long>{
+	public List<CategoryEntity> findByCategoryName(String categoryName);		
+}
+
+ O nome do Parametro deve ser OBRIGATORIA IGUAL AO ATRIBUTO DA ENTIDADE, CASO CONTRARIO OCORRERÁ ERRO DO SPRING
+ 
+ Criar classes para Entidade "Orders"
+ Class: 
+	@Entity
+	@XmlRootElement
+	@Table(name="Orders")
+	@AttributeOverride(name="id", column= @Column(name="OrderID"))
+	public class OrderEntity extends BaseEntity<Long>{...com "Construtores"
+		
+	@entity
+	public interface IOrderRepository extends JpaRepository<OrderEntity, Long>{
+	
+	Class Test:
+	public class OrderRepositoryTest extends AbstractDatabaseTest{
+	
+	Incluir Qualified Name ao "persistence.xml"
+	<class>org.wproject.server.utils.entities.OrderEntity</class>
+	
+	

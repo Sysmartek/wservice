@@ -1,0 +1,52 @@
+WProject-Server
+-Arquitetura e Configuração do Ambiente
+
+	wproject-server-all
+		Principal para configurar os outros módulos pelo Maven
+		wproject-server-utils
+			Responsável por disponilizar interfaces e beans - Beans são entidades puras, servir para transportar dados entre aplicações ou entre modulos
+		wproject-server-database
+			Responsavel por manipular toda a parte de acesso a dados
+		wproject-server-services
+			Responsavel por disponibilizar os serviços REST
+		wproject-server-factory
+			Responsavel por levantar minha aplicação e tornar ela disponivel remotamente
+
+
+	Create Folder "workspace"
+	Create New Maven Project
+		skip create archetype -> We want to create ours configurations for the project structure
+	Next
+	Artefact:
+		Group Id : org.wproject.server
+		Artefact Id: wproject-server-all
+		Version: 0.0.1-SNAPSHOT
+		package: pom
+	Finish
+	
+	Delete folder : "scr"
+	
+	Abrir o "pom.xml" do All
+	
+	Criar todas as dependencies, plugins e dependencyManagement
+	
+	Criar os Maven Modules ->  Create Simple Project ("Skip Archetype")
+	wproject-server-utils  		packaging "jar"
+	wproject-server-service 	packaging "jar"
+	wproject-server-database 	packaging "jar"
+	wproject-server-factory 	packaging "war"  ->  Responsavel por subir a aplicação, subir sobre projecto web diponibilizar nosso serviço http
+	
+	Construir web.xml	do Projeto Factory (war)
+	Add new file em wproject-server-factory  "web.xml"
+	Add new file em wproject-server-factory  "index.html"
+	
+	Construir build.xml	
+	build.xml -> Responsável por compilar o Maven e baizar nossas dependências dos nossos projetos.
+	Add new file em wproject-server-all  "build.xml"
+	
+	Backup do Sistema como Modelo de Projeto
+	
+Proxima Aula 2)
+-Desenvolvimento do Projeto Util, que será a Base do Nosso Sistema
+-Desenvolvendo o Módulo DataBase	
+	

@@ -417,6 +417,11 @@
 						</lifecycleMappingMetadata>
 					</configuration>
 				</plugin>
+				<plugin>
+					<groupId>com.github.ferstl</groupId>
+					<artifactId>depgraph-maven-plugin</artifactId>
+					<version>3.2.2</version>
+				</plugin>
 			</plugins>
 		</pluginManagement>
 	</build>

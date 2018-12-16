@@ -104,7 +104,7 @@
 	<target name="depgraph">
 		<exec executable="${env.MAVEN_HOME}/bin/mvn.cmd">
 			<arg value="install"/>
-			<arg value="depgraph:fullgraph"/>
+			<arg value="depgraph:graph"/>
 			<arg value="-Dmaven.test.skip=true"/>
 			<arg value="-Ddepgraph.artifactFilter=wproject"/>
 		</exec>
@@ -113,7 +113,7 @@
 	<target name="depgraph:all">
 		<exec executable="${env.MAVEN_HOME}/bin/mvn.cmd">
 			<arg value="install"/>
-			<arg value="depgraph:fullgraph"/>
+			<arg value="depgraph:graph"/>
 			<arg value="-Dmaven.test.skip=true"/>
 		</exec>
 	</target>
@@ -121,7 +121,7 @@
 	<target name="depgraph:file:svg">
 		<exec executable="${env.MAVEN_HOME}/bin/mvn.cmd">
 			<arg value="install"/>
-			<arg value="depgraph:fullgraph"/>
+			<arg value="depgraph:graph"/>
 			<arg value="-Dmaven.test.skip=true"/>
 			<arg value="-Ddepgraph.artifactFilter=wproject"/>
 			<arg value="-Ddepgraph.ext=svg"/>
